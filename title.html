@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мой первый сайт</title>
+  <style>
+    /* Обнуление отступов и размеров */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-image: url("images/IMG_2396.png");
+      background-size: cover;           /* масштабируется */
+      background-position: center;      /* по центру */
+      background-repeat: no-repeat;     /* не повторяется */
+      background-attachment: fixed;     /* не двигается при скролле */
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1, p {
+      background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный фон для читаемости */
+      padding: 1rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+<h1>Привет, мир!</h1>
+<p>Добро пожаловать на мой GitHub Pages сайт.</p>
+</body>
+</html>
