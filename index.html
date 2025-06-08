@@ -4,31 +4,32 @@
   <meta charset="UTF-8">
   <title>CHAOTICVERSE</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-<img src="images/CHAOTICVERSE.jpg" alt="CHAOTICVERSE">
+<img src="images/CHAOTICVERSE.jpg" alt="CHAOTICVERSE" class="background-image">
 
 <div class="fixed-overlay" id="overlay">
   <button class="minimize-button" id="minimize">–</button>
-  <!-- сюда можно вставить текст или контент -->
+  <button class="lang-toggle-button" id="langToggle">EN</button>
+
+  <div class="overlay-content" id="textContent">
+    <p id="mainText">
+      Бесконечные миры, бесконечные сражения и бесконечные возможности.<br>
+      Встречайте мультивселенную, где не существует ограничений.<br>
+      Погрузитесь в хаос вместе с
+    </p>
+
+    <img src="images/ChaoticverseLogo.png" alt="Chaoticverse Logo" class="logo-image">
+
+    <p class="disclaimer" id="disclaimerText">
+      Данный фан-проект является кроссовером множества сторонних проектов фандома Undertale и Deltarune.<br>
+      Данный фан-проект не поддерживается Toby Fox или другими коммерческими организациями.
+    </p>
+  </div>
 </div>
 
 <div class="restore-button" id="restore">+</div>
-
-<script>
-  const overlay = document.getElementById('overlay');
-  const minimizeBtn = document.getElementById('minimize');
-  const restoreBtn = document.getElementById('restore');
-
-  minimizeBtn.addEventListener('click', () => {
-    overlay.classList.add('hidden');
-    restoreBtn.style.display = 'flex';
-  });
-
-  restoreBtn.addEventListener('click', () => {
-    overlay.classList.remove('hidden');
-    restoreBtn.style.display = 'none';
-  });
-</script>
+<script src="scripts.js"></script>
 </body>
 </html>
