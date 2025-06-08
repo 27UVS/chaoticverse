@@ -3,43 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>CHAOTICVERSE</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-image: url("images/кмм_ПОСТЕР1.jpg");
-      background-size: 100% auto;         /* по ширине — растягиваем, по высоте — авто */
-      background-repeat: no-repeat;       /* не повторяется */
-      background-position: top center;    /* сверху по центру */
-      min-height: 100vh;                  /* минимум — на весь экран */
-    }
-
-    /* Трюк: делаем контейнер, который будет иметь высоту картинки */
-    .spacer {
-      width: 100%;
-      height: 10844px; /* ровно как у изображения */
-    }
-
-    /* Добавим, например, заголовок */
-    h1 {
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      text-shadow: 2px 2px 5px black;
-      font-size: 2em;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      border-radius: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Chaoticverse</h1>
-<div class="spacer"></div>
+<img src="images/CHAOTICVERSE.jpg" alt="CHAOTICVERSE">
+
+<div class="fixed-overlay" id="overlay">
+  <button class="minimize-button" id="minimize">–</button>
+  <!-- сюда можно вставить текст или контент -->
+</div>
+
+<div class="restore-button" id="restore">+</div>
+
+<script>
+  const overlay = document.getElementById('overlay');
+  const minimizeBtn = document.getElementById('minimize');
+  const restoreBtn = document.getElementById('restore');
+
+  minimizeBtn.addEventListener('click', () => {
+    overlay.classList.add('hidden');
+    restoreBtn.style.display = 'flex';
+  });
+
+  restoreBtn.addEventListener('click', () => {
+    overlay.classList.remove('hidden');
+    restoreBtn.style.display = 'none';
+  });
+</script>
 </body>
 </html>
