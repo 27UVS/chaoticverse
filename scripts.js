@@ -2,7 +2,7 @@ const overlay = document.getElementById('overlay');
 const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
-const mainText = document.getElementById('mainText');
+const homeText = document.getElementById('mainText');
 const disclaimerText = document.getElementById('disclaimerText');
 
 const textRU = `
@@ -32,12 +32,12 @@ let currentLang = 'RU';
 
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
-        mainText.innerHTML = textEN;
+        homeText.innerHTML = textEN;
         disclaimerText.innerHTML = disclaimerEN;
         langToggle.textContent = 'RU';
         currentLang = 'EN';
     } else {
-        mainText.innerHTML = textRU;
+        homeText.innerHTML = textRU;
         disclaimerText.innerHTML = disclaimerRU;
         langToggle.textContent = 'EN';
         currentLang = 'RU';

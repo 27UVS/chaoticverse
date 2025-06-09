@@ -12,6 +12,11 @@ img {
     display: block;
 }
 
+h1 {
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
 .fixed-overlay {
     position: fixed;
     top: 10%;
@@ -23,7 +28,7 @@ img {
     box-sizing: border-box;
     z-index: 1000;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-
+    /*overflow-x: hidden;*/
     overflow-y: auto;
     padding: 20px;
 }
@@ -33,7 +38,15 @@ img {
     visibility: hidden;
 }
 
-.overlay-content {
+.fixed-overlay::-webkit-scrollbar {
+    width: 8px;
+}
+.fixed-overlay::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+.overlay-content-home-page {
     font-family: 'Determination (RUS BY LYAJKA)', monospace;
     font-size: 26px;
     color: white;
@@ -43,9 +56,29 @@ img {
     margin-bottom: 5px;
 }
 
+.overlay-content-characters-page {
+    font-family: 'Determination (RUS BY LYAJKA)', monospace;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+
+.overlay-footer-text {
+    text-align: center;
+    color: white;
+    font-family: 'Determination (RUS BY LYAJKA)', monospace;
+    font-size: 14px;
+    opacity: 0.75;
+    margin-top: 20px;
+}
+
 .disclaimer {
     font-size: 20px;
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .minimize-button {
@@ -103,4 +136,51 @@ img {
     max-width: 60%;
     height: auto;
     margin: 5px auto 10px auto;
+}
+
+.characters-image {
+    display: block;
+    max-width: 50%;
+    height: auto;
+    margin: 5px auto 10px auto;
+}
+
+.divider {
+    border: none;
+    height: 2px;
+    background-color: white;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between; /* равные промежутки */
+    align-items: center;
+    margin: 20px 0 20px 0; /* отступ сверху после линии */
+    padding: 0 40px;     /* отступ от левого и правого краёв */
+}
+
+.center-row {
+    justify-content: center; /* выравнивание по центру */
+    padding: 0 40px;
+    margin-top: 20px;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-button img {
+    width: 250px;  /* размер кнопки */
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.nav-button:hover img {
+    transform: scale(1.1); /* эффект при наведении */
 }
