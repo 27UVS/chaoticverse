@@ -17,6 +17,7 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    will-change: background-image;
 }
 
 img {
@@ -64,10 +65,10 @@ h1 {
 
 .overlay-content-home-page {
     font-family: 'DeterminationRusFont', monospace;
-    font-size: 30px;
+    font-size: 28px;
     color: white;
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     line-height: 1.6;
     margin-bottom: 5px;
 }
@@ -99,7 +100,7 @@ h1 {
 }
 
 .disclaimer {
-    font-size: 20px;
+    font-size: 18px;
     opacity: 0.75;
 }
 
@@ -173,14 +174,13 @@ h1 {
     }
 }
 
-
 .divider {
     border: none;
     height: 2px;
     background-color: white;
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .button-row {
@@ -215,9 +215,47 @@ h1 {
     transform: scale(1.1); /* эффект при наведении */
 }
 
+.gif-picture {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.gif-picture img{
+    width: 500px;
+    height: auto;
+    max-width: 100%;
+}
+
+.nav-app-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-app-icon img {
+    width: 80px;
+    height: auto;
+    max-width: 100%;
+    transition: transform 0.2s ease;
+}
+
+.nav-app-icon:hover img {
+    transform: scale(1.1); /* эффект при наведении */
+}
+
 @media (max-width: 768px) {
     .nav-button img {
         width: 140px;
+    }
+
+    .gif-picture img{
+        width: 390px;
+    }
+
+    .nav-app-icon img {
+        width: 50px;
     }
 
     .overlay-content-home-page {
