@@ -6,14 +6,14 @@ const homeText = document.getElementById('mainText');
 const disclaimerText = document.getElementById('disclaimerText');
 
 const textRU = `
-  Бесконечные миры, бесконечные сражения и бесконечные возможности.<br>
-  Встречайте мультивселенную, где не существует ограничений.<br>
+  Бесконечные миры, бесконечные сражения и бесконечные возможности!<br>
+  Встречайте мультивселенную, где не существует ограничений!<br>
   Погрузитесь в хаос вместе с
 `;
 
 const textEN = `
-  Endless worlds, endless battles and endless possibilities.<br>
-  Meet a multiverse where there are no limits.<br>
+  Endless worlds, endless battles and endless possibilities!<br>
+  Meet a multiverse where there are no limits!<br>
   Plunge into the chaos with
 `;
 
