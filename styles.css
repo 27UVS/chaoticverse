@@ -31,6 +31,35 @@ h1 {
     margin-bottom: 5px;
 }
 
+a {
+    color: rgb(251,255,0);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(251,204,0); /* цвет при наведении */
+    text-decoration: underline; /* добавить подчёркивание при наведении */
+}
+
+.link-text{
+    font-size: 20px
+}
+
+@media (max-width: 900px){
+    .link-text{
+        font-size: 16px
+    }
+}
+
+.divider {
+    border: none;
+    height: 2px;
+    background-color: white;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .fixed-overlay {
     position: fixed;
     top: 10%;
@@ -172,15 +201,6 @@ h1 {
     .characters-image {
         max-width: 90%;
     }
-}
-
-.divider {
-    border: none;
-    height: 2px;
-    background-color: white;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .button-row {
@@ -337,5 +357,71 @@ h1 {
     .character-description {
         margin-left: 0;
         font-size: 18px;
+    }
+}
+
+.secondary-characters-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 30px;
+}
+
+.secondary-character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.secondary-character-icon {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.secondary-character-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.secondary-character-text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.char-name {
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.char-author {
+    color: #ccc;
+    font-size: 20px;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .secondary-character-card {
+        width: 100px;
+    }
+
+    .secondary-character-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .char-name {
+        font-size: 20px;
+    }
+
+    .char-author {
+        font-size: 12px;
     }
 }

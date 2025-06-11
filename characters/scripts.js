@@ -13,6 +13,14 @@ const characterHighest = document.getElementById('highest');
 const characterDream = document.getElementById('dream');
 const characterNightmare = document.getElementById('nightmare');
 const characterShatteredDream = document.getElementById('shatteredDream');
+const characterCore = document.getElementById('core');
+const characterDRAsriel = document.getElementById('drAsriel');
+const characterGoopySoul = document.getElementById('goopySoul');
+const characterDustSans = document.getElementById('dustSans');
+const characterSoulUndyne = document.getElementById('soulUndyne');
+const characterWIKI = document.getElementById('wiki');
+const characterKris = document.getElementById('kris');
+
 const characterNelsonDescription = document.getElementById('nelsonDescription');
 const characterGasterDescription = document.getElementById('gasterDescription');
 const characterHollowSansDescription = document.getElementById('hollowDescription');
@@ -23,6 +31,14 @@ const characterHighestDescription = document.getElementById('highestDescription'
 const characterDreamDescription = document.getElementById('dreamDescription');
 const characterNightmareDescription = document.getElementById('nightmareDescription');
 const characterShatteredDreamDescription = document.getElementById('shatteredDreamDescription');
+
+const characterCoreAuthor = document.getElementById('coreAuthor');
+const characterDRAsrielAuthor = document.getElementById('drAsrielAuthor');
+const characterGoopySoulAuthor = document.getElementById('goopySoulAuthor');
+const characterDustSansAuthor = document.getElementById('dustSansAuthor');
+const characterSoulUndyneAuthor = document.getElementById('soulUndyneAuthor');
+const characterWIKIAuthor = document.getElementById('wikiAuthor');
+const characterKrisAuthor = document.getElementById('krisAuthor');
 
 const charactersHeaderEN = `Chaoticverse Characters`;
 const characterNelsonEN = `Nelson`;
@@ -59,21 +75,37 @@ const characterHighestDescriptionEN = `Who wants to achieve perfection in everyt
                     he chose this nickname. In his opinion, almost every story in the multiverse is boring and primitive, 
                     and therefore requires serious changes and additions. He is a hacker-player, but prefers to call himself an 
                     ‘architect’ who helps bring worlds to their ‘ideal’ versions.`;
-const characterDreamEN = 'Dream';
+const characterDreamEN = 'Dream<br><div class="link-text">orig by <a href="https://www.tumblr.com/jokublog">@jokublog</a></div>';
 const characterDreamDescriptionEN = 'Despite everything he has been through, his soul shines brightly and ' +
                     'guides others. Worldview: Chaotic Good. He has become more mature and responsible. He no longer ' +
                     'tries to act alone, and is willing to rely on others. Could it be that he changed so much after ' +
                     'the merger of his two selves, or has he always been this way and just hidden it?';
-const characterNightmareEN = 'Nightmare';
+const characterNightmareEN = 'Nightmare<br><div class="link-text">orig by <a href="https://www.tumblr.com/jokublog">@jokublog</a></div>';
 const characterNightmareDescriptionEN = 'No, this is not the Nightmare you know. He is still himself, ' +
                     'but his trust in others has been shattered. Worldview: Lawful Evil. Nightmare is still cruel, ' +
                     'calculating, and cold. In his eyes, everyone is selfish, worthless, and hypocritical, ' +
                     'deserving only one thing: pain. Nevertheless, his soul is not completely shrouded in darkness.';
-const characterShatteredDreamEN = 'Shattered<br>Dream';
+const characterShatteredDreamEN = 'Shattered<br>Dream<br><div class="link-text">orig by <a href="https://www.tumblr.com/galacii-gallery">@galacii-gallery</a></div>';
 const characterShatteredDreamDescriptionEN = 'Yes, there may be more than one Dream in the multiverse, but not ' +
                     'all Dreams are the same as the original. Worldview: Lawful Evil. He has no moral principles or ' +
                     'ideas about honour and nobility. He can lie whenever he wants. He is a true demon who gets ' +
                     'everything he wants. He liked his brother, but now he wants to repay him for all the pain he caused.';
+
+const characterCoreEN = `Core Frisk`;
+const characterCoreAuthorEN = `by <a href="https://dokudoki.tumblr.com">@dokudoki</a>`;
+const characterDRAsrielEN = `Dreemurr Reborn Asriel`;
+const characterDRAsrielAuthorEN = `by <a href="https://dreemurr-reborn.tumblr.com">@dreemurr-reborn</a>`;
+const characterGoopySoulEN = `Goopy Soul`;
+const characterGoopySoulAuthorEN = `by <a href="https://dreemurr-reborn.tumblr.com">@goopytale-au</a>/
+                        <br><a href="https://www.tumblr.com/samsheadraws">@samsheadraws</a>`;
+const characterDustSansEN = `Dust Sans`;
+const characterDustSansAuthorEN = `by <a href="https://ask-dusttale.tumblr.com">@ask-dusttale</a>`;
+const characterSoulUndyneEN = `Soul Undyne`;
+const characterSoulUndyneAuthorEN = `by <a href="https://tatatale.tumblr.com">@tatatale</a>`;
+const characterWIKIEN = `WIKI`;
+const characterWIKIAuthorEN = `by <a href="https://x.com/paintedhen">@paintedhen</a>`;
+const characterKrisEN = `Kris`;
+const characterKrisAuthorEN = `by <a href="https://vk.com/milikrisart">@milikrisart</a>`;
 
 
 const charactersHeaderRU = `Персонажи Chaoticverse`;
@@ -115,22 +147,39 @@ const characterHighestDescriptionRU = `Желающий достичь сове�
                     Почти каждая история в мультивселенной на его взгляд просто скучна и примитивна, а потому
                     требует серьезных изменений и расширений. Он игрок-хакер, но предпочитает себя называть
                     “архитектором”, помогающий довести миры до их “идеальных” версий.`;
-const characterDreamRU = `Дрим`;
+const characterDreamRU = `Дрим<br><div class="link-text">ориг. от <a href="https://www.tumblr.com/jokublog">@jokublog</a></div>`;
 const characterDreamDescriptionRU = `Не смотря на все, что он пережил, его душа
                     сияет и направляет других. Мировоззрение: хаотично-доброе. Он стал более зрелым и ответственным.
                     Больше он не пытается действовать в одиночку, а готов положиться на других. Может ли быть, что он
                     так изменился после слияния двух себя, или же он всегда таким был и просто скрывал это?`;
-const characterNightmareRU = `Найтмер`;
+const characterNightmareRU = `Найтмер<br><div class="link-text">ориг. от <a href="https://www.tumblr.com/jokublog">@jokublog</a></div>`;
 const characterNightmareDescriptionRU = `Нет, это не тот Найтмер, которого вы знаете.
                     Он все еще остался собой, но его доверие к окружающим разрушено. Мировоззрение: законопослушно-злое. Найтмер
                     все также жесток, расчетлив и холоден. Все в его глазах настоящие эгоисты, ничтожества и лицемеры,
                     заслуживающие ли одного - страдания. Тем не менее его душа не полностью окутана тьмой.`;
-const characterShatteredDreamRU = `Шаттрд<br>Дрим`;
+const characterShatteredDreamRU = `Шаттерд<br>Дрим<br><div class="link-text">ориг. от <a href="https://www.tumblr.com/galacii-gallery">@galacii-gallery</a></div>`;
 const characterShatteredDreamDescriptionRU = `Да, в мультивселенной может быть
                     больше одного Дрима, но не все Дримы такие же, как и оригинал. Мировоззрение: законопослушно-злое.
                     В нем нет моральных принципов, или идеи о чести и благородстве. Он может врать когда угодно. Он
                     самый настоящий демон, который получает всё, что он захочет. Он любил своего брата, но теперь он желает
                     отплатить ему за всю ту боль, что он причинил.`;
+
+const characterCoreRU = `Кор Фриск`;
+const characterCoreAuthorRU = `от <a href="https://dokudoki.tumblr.com">@dokudoki</a>`;
+const characterDRAsrielRU = `Дримурр Реборн Азриэль`;
+const characterDRAsrielAuthorRU = `от <a href="https://dreemurr-reborn.tumblr.com">@dreemurr-reborn</a>`;
+const characterGoopySoulRU = `Гуппи Соул`;
+const characterGoopySoulAuthorRU = `от <a href="https://dreemurr-reborn.tumblr.com">@goopytale-au</a>/
+                        <br><a href="https://www.tumblr.com/samsheadraws">@samsheadraws</a>`;
+const characterDustSansRU = `Даст Санс`;
+const characterDustSansAuthorRU = `от <a href="https://ask-dusttale.tumblr.com">@ask-dusttale</a>`;
+const characterSoulUndyneRU = `Соул Андайн`;
+const characterSoulUndyneAuthorRU = `от <a href="https://tatatale.tumblr.com">@tatatale</a>`;
+const characterWIKIRU = `ВИКИ`;
+const characterWIKIAuthorRU = `от <a href="https://x.com/paintedhen">@paintedhen</a>`;
+const characterKrisRU = `Крис`;
+const characterKrisAuthorRU = `от <a href="https://vk.com/milikrisart">@milikrisart</a>`;
+
 
 let currentLang = 'RU';
 
@@ -145,9 +194,16 @@ langToggle.addEventListener('click', () => {
         characterStarSans.textContent = characterStarSansEN;
         characterStarChara.textContent = characterStarCharaEN;
         characterHighest.textContent = characterHighestEN;
-        characterDream.textContent = characterDreamEN;
-        characterNightmare.textContent = characterNightmareEN;
+        characterDream.innerHTML = characterDreamEN;
+        characterNightmare.innerHTML = characterNightmareEN;
         characterShatteredDream.innerHTML = characterShatteredDreamEN;
+        characterCore.textContent = characterCoreEN;
+        characterDRAsriel.textContent = characterDRAsrielEN;
+        characterGoopySoul.textContent = characterGoopySoulEN;
+        characterDustSans.textContent = characterDustSansEN;
+        characterSoulUndyne.textContent = characterSoulUndyneEN;
+        characterWIKI.textContent = characterWIKIEN;
+        characterKris.textContent = characterKrisEN;
 
         characterNelsonDescription.textContent = characterNelsonDescriptionEN;
         characterGasterDescription.textContent = characterGasterDescriptionEN;
@@ -159,6 +215,14 @@ langToggle.addEventListener('click', () => {
         characterDreamDescription.textContent = characterDreamDescriptionEN;
         characterNightmareDescription.textContent = characterNightmareDescriptionEN;
         characterShatteredDreamDescription.textContent = characterShatteredDreamDescriptionEN;
+
+        characterCoreAuthor.innerHTML = characterCoreAuthorEN;
+        characterDRAsrielAuthor.innerHTML = characterDRAsrielAuthorEN;
+        characterGoopySoulAuthor.innerHTML = characterGoopySoulAuthorEN;
+        characterDustSansAuthor.innerHTML = characterDustSansAuthorEN;
+        characterSoulUndyneAuthor.innerHTML = characterSoulUndyneAuthorEN;
+        characterWIKIAuthor.innerHTML = characterWIKIAuthorEN;
+        characterKrisAuthor.innerHTML = characterKrisAuthorEN;
         currentLang = 'EN';
     } else {
         charactersHeader.textContent = charactersHeaderRU;
@@ -170,9 +234,16 @@ langToggle.addEventListener('click', () => {
         characterStarSans.textContent = characterStarSansRU;
         characterStarChara.textContent = characterStarCharaRU;
         characterHighest.textContent = characterHighestRU;
-        characterDream.textContent = characterDreamRU;
-        characterNightmare.textContent = characterNightmareRU;
+        characterDream.innerHTML = characterDreamRU;
+        characterNightmare.innerHTML = characterNightmareRU;
         characterShatteredDream.innerHTML = characterShatteredDreamRU;
+        characterCore.textContent = characterCoreRU;
+        characterDRAsriel.textContent = characterDRAsrielRU;
+        characterGoopySoul.textContent = characterGoopySoulRU;
+        characterDustSans.textContent = characterDustSansRU;
+        characterSoulUndyne.textContent = characterSoulUndyneRU;
+        characterWIKI.textContent = characterWIKIRU;
+        characterKris.textContent = characterKrisRU;
 
         characterNelsonDescription.textContent = characterNelsonDescriptionRU;
         characterGasterDescription.textContent = characterGasterDescriptionRU;
@@ -184,6 +255,14 @@ langToggle.addEventListener('click', () => {
         characterDreamDescription.textContent = characterDreamDescriptionRU;
         characterNightmareDescription.textContent = characterNightmareDescriptionRU;
         characterShatteredDreamDescription.textContent = characterShatteredDreamDescriptionRU;
+
+        characterCoreAuthor.innerHTML = characterCoreAuthorRU;
+        characterDRAsrielAuthor.innerHTML = characterDRAsrielAuthorRU;
+        characterGoopySoulAuthor.innerHTML = characterGoopySoulAuthorRU;
+        characterDustSansAuthor.innerHTML = characterDustSansAuthorRU;
+        characterSoulUndyneAuthor.innerHTML = characterSoulUndyneAuthorRU;
+        characterWIKIAuthor.innerHTML = characterWIKIAuthorRU;
+        characterKrisAuthor.innerHTML = characterKrisAuthorRU;
         currentLang = 'RU';
     }
 });
