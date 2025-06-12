@@ -48,6 +48,18 @@
     }
   },
   {
+    "id": "comicPapyrus",
+    "image": "Comic Papyrus.webp",
+    "alt": "Comic Papyrus",
+    "author": "<a href=\"https://moofrog.tumblr.com\">@moofrog</a>",
+    "en": {
+      "name": "Comic Papyrus"
+    },
+    "ru": {
+      "name": "Комик Папирус"
+    }
+  },
+  {
     "id": "soulUndyne",
     "image": "Soul Undyne.webp",
     "alt": "Soul Undyne",
@@ -60,15 +72,15 @@
     }
   },
   {
-    "id": "onlinePapyrus",
-    "image": "Online Papyrus.webp",
-    "alt": "Online Papyrus",
+    "id": "offlinePapyrus",
+    "image": "Offline Papyrus.webp",
+    "alt": "Offline Papyrus",
     "author": "<a href=\"https://www.tumblr.com/industrial-menace\">@industrial-menace</a>",
     "en": {
-      "name": "Online Papyrus"
+      "name": "Offline Papyrus"
     },
     "ru": {
-      "name": "Онлайн Папирус"
+      "name": "Офлайн Папирус"
     }
   },
   {
@@ -105,6 +117,126 @@
     },
     "ru": {
       "name": "Крис"
+    }
+  },
+  {
+    "id": "baggs",
+    "image": "Baggs.webp",
+    "alt": "Baggs",
+    "author": "<a href=\"https://www.tumblr.com/megalommi\">@megalommi</a>",
+    "en": {
+      "name": "Baggs"
+    },
+    "ru": {
+      "name": "Баггс"
+    }
+  },
+  {
+    "id": "onlineSans",
+    "image": "Online Sans.webp",
+    "alt": "Online Sans",
+    "author": "<a href=\"https://www.tumblr.com/industrial-menace\">@industrial-menace</a>",
+    "en": {
+      "name": "Online Sans"
+    },
+    "ru": {
+      "name": "Онлайн Санс"
+    }
+  },
+  {
+    "id": "errorSans",
+    "image": "Error Sans.webp",
+    "alt": "Error Sans",
+    "author": "<a href=\"https://www.tumblr.com/loverofpiggies\">@loverofpiggies</a>",
+    "en": {
+      "name": "Error"
+    },
+    "ru": {
+      "name": "Эррор"
+    }
+  },
+  {
+    "id": "thanatosAsriel",
+    "image": "Thanatos Asriel.webp",
+    "alt": "Thanatos Asriel",
+    "author": "<a href=\"https://tatatale.tumblr.com\">@tatatale</a>",
+    "en": {
+      "name": "Thanatos Asriel"
+    },
+    "ru": {
+      "name": "Танатос Азриэль"
+    }
+  },
+  {
+    "id": "gwin",
+    "image": "Gwin.webp",
+    "alt": "Gwin",
+    "author": "<a href=\"https://vk.com/xsevvv\">@xsevvv</a>",
+    "en": {
+      "name": "Gwin"
+    },
+    "ru": {
+      "name": "Гвин"
+    }
+  },
+  {
+    "id": "actionSans",
+    "image": "Action Sans.webp",
+    "alt": "Action Sans",
+    "author": "<a href=\"https://vk.com/causticgrassmaingroup\">@causticgrass</a>",
+    "en": {
+      "name": "Action Sans"
+    },
+    "ru": {
+      "name": "Экшн Санс"
+    }
+  },
+  {
+    "id": "inkSans",
+    "image": "Ink Sans.webp",
+    "alt": "InkSans",
+    "author": "<a href=\"https://comyet.tumblr.com\">@comyet</a>",
+    "en": {
+      "name": "Ink Sans"
+    },
+    "ru": {
+      "name": "Инк Санс"
+    }
+  },
+  {
+    "id": "proferror",
+    "image": "Proferror.webp",
+    "alt": "Proferror",
+    "author": "<a href=\"https://www.tumblr.com/loverofpiggies\">@loverofpiggies</a>",
+    "en": {
+      "name": "Proferror"
+    },
+    "ru": {
+      "name": "Профэррор"
+    }
+  },
+  {
+    "id": "curcuit",
+    "image": "Curcuit.webp",
+    "alt": "Curcuit",
+    "author": "<a href=\"https://www.tumblr.com/loverofpiggies\">@loverofpiggies</a>",
+    "en": {
+      "name": "Curcuit"
+    },
+    "ru": {
+      "name": "Сёркит"
+    }
+  },
+  {
+    "id": "neutralFrisk",
+    "image": "Neutral Frisk.webp",
+    "alt": "NeutralFrisk",
+    "author": "<a href=\"https://www.tumblr.com/yugogeer012\">@yugogeer012</a>",
+    "en": {
+      "name": "Neutral Frisk"
+    },
+    "ru": {
+      "name": "Нейтрал Фриск"
     }
   }
 ]
