@@ -13,13 +13,6 @@ const characterHighest = document.getElementById('highest');
 const characterDream = document.getElementById('dream');
 const characterNightmare = document.getElementById('nightmare');
 const characterShatteredDream = document.getElementById('shatteredDream');
-const characterCore = document.getElementById('core');
-const characterDRAsriel = document.getElementById('drAsriel');
-const characterGoopySoul = document.getElementById('goopySoul');
-const characterDustSans = document.getElementById('dustSans');
-const characterSoulUndyne = document.getElementById('soulUndyne');
-const characterWIKI = document.getElementById('wiki');
-const characterKris = document.getElementById('kris');
 
 const characterNelsonDescription = document.getElementById('nelsonDescription');
 const characterGasterDescription = document.getElementById('gasterDescription');
@@ -31,14 +24,6 @@ const characterHighestDescription = document.getElementById('highestDescription'
 const characterDreamDescription = document.getElementById('dreamDescription');
 const characterNightmareDescription = document.getElementById('nightmareDescription');
 const characterShatteredDreamDescription = document.getElementById('shatteredDreamDescription');
-
-const characterCoreAuthor = document.getElementById('coreAuthor');
-const characterDRAsrielAuthor = document.getElementById('drAsrielAuthor');
-const characterGoopySoulAuthor = document.getElementById('goopySoulAuthor');
-const characterDustSansAuthor = document.getElementById('dustSansAuthor');
-const characterSoulUndyneAuthor = document.getElementById('soulUndyneAuthor');
-const characterWIKIAuthor = document.getElementById('wikiAuthor');
-const characterKrisAuthor = document.getElementById('krisAuthor');
 
 const charactersHeaderEN = `Chaoticverse Characters`;
 const characterNelsonEN = `Nelson`;
@@ -90,23 +75,6 @@ const characterShatteredDreamDescriptionEN = 'Yes, there may be more than one Dr
                     'all Dreams are the same as the original. Worldview: Lawful Evil. He has no moral principles or ' +
                     'ideas about honour and nobility. He can lie whenever he wants. He is a true demon who gets ' +
                     'everything he wants. He liked his brother, but now he wants to repay him for all the pain he caused.';
-
-const characterCoreEN = `Core Frisk`;
-const characterCoreAuthorEN = `by <a href="https://dokudoki.tumblr.com">@dokudoki</a>`;
-const characterDRAsrielEN = `Dreemurr Reborn Asriel`;
-const characterDRAsrielAuthorEN = `by <a href="https://dreemurr-reborn.tumblr.com">@dreemurr-reborn</a>`;
-const characterGoopySoulEN = `Goopy Soul`;
-const characterGoopySoulAuthorEN = `by <a href="https://dreemurr-reborn.tumblr.com">@goopytale-au</a>/
-                        <br><a href="https://www.tumblr.com/samsheadraws">@samsheadraws</a>`;
-const characterDustSansEN = `Dust Sans`;
-const characterDustSansAuthorEN = `by <a href="https://ask-dusttale.tumblr.com">@ask-dusttale</a>`;
-const characterSoulUndyneEN = `Soul Undyne`;
-const characterSoulUndyneAuthorEN = `by <a href="https://tatatale.tumblr.com">@tatatale</a>`;
-const characterWIKIEN = `WIKI`;
-const characterWIKIAuthorEN = `by <a href="https://x.com/paintedhen">@paintedhen</a>`;
-const characterKrisEN = `Kris`;
-const characterKrisAuthorEN = `by <a href="https://vk.com/milikrisart">@milikrisart</a>`;
-
 
 const charactersHeaderRU = `Персонажи Chaoticverse`;
 const characterNelsonRU = `Нельсон`;
@@ -164,22 +132,6 @@ const characterShatteredDreamDescriptionRU = `Да, в мультивселен�
                     самый настоящий демон, который получает всё, что он захочет. Он любил своего брата, но теперь он желает
                     отплатить ему за всю ту боль, что он причинил.`;
 
-const characterCoreRU = `Кор Фриск`;
-const characterCoreAuthorRU = `от <a href="https://dokudoki.tumblr.com">@dokudoki</a>`;
-const characterDRAsrielRU = `Дримурр Реборн Азриэль`;
-const characterDRAsrielAuthorRU = `от <a href="https://dreemurr-reborn.tumblr.com">@dreemurr-reborn</a>`;
-const characterGoopySoulRU = `Гуппи Соул`;
-const characterGoopySoulAuthorRU = `от <a href="https://dreemurr-reborn.tumblr.com">@goopytale-au</a>/
-                        <br><a href="https://www.tumblr.com/samsheadraws">@samsheadraws</a>`;
-const characterDustSansRU = `Даст Санс`;
-const characterDustSansAuthorRU = `от <a href="https://ask-dusttale.tumblr.com">@ask-dusttale</a>`;
-const characterSoulUndyneRU = `Соул Андайн`;
-const characterSoulUndyneAuthorRU = `от <a href="https://tatatale.tumblr.com">@tatatale</a>`;
-const characterWIKIRU = `ВИКИ`;
-const characterWIKIAuthorRU = `от <a href="https://x.com/paintedhen">@paintedhen</a>`;
-const characterKrisRU = `Крис`;
-const characterKrisAuthorRU = `от <a href="https://vk.com/milikrisart">@milikrisart</a>`;
-
 
 let currentLang = 'RU';
 
@@ -197,13 +149,6 @@ langToggle.addEventListener('click', () => {
         characterDream.innerHTML = characterDreamEN;
         characterNightmare.innerHTML = characterNightmareEN;
         characterShatteredDream.innerHTML = characterShatteredDreamEN;
-        characterCore.textContent = characterCoreEN;
-        characterDRAsriel.textContent = characterDRAsrielEN;
-        characterGoopySoul.textContent = characterGoopySoulEN;
-        characterDustSans.textContent = characterDustSansEN;
-        characterSoulUndyne.textContent = characterSoulUndyneEN;
-        characterWIKI.textContent = characterWIKIEN;
-        characterKris.textContent = characterKrisEN;
 
         characterNelsonDescription.textContent = characterNelsonDescriptionEN;
         characterGasterDescription.textContent = characterGasterDescriptionEN;
@@ -215,14 +160,6 @@ langToggle.addEventListener('click', () => {
         characterDreamDescription.textContent = characterDreamDescriptionEN;
         characterNightmareDescription.textContent = characterNightmareDescriptionEN;
         characterShatteredDreamDescription.textContent = characterShatteredDreamDescriptionEN;
-
-        characterCoreAuthor.innerHTML = characterCoreAuthorEN;
-        characterDRAsrielAuthor.innerHTML = characterDRAsrielAuthorEN;
-        characterGoopySoulAuthor.innerHTML = characterGoopySoulAuthorEN;
-        characterDustSansAuthor.innerHTML = characterDustSansAuthorEN;
-        characterSoulUndyneAuthor.innerHTML = characterSoulUndyneAuthorEN;
-        characterWIKIAuthor.innerHTML = characterWIKIAuthorEN;
-        characterKrisAuthor.innerHTML = characterKrisAuthorEN;
         currentLang = 'EN';
     } else {
         charactersHeader.textContent = charactersHeaderRU;
@@ -237,13 +174,6 @@ langToggle.addEventListener('click', () => {
         characterDream.innerHTML = characterDreamRU;
         characterNightmare.innerHTML = characterNightmareRU;
         characterShatteredDream.innerHTML = characterShatteredDreamRU;
-        characterCore.textContent = characterCoreRU;
-        characterDRAsriel.textContent = characterDRAsrielRU;
-        characterGoopySoul.textContent = characterGoopySoulRU;
-        characterDustSans.textContent = characterDustSansRU;
-        characterSoulUndyne.textContent = characterSoulUndyneRU;
-        characterWIKI.textContent = characterWIKIRU;
-        characterKris.textContent = characterKrisRU;
 
         characterNelsonDescription.textContent = characterNelsonDescriptionRU;
         characterGasterDescription.textContent = characterGasterDescriptionRU;
@@ -256,15 +186,9 @@ langToggle.addEventListener('click', () => {
         characterNightmareDescription.textContent = characterNightmareDescriptionRU;
         characterShatteredDreamDescription.textContent = characterShatteredDreamDescriptionRU;
 
-        characterCoreAuthor.innerHTML = characterCoreAuthorRU;
-        characterDRAsrielAuthor.innerHTML = characterDRAsrielAuthorRU;
-        characterGoopySoulAuthor.innerHTML = characterGoopySoulAuthorRU;
-        characterDustSansAuthor.innerHTML = characterDustSansAuthorRU;
-        characterSoulUndyneAuthor.innerHTML = characterSoulUndyneAuthorRU;
-        characterWIKIAuthor.innerHTML = characterWIKIAuthorRU;
-        characterKrisAuthor.innerHTML = characterKrisAuthorRU;
         currentLang = 'RU';
     }
+    renderCharacters();
 });
 minimizeBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
@@ -275,3 +199,37 @@ restoreBtn.addEventListener('click', () => {
     overlay.classList.remove('hidden');
     restoreBtn.style.display = 'none';
 });
+
+
+let secondCharacters = [];
+const container = document.getElementById('secondCharacters');
+
+async function loadSecondCharacters() {
+    const res = await fetch('second_characters.json');
+    secondCharacters = await res.json();
+    renderCharacters();
+}
+
+function renderCharacters() {
+    container.innerHTML = '';
+    secondCharacters.forEach(char => {
+        const card = document.createElement('div');
+        card.className = 'second-character-card';
+
+        card.innerHTML = `
+          <div class="second-character-icon">
+            <img src="../images/characters/second_characters/${char.image}" alt="${char.alt}">
+          </div>
+          <div class="second-character-text">
+            <div class="char-name" id="${char.id}">${char[currentLang.toLowerCase()].name}</div>
+            <div class="char-author" id="${char.id}Author">${char[currentLang.toLowerCase()].author}</div>
+          </div>
+    `;
+        container.appendChild(card);
+    });
+}
+
+// загружаем при запуске
+loadSecondCharacters();
+
+

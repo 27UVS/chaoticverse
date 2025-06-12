@@ -1,0 +1,95 @@
+[
+  {
+    "id": "core",
+    "image": "Core Frisk.webp",
+    "alt": "Core",
+    "en": {
+      "name": "Core Frisk",
+      "author": "by <a href=\"https://dokudoki.tumblr.com\">@dokudoki</a>"
+    },
+    "ru": {
+      "name": "Кор Фриск",
+      "author": "от <a href=\"https://dokudoki.tumblr.com\">@dokudoki</a>"
+    }
+  },
+  {
+    "id": "drAsriel",
+    "image": "Dreemurr Reborn Asriel.webp",
+    "alt": "DR Asriel",
+    "en": {
+      "name": "Dreemurr Reborn<br>Asriel",
+      "author": "by <a href=\"https://dreemurr-reborn.tumblr.com\">@dreemurr-reborn</a>"
+    },
+    "ru": {
+      "name": "Дримурр Реборн<br>Азриэль",
+      "author": "от <a href=\"https://dreemurr-reborn.tumblr.com\">@dreemurr-reborn</a>"
+    }
+  },
+  {
+    "id": "goopySoul",
+    "image": "Goopy Soul.webp",
+    "alt": "Goopy Soul",
+    "en": {
+      "name": "Goopy Soul",
+      "author": "by <a href=\"https://dreemurr-reborn.tumblr.com\">@goopytale-au</a><br><a href=\"https://www.tumblr.com/samsheadraws\">@samsheadraws</a>"
+    },
+    "ru": {
+      "name": "Гуппи Соул",
+      "author": "от <a href=\"https://dreemurr-reborn.tumblr.com\">@goopytale-au</a><br><a href=\"https://www.tumblr.com/samsheadraws\">@samsheadraws</a>"
+    }
+  },
+  {
+    "id": "dustSans",
+    "image": "Dust Sans.webp",
+    "alt": "Dust Sans",
+    "en": {
+      "name": "Dust Sans",
+      "author": "by <a href=\"https://ask-dusttale.tumblr.com\">@ask-dusttale</a>"
+    },
+    "ru": {
+      "name": "Даст Санс",
+      "author": "от <a href=\"https://ask-dusttale.tumblr.com\">@ask-dusttale</a>"
+    }
+  },
+  {
+    "id": "soulUndyne",
+    "image": "Soul Undyne.webp",
+    "alt": "Soul Undyne",
+    "en": {
+      "name": "Soul Undyne",
+      "author": "by <a href=\"https://tatatale.tumblr.com\">@tatatale</a>"
+    },
+    "ru": {
+      "name": "Соул Андайн",
+      "author": "от <a href=\"https://tatatale.tumblr.com\">@tatatale</a>"
+    }
+  },
+  {
+    "id": "wiki",
+    "image": "WIKI.webp",
+    "alt": "WIKI",
+    "en": {
+      "name": "WIKI",
+      "author": "by <a href=\"https://x.com/paintedhen\">@paintedhen</a>"
+    },
+    "ru": {
+      "name": "ВИКИ",
+      "author": "от <a href=\"https://x.com/paintedhen\">@paintedhen</a>"
+    }
+  },
+  {
+    "id": "kris",
+    "image": "Kris.webp",
+    "alt": "Kris",
+    "en": {
+      "name": "Kris",
+      "author": "by <a href=\"https://vk.com/milikrisart\">@milikrisart</a>"
+    },
+    "ru": {
+      "name": "Крис",
+      "author": "от <a href=\"https://vk.com/milikrisart\">@milikrisart</a>"
+    }
+  }
+
+
+]
