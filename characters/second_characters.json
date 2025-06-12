@@ -5,12 +5,10 @@
     "alt": "Core",
     "author": "<a href=\"https://dokudoki.tumblr.com\">@dokudoki</a>",
     "en": {
-      "name": "Core Frisk",
-      "by": "by "
+      "name": "Core Frisk"
     },
     "ru": {
-      "name": "Кор Фриск",
-      "by": "от "
+      "name": "Кор Фриск"
     }
   },
   {
@@ -19,12 +17,10 @@
     "alt": "DR Asriel",
     "author": "<a href=\"https://dreemurr-reborn.tumblr.com\">@dreemurr-reborn</a>",
     "en": {
-      "name": "Dreemurr Reborn<br>Asriel",
-      "by": "by "
+      "name": "Dreemurr Reborn<br>Asriel"
     },
     "ru": {
-      "name": "Дримурр Реборн<br>Азриэль",
-      "by": "от "
+      "name": "Дримурр Реборн<br>Азриэль"
     }
   },
   {
@@ -33,12 +29,10 @@
     "alt": "Goopy Soul",
     "author": "<a href=\"https://dreemurr-reborn.tumblr.com\">@goopytale-au</a>/<br><a href=\"https://www.tumblr.com/samsheadraws\">@samsheadraws</a>",
     "en": {
-      "name": "Goopy Soul",
-      "by": "by "
+      "name": "Goopy Soul"
     },
     "ru": {
-      "name": "Гупи Соул",
-      "by": "от "
+      "name": "Гупи Соул"
     }
   },
   {
@@ -47,12 +41,10 @@
     "alt": "Dust Sans",
     "author": "<a href=\"https://ask-dusttale.tumblr.com\">@ask-dusttale</a>",
     "en": {
-      "name": "Dust Sans",
-      "by": "by "
+      "name": "Dust Sans"
     },
     "ru": {
-      "name": "Даст Санс",
-      "by": "от "
+      "name": "Даст Санс"
     }
   },
   {
@@ -61,12 +53,10 @@
     "alt": "Soul Undyne",
     "author": "<a href=\"https://tatatale.tumblr.com\">@tatatale</a>",
     "en": {
-      "name": "Soul Undyne",
-      "by": "by "
+      "name": "Soul Undyne"
     },
     "ru": {
-      "name": "Соул Андайн",
-      "by": "от "
+      "name": "Соул Андайн"
     }
   },
   {
@@ -75,12 +65,10 @@
     "alt": "Online Papyrus",
     "author": "<a href=\"https://www.tumblr.com/industrial-menace\">@industrial-menace</a>",
     "en": {
-      "name": "Online Papyrus",
-      "by": "by "
+      "name": "Online Papyrus"
     },
     "ru": {
-      "name": "Онлайн Папирус",
-      "by": "от "
+      "name": "Онлайн Папирус"
     }
   },
   {
@@ -89,12 +77,10 @@
     "alt": "Art Frisk",
     "author": "<a href=\"https://www.tumblr.com/meilienne\">@meilienne</a>",
     "en": {
-      "name": "Art Frisk",
-      "by": "by "
+      "name": "Art Frisk"
     },
     "ru": {
-      "name": "Арт Фриск",
-      "by": "от "
+      "name": "Арт Фриск"
     }
   },
   {
@@ -103,12 +89,10 @@
     "alt": "WIKI",
     "author": "<a href=\"https://x.com/paintedhen\">@paintedhen</a>",
     "en": {
-      "name": "WIKI",
-      "by": "by "
+      "name": "WIKI"
     },
     "ru": {
-      "name": "ВИКИ",
-      "by": "от "
+      "name": "ВИКИ"
     }
   },
   {
@@ -117,12 +101,10 @@
     "alt": "Kris",
     "author": "<a href=\"https://vk.com/milikrisart\">@milikrisart</a>",
     "en": {
-      "name": "Kris",
-      "by": "by "
+      "name": "Kris"
     },
     "ru": {
-      "name": "Крис",
-      "by": "от "
+      "name": "Крис"
     }
   }
 ]

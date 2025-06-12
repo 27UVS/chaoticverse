@@ -203,6 +203,10 @@ restoreBtn.addEventListener('click', () => {
 
 let secondCharacters = [];
 const container = document.getElementById('secondCharacters');
+const byTranslation = {
+    en: "by ",
+    ru: "от "
+};
 
 async function loadSecondCharacters() {
     const res = await fetch('second_characters.json');
@@ -216,13 +220,16 @@ function renderCharacters() {
         const card = document.createElement('div');
         card.className = 'second-character-card';
 
+        const lang = currentLang.toLowerCase();
+        const byText = byTranslation[lang];
+
         card.innerHTML = `
           <div class="second-character-icon">
             <img src="../images/characters/second_characters/${char.image}" alt="${char.alt}">
           </div>
           <div class="second-character-text">
             <div class="char-name" id="${char.id}">${char[currentLang.toLowerCase()].name}</div>
-            <div class="char-author" id="${char.id}Author">${char[currentLang.toLowerCase()].by + char.author}</div>
+            <div class="char-author" id="${char.id}Author">${byText}${char.author}</div>
           </div>
     `;
         container.appendChild(card);
