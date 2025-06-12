@@ -3,93 +3,126 @@
     "id": "core",
     "image": "Core Frisk.webp",
     "alt": "Core",
+    "author": "<a href=\"https://dokudoki.tumblr.com\">@dokudoki</a>",
     "en": {
       "name": "Core Frisk",
-      "author": "by <a href=\"https://dokudoki.tumblr.com\">@dokudoki</a>"
+      "by": "by "
     },
     "ru": {
       "name": "Кор Фриск",
-      "author": "от <a href=\"https://dokudoki.tumblr.com\">@dokudoki</a>"
+      "by": "от "
     }
   },
   {
     "id": "drAsriel",
     "image": "Dreemurr Reborn Asriel.webp",
     "alt": "DR Asriel",
+    "author": "<a href=\"https://dreemurr-reborn.tumblr.com\">@dreemurr-reborn</a>",
     "en": {
       "name": "Dreemurr Reborn<br>Asriel",
-      "author": "by <a href=\"https://dreemurr-reborn.tumblr.com\">@dreemurr-reborn</a>"
+      "by": "by "
     },
     "ru": {
       "name": "Дримурр Реборн<br>Азриэль",
-      "author": "от <a href=\"https://dreemurr-reborn.tumblr.com\">@dreemurr-reborn</a>"
+      "by": "от "
     }
   },
   {
     "id": "goopySoul",
     "image": "Goopy Soul.webp",
     "alt": "Goopy Soul",
+    "author": "<a href=\"https://dreemurr-reborn.tumblr.com\">@goopytale-au</a>/<br><a href=\"https://www.tumblr.com/samsheadraws\">@samsheadraws</a>",
     "en": {
       "name": "Goopy Soul",
-      "author": "by <a href=\"https://dreemurr-reborn.tumblr.com\">@goopytale-au</a><br><a href=\"https://www.tumblr.com/samsheadraws\">@samsheadraws</a>"
+      "by": "by "
     },
     "ru": {
-      "name": "Гуппи Соул",
-      "author": "от <a href=\"https://dreemurr-reborn.tumblr.com\">@goopytale-au</a><br><a href=\"https://www.tumblr.com/samsheadraws\">@samsheadraws</a>"
+      "name": "Гупи Соул",
+      "by": "от "
     }
   },
   {
     "id": "dustSans",
     "image": "Dust Sans.webp",
     "alt": "Dust Sans",
+    "author": "<a href=\"https://ask-dusttale.tumblr.com\">@ask-dusttale</a>",
     "en": {
       "name": "Dust Sans",
-      "author": "by <a href=\"https://ask-dusttale.tumblr.com\">@ask-dusttale</a>"
+      "by": "by "
     },
     "ru": {
       "name": "Даст Санс",
-      "author": "от <a href=\"https://ask-dusttale.tumblr.com\">@ask-dusttale</a>"
+      "by": "от "
     }
   },
   {
     "id": "soulUndyne",
     "image": "Soul Undyne.webp",
     "alt": "Soul Undyne",
+    "author": "<a href=\"https://tatatale.tumblr.com\">@tatatale</a>",
     "en": {
       "name": "Soul Undyne",
-      "author": "by <a href=\"https://tatatale.tumblr.com\">@tatatale</a>"
+      "by": "by "
     },
     "ru": {
       "name": "Соул Андайн",
-      "author": "от <a href=\"https://tatatale.tumblr.com\">@tatatale</a>"
+      "by": "от "
+    }
+  },
+  {
+    "id": "onlinePapyrus",
+    "image": "Online Papyrus.webp",
+    "alt": "Online Papyrus",
+    "author": "<a href=\"https://www.tumblr.com/industrial-menace\">@industrial-menace</a>",
+    "en": {
+      "name": "Online Papyrus",
+      "by": "by "
+    },
+    "ru": {
+      "name": "Онлайн Папирус",
+      "by": "от "
+    }
+  },
+  {
+    "id": "artFrisk",
+    "image": "Art Frisk.webp",
+    "alt": "Art Frisk",
+    "author": "<a href=\"https://www.tumblr.com/meilienne\">@meilienne</a>",
+    "en": {
+      "name": "Art Frisk",
+      "by": "by "
+    },
+    "ru": {
+      "name": "Арт Фриск",
+      "by": "от "
     }
   },
   {
     "id": "wiki",
     "image": "WIKI.webp",
     "alt": "WIKI",
+    "author": "<a href=\"https://x.com/paintedhen\">@paintedhen</a>",
     "en": {
       "name": "WIKI",
-      "author": "by <a href=\"https://x.com/paintedhen\">@paintedhen</a>"
+      "by": "by "
     },
     "ru": {
       "name": "ВИКИ",
-      "author": "от <a href=\"https://x.com/paintedhen\">@paintedhen</a>"
+      "by": "от "
     }
   },
   {
     "id": "kris",
     "image": "Kris.webp",
     "alt": "Kris",
+    "author": "<a href=\"https://vk.com/milikrisart\">@milikrisart</a>",
     "en": {
       "name": "Kris",
-      "author": "by <a href=\"https://vk.com/milikrisart\">@milikrisart</a>"
+      "by": "by "
     },
     "ru": {
       "name": "Крис",
-      "author": "от <a href=\"https://vk.com/milikrisart\">@milikrisart</a>"
+      "by": "от "
     }
   }
-
-
 ]

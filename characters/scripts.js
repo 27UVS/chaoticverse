@@ -222,14 +222,14 @@ function renderCharacters() {
           </div>
           <div class="second-character-text">
             <div class="char-name" id="${char.id}">${char[currentLang.toLowerCase()].name}</div>
-            <div class="char-author" id="${char.id}Author">${char[currentLang.toLowerCase()].author}</div>
+            <div class="char-author" id="${char.id}Author">${char[currentLang.toLowerCase()].by + char.author}</div>
           </div>
     `;
         container.appendChild(card);
     });
 }
 
-// загружаем при запуске
+// загружает при запуске
 loadSecondCharacters();
 
 
