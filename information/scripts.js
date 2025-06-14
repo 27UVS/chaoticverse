@@ -33,7 +33,7 @@ const informationHowChaoticverseIsWorking1EN = `The principle of existence of Ch
             <a href="https://www.tumblr.com/xtaleunderverse">Underverse</a>,
             <a href="https://tatatale.tumblr.com">ALIVE</a>,
             <a href="https://www.tumblr.com/galacii-gallery">Shattered Fates</a>,
-            <a href="https://www.tumblr.com/admixverse-official">Admixverse</a>, etc.<br><br>`;
+            <a href="https://www.tumblr.com/admixverse-official">Admixverse</a>, etc.`;
 const informationHowChaoticverseIsWorking2EN = `The reason for this phenomenon was the actions of Error in
             <a href="https://ut-storyshift.tumblr.com">Storyshift</a>. After he used his special attack once, the 
             entire Storyshift with its branches Storyfell, Storyswap, etc. were destroyed almost instantly. 
@@ -79,7 +79,7 @@ const informationHowChaoticverseIsWorking1RU = `Принцип работы Chao
             <a href="https://www.tumblr.com/xtaleunderverse">Underverse</a>,
             <a href="https://tatatale.tumblr.com">ALIVE</a>,
             <a href="https://www.tumblr.com/galacii-gallery">Shattered Fates</a>,
-            <a href="https://www.tumblr.com/admixverse-official">Admixverse</a> и т.д.<br><br>`;
+            <a href="https://www.tumblr.com/admixverse-official">Admixverse</a> и т.д.`;
 const informationHowChaoticverseIsWorking2RU = `Причиной подобного явления стали действия Эррора в
             <a href="https://ut-storyshift.tumblr.com">Storyshift</a>. После того как он использовал единожды свою
             специальную атаку, весь Storyshift с его ответвлениями Storyfell, Storyswap и др. были уничтожены практически
