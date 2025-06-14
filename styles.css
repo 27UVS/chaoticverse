@@ -483,6 +483,13 @@ a:hover {
     margin: -50px auto -50px auto;
 }
 
+.timestream-image {
+    display: block;
+    max-width: 70%;
+    height: auto;
+    margin: 5px auto 5px auto;
+}
+
 @media (max-width: 768px) {
     .overlay-content-information-page {
         font-size: 18px;
