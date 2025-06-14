@@ -175,7 +175,7 @@ a:hover {
 }
 
 .nav-long-button img {
-    width: 550px;  /* размер кнопки */
+    width: 500px;  /* размер кнопки */
     height: auto;
     max-width: 100%;
     transition: transform 0.2s ease;
@@ -191,7 +191,7 @@ a:hover {
     }
 
     .nav-long-button img {
-        width: 295px;
+        width: 280px;
     }
 }
 
