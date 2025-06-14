@@ -172,12 +172,16 @@ a:hover {
     border: none;
     cursor: pointer;
     padding: 0;
+    max-width: 100%;
+    display: inline-block;
 }
 
 .nav-long-button img {
     width: auto;
     height: 70px;
     max-height: 100%;
+    display: block;
+    object-fit: contain;
     transition: transform 0.2s ease;
 }
 
