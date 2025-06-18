@@ -1,0 +1,201 @@
+{
+  "ru": {
+    "Пролог": {
+      "Арка Связи": [
+
+      ],
+      "Арка Три брата": [
+        {},
+        {
+          "name": "Закат",
+          "parts": [1, 2],
+          "urls": ["https://vk.com/wall-196152977_5605", "https://vk.com/wall-196152977_5642"]
+        },
+        {}
+      ],
+      "Арка Поработитель вселенных": [
+
+      ],
+      "Арка Пожиратель душ": [
+
+      ],
+      "Арка Омега Таймлайн": [
+
+      ]
+    },
+    "Сезон 1": {
+      "История Нельсона": [
+        {
+          "name": "Cowardtale",
+          "chapters": [0, 1.1, 1.2],
+          "urls": ["https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38047183#part_content",
+          "https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38080420#part_content",
+          "https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38143035#part_content"]
+        }
+      ],
+      "Арка Связи": [
+        {
+          "name": "Сделка",
+          "parts": [1, 2, 3, 4],
+          "urls": ["https://vk.com/wall-196152977_4988", "https://vk.com/wall-196152977_5033",
+            "https://vk.com/wall-196152977_5101", "https://vk.com/wall-196152977_5176"]
+        },
+        {}
+      ]
+    },
+    "Сезон 2": {
+      "Арка Сквозь таймлайны": [
+        {
+          "name": "Новый суд",
+          "parts": [],
+          "urls": []
+        },
+        {
+          "name": "Друг",
+          "parts": [1],
+          "urls": ["https://vk.com/wall-196152977_5549"]
+        },
+        {},
+        {
+          "name": "Дом",
+          "parts": [1],
+          "urls": ["https://vk.com/wall-196152977_5460"]
+        }
+      ],
+      "Арка Омега Таймлайн": [
+
+      ],
+      "Арка Пожиратель душ": [
+
+      ],
+      "Арка Поработитель вселенных": [
+
+      ],
+      "Арка Три брата": [
+
+      ],
+      "Секретная арка": [
+
+      ]
+    },
+    "Сезон 3": {
+
+    },
+    "Сезон 4": {
+
+    },
+    "Вне сюжета": [
+      {
+        "name": "Шипы",
+        "parts": [1, 2, 3],
+        "urls": ["https://vk.com/wall-196152977_5228", "https://vk.com/wall-196152977_5243", "https://vk.com/wall-196152977_5282"]
+      },
+      {
+        "name": "Глаз (аск)",
+        "parts": [1, 2],
+        "urls": ["https://vk.com/wall-196152977_5289", "https://boosty.to/sput27/posts/8ad5fd52-c124-43f2-8c80-544209655e47"]
+      }
+    ]
+  },
+  "en": {
+    "Prologue": {
+      "Connection Arc": [
+
+      ],
+      "Three brothers Arc": [
+        {},
+        {
+          "name": "Sunset",
+          "parts": [1, 2],
+          "urls": ["https://www.tumblr.com/sole-production-ut/781802237219536896/sunset",
+            "https://www.tumblr.com/sole-production-ut/785189007338405888/sunset"]
+        },
+        {}
+      ],
+      "Soul eater Arc": [
+
+      ],
+      "Enslaver of universes Arc": [
+
+      ],
+      "Omega Timeline Arc": [
+
+      ]
+    },
+    "Season 1": {
+      "Nelson story": [
+        {
+          "name": "Cowardtale (only rus)",
+          "chapters": [0, 1.1, 1.2],
+          "urls": ["https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38047183#part_content",
+            "https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38080420#part_content",
+            "https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38143035#part_content"]
+        }
+      ],
+      "Connections Arc": [
+        {
+          "name": "The Deal",
+          "parts": [1, 2, 3, 4],
+          "urls": ["https://www.tumblr.com/sole-production-ut/760681213975543808/the-deal",
+            "https://www.tumblr.com/sole-production-ut/763500140494553088/the-deal",
+            "https://www.tumblr.com/sole-production-ut/765542298346012672/the-deal",
+            "https://www.tumblr.com/sole-production-ut/766134203390853120/the-deal"]
+        },
+        {}
+      ]
+    },
+    "Season 2": {
+      "Through the timelines Arc": [
+        {
+          "name": "New judgment",
+          "parts": [],
+          "urls": []
+        },
+        {
+          "name": "Friend",
+          "parts": [1],
+          "urls": ["https://www.tumblr.com/sole-production-ut/778808653332545536/friend"]
+        },
+        {},
+        {
+          "name": "The Home",
+          "parts": [1],
+          "urls": ["https://www.tumblr.com/sole-production-ut/775030645332295680/the-home"]
+        }
+      ],
+      "Omega Timeline Arc": [
+
+      ],
+      "Soul eater Arc": [
+
+      ],
+      "Enslaver of universes Arc": [
+
+      ],
+      "Three brothers Arc": [
+
+      ],
+      "Secret arc": [
+
+      ]
+    },
+    "Season 3": {
+
+    },
+    "Season 4": {
+
+    },
+    "Other": [
+      {
+        "name": "Shippings",
+        "parts": [1],
+        "urls": ["https://www.tumblr.com/sole-production-ut/769663414401368064/good-you-havent-seen-any-content-from-me-for-a"]
+      },
+      {
+        "name": "Eye (ask)",
+        "parts": [],
+        "urls": []
+      }
+    ]
+  }
+}

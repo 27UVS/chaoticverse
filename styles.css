@@ -505,3 +505,14 @@ a:hover {
         max-width: 50%;
     }
 }
+
+/* --- Элементы страницы оглавления --- */
+.overlay-content-contents-page{
+    font-family: 'DeterminationRusFont', monospace;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
