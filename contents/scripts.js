@@ -2,9 +2,13 @@ const overlay = document.getElementById('overlay');
 const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
+const contentsHeader = document.getElementById('contentsHeader');
 const tocContainer = document.getElementById('toc');
 
 let currentLang = 'RU';
+
+const headerRU = `Оглавление`;
+const headerEN = `Contents`;
 
 async function loadTOC() {
     const res = await fetch('contents_names.json');
@@ -103,10 +107,12 @@ function createDashEntry() {
 
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
+        contentsHeader.textContent = headerEN;
         langToggle.textContent = 'RU';
         currentLang = 'EN';
         loadTOC();
     } else {
+        contentsHeader.textContent = headerRU;
         langToggle.textContent = 'EN';
         currentLang = 'RU';
         loadTOC();

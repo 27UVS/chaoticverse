@@ -639,3 +639,27 @@ a:hover {
         margin-bottom: 10px;
     }
 }
+
+/* --- Элементы страницы о нас --- */
+.overlay-content-about-us-page{
+    font-family: 'DeterminationRusFont', monospace;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+.about-us-image {
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 5px auto -100px auto;
+}
+
+@media (max-width: 900px){
+    .about-us-image {
+        max-width:90%;
+        margin: 5px auto -40px auto;
+    }
+}
