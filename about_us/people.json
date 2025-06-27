@@ -1,0 +1,153 @@
+{
+  "scripters": [
+    {
+      "id": "victoria",
+      "image": "Victoria Polyakova.webp",
+      "alt": "victoria",
+      "link": "https://vk.com/vistral_close3",
+      "en": {
+        "name": "Victoria Polyakova"
+      },
+      "ru": {
+        "name": "Виктория Полякова"
+      }
+    }
+  ],
+  "artists": [
+    {
+      "id": "asun",
+      "image": "A-Sun.webp",
+      "alt": "a-sun",
+      "link": "https://vk.com/a_sun_comix",
+      "en": {
+        "name": "A-Sun"
+      },
+      "ru": {
+        "name": "A-Sun"
+      }
+    },
+    {
+      "id": "ti_sparrow",
+      "image": "ti_sparrow.webp",
+      "alt": "ti_sparrow",
+      "link": "https://vk.com/ti_sparrow",
+      "en": {
+        "name": "~^ti_sparrow^~"
+      },
+      "ru": {
+        "name": "~^ti_sparrow^~"
+      }
+    },
+    {
+      "id": "tok",
+      "image": "tok.webp",
+      "alt": "tok",
+      "link": "https://vk.com/tok_1",
+      "en": {
+        "name": "Т.О.К"
+      },
+      "ru": {
+        "name": "Т.О.К"
+      }
+    },
+    {
+      "id": "avokot",
+      "image": "avokot.webp",
+      "alt": "avokot",
+      "link": "https://vk.com/av0k0t",
+      "en": {
+        "name": "AvoKot"
+      },
+      "ru": {
+        "name": "AvoKot"
+      }
+    },
+    {
+      "id": "paws",
+      "image": "paws.webp",
+      "alt": "paws",
+      "link": "https://vk.com/club223254276",
+      "en": {
+        "name": "Mighty Paws"
+      },
+      "ru": {
+        "name": "Могучие лапки"
+      }
+    },
+    {
+      "id": "sorenpo",
+      "image": "Sorenpo.webp",
+      "alt": "sorenpo",
+      "link": "https://vk.com/soren_po",
+      "en": {
+        "name": "Sorenpo"
+      },
+      "ru": {
+        "name": "Sorenpo"
+      }
+    },
+    {
+      "id": "pipets",
+      "image": "Pipets.webp",
+      "alt": "pipets",
+      "link": "https://vk.com/lermonchek",
+      "en": {
+        "name": ".Pipets |∆"
+      },
+      "ru": {
+        "name": ".Пипец |∆"
+      }
+    },
+    {
+      "id": "maria",
+      "image": "Maria Reidman.webp",
+      "alt": "maria",
+      "link": "https://vk.com/id614033191",
+      "en": {
+        "name": "Maria Reidman"
+      },
+      "ru": {
+        "name": "Мария Рейдман"
+      }
+    },
+    {
+      "id": "bpcn",
+      "image": "BPCN Studio.webp",
+      "alt": "bpcn studio",
+      "link": "https://vk.com/bpcnstudio",
+      "en": {
+        "name": "BPCN Studio"
+      },
+      "ru": {
+        "name": "BPCN Studio"
+      }
+    },
+    {
+      "id": "pnonytale",
+      "image": "PnonyTale.webp",
+      "alt": "pnonytale",
+      "link": "https://vk.com/club229553141",
+      "en": {
+        "name": "Nest || PnonyTale"
+      },
+      "ru": {
+        "name": "Гнездо || PnonyTale"
+      }
+    },
+    {
+      "id": "xsevvv",
+      "image": "xsevvv.webp",
+      "alt": "xsevvv",
+      "link": "https://vk.com/xsevvv",
+      "en": {
+        "name": "xsevvv"
+      },
+      "ru": {
+        "name": "xsevvv"
+      }
+    }
+  ],
+  "partners": [
+
+  ]
+}

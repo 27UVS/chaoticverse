@@ -236,7 +236,6 @@ function renderCharacters() {
     });
 }
 
-// загружает при запуске
 loadSecondCharacters();
 
 
