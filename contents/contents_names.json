@@ -52,8 +52,8 @@
         },
         {
           "name": "Друг",
-          "parts": [1],
-          "urls": ["https://vk.com/wall-196152977_5549"]
+          "parts": [1, 2],
+          "urls": ["https://vk.com/wall-196152977_5549", "https://vk.com/wall-196152977_5663"]
         },
         {},
         {
@@ -153,8 +153,9 @@
         },
         {
           "name": "Friend",
-          "parts": [1],
-          "urls": ["https://www.tumblr.com/sole-production-ut/778808653332545536/friend"]
+          "parts": [1, 2],
+          "urls": ["https://www.tumblr.com/sole-production-ut/778808653332545536/friend",
+            "https://www.tumblr.com/sole-production-ut/787432603594768384/friend"]
         },
         {},
         {
