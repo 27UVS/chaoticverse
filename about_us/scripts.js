@@ -3,6 +3,9 @@ const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
 const aboutUsHeader = document.getElementById('aboutUsHeader');
+const scriptersHeader = document.getElementById('scriptersHeader');
+const artistsHeader = document.getElementById('artistsHeader');
+const partnersHeader = document.getElementById('partnersHeader');
 const textSoleProductionUT = document.getElementById('soleProductionUT');
 const titleUVS27 = document.getElementById('uvs27');
 const UVS27Description = document.getElementById('uvs27Description');
@@ -13,6 +16,12 @@ let currentLang = 'RU';
 
 const headerRU = `О нас`;
 const headerEN = `About Us`;
+const scriptersEN = `Scripters`;
+const scriptersRU = `Сценаристы`;
+const artistsEN = `Artists`;
+const artistsRU = `Художники`;
+const partnersEN = `Partners`;
+const partnersRU = `Партнеры`;
 
 const textSoleProductionUTRU = `Sole Production UT - независимое некоммерческое объединение творческих личностей под управлением человека, являющегося создателем данного проект.
             Объединение стремится к цели создать и продемонстрировать историю проекта. Каждый в нем действует исключительно по собственному желанию, 
@@ -45,6 +54,9 @@ const deltaDescriptionEN = `Sometimes helps with translations, working on his ow
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
         aboutUsHeader.textContent = headerEN;
+        scriptersHeader.textContent = scriptersEN;
+        artistsHeader.textContent = artistsEN;
+        partnersHeader.textContent = partnersEN;
         textSoleProductionUT.textContent = textSoleProductionUTEN;
         titleUVS27.innerHTML = uvs27EN;
         titleDelta.innerHTML = deltaEN;
@@ -54,6 +66,9 @@ langToggle.addEventListener('click', () => {
         currentLang = 'EN';
     } else {
         aboutUsHeader.textContent = headerRU;
+        scriptersHeader.textContent = scriptersRU;
+        artistsHeader.textContent = artistsRU;
+        partnersHeader.textContent = partnersRU;
         textSoleProductionUT.textContent = textSoleProductionUTRU;
         titleUVS27.innerHTML = uvs27RU;
         titleDelta.innerHTML = deltaRU;
