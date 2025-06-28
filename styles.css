@@ -773,6 +773,11 @@ h2 {
     border: 2px solid #ccc;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
     overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.person-group-icon:hover {
+    border-color: rgb(251,204,0);
 }
 
 .person-group-icon img {
