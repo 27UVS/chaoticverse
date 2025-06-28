@@ -129,7 +129,7 @@ function renderGroup(group, container, folder) {
                 </a>
             </div>
             <div class="person-group-text">
-                <div class="person-group-name"><a href=${person.link}>${name}</a></div>
+                <div class="person-group-name">${name}</div>
             </div>
         `;
         container.appendChild(card);
