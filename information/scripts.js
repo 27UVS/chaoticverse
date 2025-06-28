@@ -45,7 +45,13 @@ const informationHowChaoticverseIsWorking2EN = `The reason for this phenomenon w
             with powers of foresight or knowledge of the future stopped seeing it clearly. Moreover, the 
             further spread of the “players” beyond their timelines and AU also contributed to this.
             So the multiverse began to descend into chaos and some had to adapt to the new conditions, 
-            while others remained unaware or did not notice the problem.<br>`;
+            while others remained unaware or did not notice the problem.<br>
+            Since then, in the Chaoticverse, the probability of any unexpected collisions has increased exponentially, 
+            and encounters between two identical outcodes have become usual. But some timelines definitely cannot
+            exist within the structure of the Chaoticverse, such as
+            <a href="https://alphatale.fandom.com/wiki/Alphaverse">Alphaverse</a>,
+            <a href="https://truegodverse.fandom.com/wiki/Godverse_Wiki">GODVERSE</a> and similar ones. The principle 
+            of the emergence and existence of these stories differs significantly from others, and therefore they are exceptions in this project.`;
 const informationSearchNewPeopleEN = `The project is extremely large and voluminous in production, so our 
             team is actively looking for volunteers and those willing to help in the development of our project. We 
             are looking for comic book writers and artists, mostly from the Russian segment. If you are there from, 
@@ -94,7 +100,7 @@ const informationHowChaoticverseIsWorking2RU = `Причиной подобно�
             пока другие оставались в неведении или не замечали проблемы.<br>
             С тех пор в Chaoticverse вероятность появления каких-либо неожиданных столкновений стала в разы выше, а
             встреча двух одинаковых внекодовых стало нормой. Но некоторые временные потоки точно не могут
-            существовать в рамках Chaotricverse, такие, как
+            существовать в рамках Chaoticverse, такие, как
             <a href="https://alphatale.fandom.com/wiki/Alphaverse">Alphaverse</a>,
             <a href="https://truegodverse.fandom.com/wiki/Godverse_Wiki">GODVERSE</a> и им подобные.
             Принцип зарождения и существования данных историй сильно разнится с другими, а потому они являются
