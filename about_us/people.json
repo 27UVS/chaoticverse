@@ -135,19 +135,66 @@
       }
     },
     {
-      "id": "xsevvv",
-      "image": "xsevvv.webp",
-      "alt": "xsevvv",
-      "link": "https://vk.com/xsevvv",
+      "id": "grass",
+      "image": "Caustic Grass.webp",
+      "alt": "grass",
+      "link": "https://vk.com/causticgrassmaingroup",
       "en": {
-        "name": "xsevvv"
+        "name": "Caustic Grass"
       },
       "ru": {
-        "name": "xsevvv"
+        "name": "Caustic Grass"
       }
     }
   ],
   "partners": [
-
+    {
+      "id": "horizon",
+      "image": "horizon natsu.webp",
+      "alt": "natsu",
+      "link": "https://vk.com/horizon_natsu",
+      "en": {
+        "name": "horizon natsu"
+      },
+      "ru": {
+        "name": "horizon natsu"
+      }
+    },
+    {
+      "id": "roman",
+      "image": "roman holmes.webp",
+      "alt": "roman",
+      "link": "https://vk.com/timelessangel",
+      "en": {
+        "name": "Roman Holmes"
+      },
+      "ru": {
+        "name": "Roman Holmes"
+      }
+    },
+    {
+      "id": "redark",
+      "image": "re dark.webp",
+      "alt": "redark",
+      "link": "https://vk.com/melodysarts",
+      "en": {
+        "name": "RE:DARK [16+]"
+      },
+      "ru": {
+        "name": "RE:DARK [16+]"
+      }
+    },
+    {
+      "id": "dolphin",
+      "image": "dolphin cult.webp",
+      "alt": "dolphin",
+      "link": "https://www.youtube.com/@cool_dolphin",
+      "en": {
+        "name": "Dolphin Cult"
+      },
+      "ru": {
+        "name": "Культ Дельфина"
+      }
+    }
   ]
 }
