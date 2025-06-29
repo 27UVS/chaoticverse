@@ -27,7 +27,7 @@ const textSoleProductionUTRU = `Sole Production UT - независимое не
             Объединение стремится к цели создать и продемонстрировать невероятно масштабную историю. Каждый в нем действует исключительно по собственному желанию, 
             помогая в развитии. Объединение состоит из 3-х категорий участников: руководители, сценаристы, художники, а также ведёт
             партнерские отношения с некоторыми людьми и командами, для помощи популяризации и распространения в медиа проекта.`;
-const textSoleProductionUTEN = `Sole Production UT is an independent non-profit group of creative individuals under the management of a person who is the creator of this project.
+const textSoleProductionUTEN = `Sole Production UT is an independent non-commercial group of creative individuals under the management of a person who is the creator of this project.
             The group aims to create and showcase the incredibly huge story. Everyone in it acts solely according to their own will,
             helping in development. The group consists of three categories of participants: directors, screenwriters, artists, and also leads
             partnerships with certain individuals and teams to help promote and spread the project in the media.`;
