@@ -12,7 +12,7 @@ const informationNewCharacters = document.getElementById('newCharacters');
 
 const informationHeaderEN = `Information`;
 const informationWhatIsChaoticverseEN = `The Chaoticverse is a massive crossover project involving multiple Undertale and Deltarune fandom projects,
-            united within the context of interconnected stories. Chaoticverse has a key protagonist and antagonist,
+            united within the context of interconnected stories. Chaoticverse has key protagonist and antagonist,
             who are the catalysts for most of the events. However, the project is dedicated to the stories of other, equally significant
             characters who directly influence the key events. As long as the fandom lives on, chaos continues to grow in
             Chaoticverse. The only question is where this chaos will lead. To destruction or a new future?`;
@@ -64,7 +64,7 @@ const informationNewCharactersEN = `At the moment, the project practically does 
 
 const informationHeaderRU = `Информация`;
 const informationWhatIsChaoticverseRU = `Проект Chaoticverse - масштабный проект-кроссовер множества проектов фандома Undertale и Deltarune,
-            объединенных в рамках взаимосвязанных историй. У Chaoticverse есть ключевой главный герой и антагонист,
+            объединенных в рамках взаимосвязанных историй. В Chaoticverse существуют главные герой и антагонист,
             являющиеся катализаторами большинства событий. Однако проект посвящен историям и других, не менее значимых
             персонажей, прямо влияющих на события ключевых. До тех пор, пока фандом живёт, хаос продолжает расти в
             Chaoticverse. Вопрос лишь в том, к чему приведет этот хаос. К погибели или новому будущему?`;
