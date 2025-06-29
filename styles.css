@@ -31,6 +31,11 @@ h1 {
     margin-bottom: 5px;
 }
 
+h2 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
 a {
     color: rgb(251,255,0);
     text-decoration: none;
@@ -531,22 +536,20 @@ a:hover {
 }
 
 #toc {
-    padding: 30px;
-    margin: -50px auto -80px auto;
-    max-width: 1000px;
+    padding: 0 30px;
+    margin: -20px auto -40px auto;
     color: white;
     font-family: 'DeterminationRusFont', monospace;
     text-align: center; /* Выравнивание по левому краю */
 }
 
 .season-block {
-    margin-bottom: 20px;
-    margin-top: -50px;
+    margin-top: -30px;
     padding: 10px 0;
 }
 
 .season-block h2 {
-    font-size: 70px;
+    font-size: 60px;
     color: rgb(251,204,0);
     margin-bottom: 10px;
 }
@@ -604,9 +607,8 @@ a:hover {
 
 @media (max-width: 900px) {
     #toc {
-        padding: 20px;
-        margin: -30px auto -60px auto;
-        max-width: 95%;
+        padding: 0 20px;
+        margin: -10px auto -20px auto;
         text-align: center;
     }
 
@@ -662,11 +664,6 @@ a:hover {
         max-width:90%;
         margin: 5px auto auto auto;
     }
-}
-
-h2 {
-    margin-top: 20px;
-    margin-bottom: 5px;
 }
 
 .people-info-section {
@@ -810,5 +807,87 @@ h2 {
 
     .person-group-name {
         font-size: 20px;
+    }
+}
+
+/* --- Элементы страницы прогресса --- */
+.overlay-content-progress-page{
+    font-family: 'DeterminationRusFont', monospace;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.progress-image {
+    display: block;
+    max-width: 40%;
+    height: auto;
+    margin: 5px auto auto auto;
+}
+
+.progress-section {
+    padding: 0 10px;
+    margin-bottom: 40px;
+}
+
+.progress-section h2 {
+    font-size: 50px;
+    color: rgb(251, 204, 0);
+    margin-bottom: 10px;
+}
+
+.progress-bar-container {
+    margin-bottom: 15px;
+}
+
+.progress-bar-label {
+    font-size: 26px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.progress-bar {
+    height: 20px;
+    transition: width 0.5s ease;
+}
+
+.progress-bar.plot {
+    background-color: rgb(237,35,85);
+    /*rgb(232, 219, 0);*/
+}
+
+.progress-bar.scripts {
+    background-color: rgb(255, 123, 0);
+}
+
+.progress-bar.comics {
+    background-color: rgb(251, 255, 0);
+}
+
+.progress-bar.text {
+    background-color: rgb(251, 249, 250);
+}
+
+@media (max-width: 900px) {
+    .progress-section {
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    .progress-section h2 {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+
+    .progress-bar-label {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .progress-bar {
+        height: 16px;
     }
 }
