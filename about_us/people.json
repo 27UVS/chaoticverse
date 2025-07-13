@@ -319,6 +319,18 @@
       }
     },
     {
+      "id": "xenan",
+      "image": "xenan.webp",
+      "alt": "xenan",
+      "link": "https://vk.com/xenan2",
+      "en": {
+        "name": "Xenan"
+      },
+      "ru": {
+        "name": "Xenan"
+      }
+    },
+    {
       "id": "toffi",
       "image": "toffi.webp",
       "alt": "toffi",
@@ -403,6 +415,18 @@
       }
     },
     {
+      "id": "oneiro",
+      "image": "oneiro.webp",
+      "alt": "oneiro",
+      "link": "https://x.com/oneirocorpp",
+      "en": {
+        "name": "ONEIRO"
+      },
+      "ru": {
+        "name": "ONEIRO"
+      }
+    },
+    {
       "id": "mad",
       "image": "mad.webp",
       "alt": "mad",
@@ -484,18 +508,6 @@
       },
       "ru": {
         "name": "Idea Of Shame"
-      }
-    },
-    {
-      "id": "oneiro",
-      "image": "oneiro.webp",
-      "alt": "oneiro",
-      "link": "https://x.com/oneirocorpp",
-      "en": {
-        "name": "ONEIRO"
-      },
-      "ru": {
-        "name": "ONEIRO"
       }
     }
   ]
