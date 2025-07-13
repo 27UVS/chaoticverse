@@ -111,15 +111,15 @@
       }
     },
     {
-      "id": "bpcn",
+      "id": "unknown_team",
       "image": "BPCN Studio.webp",
-      "alt": "bpcn studio",
-      "link": "https://vk.com/bpcnstudio",
+      "alt": "unknown team",
+      "link": "https://vk.com/forgottenandunknownman",
       "en": {
-        "name": "BPCN Studio"
+        "name": "Unknown Team"
       },
       "ru": {
-        "name": "BPCN Studio"
+        "name": "Unknown Team"
       }
     },
     {
