@@ -485,6 +485,18 @@
       "ru": {
         "name": "Idea Of Shame"
       }
+    },
+    {
+      "id": "oneiro",
+      "image": "oneiro.webp",
+      "alt": "oneiro",
+      "link": "https://x.com/oneirocorpp",
+      "en": {
+        "name": "ONEIRO"
+      },
+      "ru": {
+        "name": "ONEIRO"
+      }
     }
   ]
 }
