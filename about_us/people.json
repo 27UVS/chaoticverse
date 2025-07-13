@@ -196,5 +196,295 @@
         "name": "Культ Дельфина"
       }
     }
+  ],
+  "exparticipants": [
+    {
+      "id": "redya",
+      "image": "redya.webp",
+      "alt": "redya",
+      "link": "https://vk.com/club212972366",
+      "en": {
+        "name": "Redya"
+      },
+      "ru": {
+        "name": "Redya"
+      }
+    },
+    {
+      "id": "som",
+      "image": "som.webp",
+      "alt": "som",
+      "link": "https://vk.com/sssonamaa",
+      "en": {
+        "name": "Som"
+      },
+      "ru": {
+        "name": "Som"
+      }
+    },
+    {
+      "id": "emmy",
+      "image": "EmmY.webp",
+      "alt": "emmy",
+      "link": "https://emmyliquid34.carrd.co",
+      "en": {
+        "name": "EmmY"
+      },
+      "ru": {
+        "name": "EmmY"
+      }
+    },
+    {
+      "id": "sara",
+      "image": "sara_yosi.webp",
+      "alt": "sara",
+      "link": "https://vk.com/id627199520",
+      "en": {
+        "name": "Sara Yosi"
+      },
+      "ru": {
+        "name": "Sara Yosi"
+      }
+    },
+    {
+      "id": "diaf",
+      "image": "diaf.webp",
+      "alt": "diaf",
+      "link": "https://diaff.carrd.co",
+      "en": {
+        "name": "Diaf"
+      },
+      "ru": {
+        "name": "Diaf"
+      }
+    },
+    {
+      "id": "dump",
+      "image": "mt_dump.webp",
+      "alt": "dump",
+      "link": "https://vk.com/club220105924",
+      "en": {
+        "name": "multiverse dump"
+      },
+      "ru": {
+        "name": "мультивселеннская свалка"
+      }
+    },
+    {
+      "id": "aqshzik",
+      "image": "aqshzik.webp",
+      "alt": "aqshzik",
+      "link": "https://vk.com/aloniquiet",
+      "en": {
+        "name": "AQ ShZik"
+      },
+      "ru": {
+        "name": "AQ ShZik"
+      }
+    },
+    {
+      "id": "yukkesha",
+      "image": "yukkesha.webp",
+      "alt": "yukkesha",
+      "link": "https://vk.com/yukkesha65656",
+      "en": {
+        "name": "yukkesha uc"
+      },
+      "ru": {
+        "name": "yukkesha uc"
+      }
+    },
+    {
+      "id": "sillyswoop",
+      "image": "sillyswoop.webp",
+      "alt": "sillyswoop",
+      "link": "https://vk.com/sillyswoop",
+      "en": {
+        "name": "sillyswoop"
+      },
+      "ru": {
+        "name": "sillyswoop"
+      }
+    },
+    {
+      "id": "niko",
+      "image": "niko.webp",
+      "alt": "niko",
+      "link": "https://vk.com/4nik04",
+      "en": {
+        "name": "NIKO SILVER"
+      },
+      "ru": {
+        "name": "NIKO SILVER"
+      }
+    },
+    {
+      "id": "toffi",
+      "image": "toffi.webp",
+      "alt": "toffi",
+      "link": "https://vk.com/toffitofo",
+      "en": {
+        "name": "toffi16+"
+      },
+      "ru": {
+        "name": "toffi16+"
+      }
+    },
+    {
+      "id": "nazlygul",
+      "image": "nazlygul.webp",
+      "alt": "nazlygul",
+      "link": "https://vk.com/id468554165",
+      "en": {
+        "name": "Nazlygul Afzalova"
+      },
+      "ru": {
+        "name": "Назлыгуль Афзалова"
+      }
+    },
+    {
+      "id": "kitsa",
+      "image": "kitsa.webp",
+      "alt": "kitsa",
+      "link": "https://vk.com/justtkitsa",
+      "en": {
+        "name": "Kitsa"
+      },
+      "ru": {
+        "name": "Кица"
+      }
+    },
+    {
+      "id": "yomagvear",
+      "image": "yomagvear.webp",
+      "alt": "yomagvear",
+      "link": "https://linktr.ee/yomagvear",
+      "en": {
+        "name": "yomagvear"
+      },
+      "ru": {
+        "name": "катарсис"
+      }
+    },
+    {
+      "id": "miathess",
+      "image": "miathess.webp",
+      "alt": "miathess",
+      "link": "https://vk.com/club205643957",
+      "en": {
+        "name": "Miathess ###"
+      },
+      "ru": {
+        "name": "Miathess ###"
+      }
+    },
+    {
+      "id": "peora",
+      "image": "peora.webp",
+      "alt": "peora",
+      "link": "https://vk.com/p_e_o_r_a",
+      "en": {
+        "name": "PEORA"
+      },
+      "ru": {
+        "name": "PEORA"
+      }
+    },
+    {
+      "id": "shulga",
+      "image": "shulga.webp",
+      "alt": "shulga",
+      "link": "https://vk.com/id623528538",
+      "en": {
+        "name": "Alexander Shulga"
+      },
+      "ru": {
+        "name": "Александр Шульга"
+      }
+    },
+    {
+      "id": "mad",
+      "image": "mad.webp",
+      "alt": "mad",
+      "link": "https://vk.com/madevilmindart",
+      "en": {
+        "name": "Mad Evil"
+      },
+      "ru": {
+        "name": "Mad Evil"
+      }
+    },
+    {
+      "id": "makmi",
+      "image": "makmi.webp",
+      "alt": "makmi",
+      "link": "https://vk.com/makmi_folder",
+      "en": {
+        "name": "makmi"
+      },
+      "ru": {
+        "name": "makmi"
+      }
+    },
+    {
+      "id": "pl_hour",
+      "image": "pl_hour.webp",
+      "alt": "pl_hour",
+      "link": "https://vk.com/public188167452",
+      "en": {
+        "name": "passively-lazy hour"
+      },
+      "ru": {
+        "name": "пасивно-ленивый час"
+      }
+    },
+    {
+      "id": "badmoral",
+      "image": "badmoral.webp",
+      "alt": "Evil Potato",
+      "link": "https://vk.com/accountname1",
+      "en": {
+        "name": "Evil Potato"
+      },
+      "ru": {
+        "name": "Злая картоха"
+      }
+    },
+    {
+      "id": "apricoskaart",
+      "image": "apricoskaart.webp",
+      "alt": "apricoskaart",
+      "link": "https://vk.com/apricoskaart",
+      "en": {
+        "name": "apricoskaart"
+      },
+      "ru": {
+        "name": "Помойная яма априкоски"
+      }
+    },
+    {
+      "id": "misha_in_hat",
+      "image": "misha_in_hat.webp",
+      "alt": "misha_in_hat",
+      "link": "https://t.me/misha_in_hat",
+      "en": {
+        "name": "misha_in_hat"
+      },
+      "ru": {
+        "name": "мишка в шляпе"
+      }
+    },
+    {
+      "id": "idea",
+      "image": "idea.webp",
+      "alt": "idea",
+      "link": "https://vk.com/live_me_alone_pls",
+      "en": {
+        "name": "Idea Of Shame"
+      },
+      "ru": {
+        "name": "Idea Of Shame"
+      }
+    }
   ]
 }

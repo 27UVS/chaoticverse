@@ -6,6 +6,7 @@ const aboutUsHeader = document.getElementById('aboutUsHeader');
 const scriptersHeader = document.getElementById('scriptersHeader');
 const artistsHeader = document.getElementById('artistsHeader');
 const partnersHeader = document.getElementById('partnersHeader');
+const exParticipantsHeader = document.getElementById('ex-participantsHeader');
 const textSoleProductionUT = document.getElementById('soleProductionUT');
 const titleUVS27 = document.getElementById('uvs27');
 const UVS27Description = document.getElementById('uvs27Description');
@@ -22,6 +23,8 @@ const artistsEN = `Artists`;
 const artistsRU = `Художники`;
 const partnersEN = `Partners`;
 const partnersRU = `Партнеры`;
+const exParticipantsRU = `Бывшие участники`;
+const exParticipantsEN = `Ex-participants`;
 
 const textSoleProductionUTRU = `Sole Production UT - независимое некоммерческое объединение творческих личностей под управлением человека, являющегося создателем данного проекта.
             Объединение стремится к цели создать и продемонстрировать невероятно масштабную историю. Каждый в нем действует исключительно по собственному желанию, 
@@ -57,6 +60,7 @@ langToggle.addEventListener('click', () => {
         scriptersHeader.textContent = scriptersEN;
         artistsHeader.textContent = artistsEN;
         partnersHeader.textContent = partnersEN;
+        exParticipantsHeader.textContent = exParticipantsEN;
         textSoleProductionUT.textContent = textSoleProductionUTEN;
         titleUVS27.innerHTML = uvs27EN;
         titleDelta.innerHTML = deltaEN;
@@ -69,6 +73,7 @@ langToggle.addEventListener('click', () => {
         scriptersHeader.textContent = scriptersRU;
         artistsHeader.textContent = artistsRU;
         partnersHeader.textContent = partnersRU;
+        exParticipantsHeader.textContent = exParticipantsRU;
         textSoleProductionUT.textContent = textSoleProductionUTRU;
         titleUVS27.innerHTML = uvs27RU;
         titleDelta.innerHTML = deltaRU;
@@ -96,6 +101,7 @@ let peopleData = {};
 const scriptersContainer = document.getElementById('scripters');
 const artistsContainer = document.getElementById('artists');
 const partnersContainer = document.getElementById('partners');
+const exParticipantsContainer = document.getElementById('ex-participants');
 
 async function loadPeople() {
     const res = await fetch('people.json');
@@ -107,10 +113,12 @@ function renderPeople() {
     scriptersContainer.innerHTML = '';
     artistsContainer.innerHTML = '';
     partnersContainer.innerHTML = '';
+    exParticipantsContainer.innerHTML = '';
 
     renderGroup(peopleData.scripters, scriptersContainer, 'scripters');
     renderGroup(peopleData.artists, artistsContainer, 'artists');
     renderGroup(peopleData.partners, partnersContainer, 'partners');
+    renderGroup(peopleData.exparticipants, exParticipantsContainer, 'ex-participants');
 }
 
 
