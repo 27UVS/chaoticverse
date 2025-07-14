@@ -11,6 +11,18 @@
       "ru": {
         "name": "Виктория Полякова"
       }
+    },
+    {
+      "id": "shulga",
+      "image": "shulga.webp",
+      "alt": "shulga",
+      "link": "https://t.me/alexshula",
+      "en": {
+        "name": "Alexander Shulga"
+      },
+      "ru": {
+        "name": "Александр Шульга"
+      }
     }
   ],
   "artists": [
@@ -400,18 +412,6 @@
       },
       "ru": {
         "name": "PEORA"
-      }
-    },
-    {
-      "id": "shulga",
-      "image": "shulga.webp",
-      "alt": "shulga",
-      "link": "https://vk.com/id623528538",
-      "en": {
-        "name": "Alexander Shulga"
-      },
-      "ru": {
-        "name": "Александр Шульга"
       }
     },
     {
