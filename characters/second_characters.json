@@ -1,5 +1,17 @@
 [
   {
+    "id": "last breath",
+    "image": "Last Breath Sans.webp",
+    "alt": "Last Breath",
+    "author": "<a href=\"https://gamejolt.com/@ulbteam\">@ulbteam</a>/<br>@zerjox",
+    "en": {
+      "name": "Last Breath Sans"
+    },
+    "ru": {
+      "name": "Ласт Брис Санс"
+    }
+  },
+  {
     "id": "core",
     "image": "Core Frisk.webp",
     "alt": "Core",
