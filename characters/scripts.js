@@ -25,6 +25,8 @@ const characterDreamDescription = document.getElementById('dreamDescription');
 const characterNightmareDescription = document.getElementById('nightmareDescription');
 const characterShatteredDreamDescription = document.getElementById('shatteredDreamDescription');
 
+document.getElementById("year").textContent = new Date().getFullYear();
+
 const charactersHeaderEN = `Chaoticverse Characters`;
 const characterNelsonEN = `Nelson`;
 const characterNelsonDescriptionEN = `One of the central figures in Chaoticverse. 

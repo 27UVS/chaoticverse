@@ -9,6 +9,7 @@ const informationHowChaoticverseIsWorking1 = document.getElementById('howChaotic
 const informationHowChaoticverseIsWorking2 = document.getElementById('howChaoticverseIsWorking2');
 const informationSearchNewPeople = document.getElementById('searchNewPeople');
 const informationNewCharacters = document.getElementById('newCharacters');
+document.getElementById("year").textContent = new Date().getFullYear();
 
 const informationHeaderEN = `Information`;
 const informationWhatIsChaoticverseEN = `The Chaoticverse is a massive crossover project involving multiple Undertale and Deltarune fandom projects,

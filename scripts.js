@@ -4,6 +4,7 @@ const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
 const homeText = document.getElementById('mainText');
 const disclaimerText = document.getElementById('disclaimerText');
+document.getElementById("year").textContent = new Date().getFullYear();
 
 const textRU = `
   Бесконечные миры, бесконечные сражения и бесконечные возможности!<br>

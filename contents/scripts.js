@@ -4,6 +4,7 @@ const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
 const contentsHeader = document.getElementById('contentsHeader');
 const tocContainer = document.getElementById('toc');
+document.getElementById("year").textContent = new Date().getFullYear();
 
 let currentLang = 'RU';
 

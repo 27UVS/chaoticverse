@@ -3,6 +3,7 @@ const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
 const progressHeader = document.getElementById('progressHeader');
+document.getElementById("year").textContent = new Date().getFullYear();
 
 let currentLang = 'RU';
 

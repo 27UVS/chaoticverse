@@ -12,6 +12,7 @@ const titleUVS27 = document.getElementById('uvs27');
 const UVS27Description = document.getElementById('uvs27Description');
 const titleDelta = document.getElementById('delta');
 const deltaDescription = document.getElementById('deltaDescription');
+document.getElementById("year").textContent = new Date().getFullYear();
 
 let currentLang = 'RU';
 
