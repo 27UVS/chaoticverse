@@ -157,6 +157,18 @@
       "ru": {
         "name": "Caustic Grass"
       }
+    },
+    {
+      "id": "arkashka",
+      "image": "arkashka.webp",
+      "alt": "arkashka",
+      "link": "https://t.me/Thought120",
+      "en": {
+        "name": "Arkashka"
+      },
+      "ru": {
+        "name": "Arkashka"
+      }
     }
   ],
   "partners": [
@@ -206,6 +218,18 @@
       },
       "ru": {
         "name": "Культ Дельфина"
+      }
+    },
+    {
+      "id": "musicavocado",
+      "image": "music_avo.webp",
+      "alt": "musicavocado",
+      "link": "https://www.youtube.com/@cool_dolphin",
+      "en": {
+        "name": "MusicAvocado"
+      },
+      "ru": {
+        "name": "MusicAvocado"
       }
     }
   ],
