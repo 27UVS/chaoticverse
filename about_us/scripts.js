@@ -12,6 +12,8 @@ const titleUVS27 = document.getElementById('uvs27');
 const UVS27Description = document.getElementById('uvs27Description');
 const titleDelta = document.getElementById('delta');
 const deltaDescription = document.getElementById('deltaDescription');
+const titleRaf = document.getElementById('raf');
+const rafDescription = document.getElementById('rafDescription');
 document.getElementById("year").textContent = new Date().getFullYear();
 
 let currentLang = 'RU';
@@ -36,10 +38,14 @@ const textSoleProductionUTEN = `Sole Production UT is an independent non-commerc
             helping in development. The group consists of three categories of participants: directors, screenwriters, artists, and also leads
             partnerships with certain individuals and teams to help promote and spread the project in the media.`;
 
-const uvs27RU = `27UVS<br><div class="titles-text">Создатель Chaoticverse,<br>лидер Sole_Production_UT,<br>сценарист, создатель сайта</div>`
-const uvs27EN = `27UVS<br><div class="titles-text">Chaoticverse Creator,<br>Sole_Production_UT leader,<br>main scripter, web-site creator</div>`
-const deltaRU = `Дельта<br><div class="titles-text">Соруководитель Chaoticverse<br>(на данный момент не при делах)`
-const deltaEN = `Delta<br><div class="titles-text">Chaoticverse co-leader<br>(at the moment not involved)`
+const uvs27RU = `27UVS<br><div class="titles-text">Создатель Chaoticverse,<br>лидер Sole Production UT,<br>сценарист, создатель сайта</div>`
+const uvs27EN = `27UVS<br><div class="titles-text">Chaoticverse Creator,<br>Sole Production UT leader,<br>main scripter, web-site creator</div>`
+const deltaRU = `Дельта<br><div class="titles-text">Соруководитель<br>Sole Production UT<br>(на данный момент не при делах)`
+const deltaEN = `Delta<br><div class="titles-text">Sole Production UT<br>co-leader<br>(at the moment not involved)`
+const rafRU = `Рафели<br><div class="titles-text">Руководитель <a href="https://sole-production-ut.tumblr.com">Tumblr</a> и 
+            <a href="https://x.com/SPUT_27">X</a><br>каналов Sole Production UT</div>`
+const rafEN = `Rafeli<br><div class="titles-text">Manager of <a href="https://sole-production-ut.tumblr.com">Tumblr</a> and 
+            <a href="https://x.com/SPUT_27">X</a><br> Sole Production UT channels</div>`
 
 const UVS27DescriptionRU = `Всем привет! Это я! Прямо сейчас вы читаете обо мне
                     и читаете сайт, который я написал. Спасибо, что смотрите наш контент! Вам интересно, кто я?
@@ -54,6 +60,12 @@ const deltaDescriptionRU = `Временами помогает с перево�
                     Фотомодель.`
 const deltaDescriptionEN = `Sometimes helps with translations, working on his own project 
                     <a href="https://underfill.fandom.com/ru/wiki/UnderFill_Вики">UnderFill</a>. Model.`
+const rafDescriptionRU = `Всем приветик! Меня зовут Рафели~ (ударение на "а"),
+                    рада с Вами познакомиться! Я являюсь помощником/руководителем нашего главного крылатого иллюмината, ахах))<br>
+                    Иногда творю хаос, но в пределах разумного. Так же помогаю вести соц.сети.`
+const rafDescriptionEN = `Hello, everyone! My name is Rafeli~ (emphasis on the ‘a’), nice to meet you! 
+                    I am the co-leader/manager of our main winged illuminati, ahaha))<br>Sometimes I create chaos, 
+                    but within reason. I also help manage social media.`
 
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
@@ -65,8 +77,10 @@ langToggle.addEventListener('click', () => {
         textSoleProductionUT.textContent = textSoleProductionUTEN;
         titleUVS27.innerHTML = uvs27EN;
         titleDelta.innerHTML = deltaEN;
+        titleRaf.innerHTML = rafEN;
         UVS27Description.textContent = UVS27DescriptionEN;
         deltaDescription.innerHTML = deltaDescriptionEN;
+        rafDescription.innerHTML = rafDescriptionEN;
         langToggle.textContent = 'RU';
         currentLang = 'EN';
     } else {
@@ -78,8 +92,10 @@ langToggle.addEventListener('click', () => {
         textSoleProductionUT.textContent = textSoleProductionUTRU;
         titleUVS27.innerHTML = uvs27RU;
         titleDelta.innerHTML = deltaRU;
+        titleRaf.innerHTML = rafRU;
         UVS27Description.textContent = UVS27DescriptionRU;
         deltaDescription.innerHTML = deltaDescriptionRU;
+        rafDescription.innerHTML = rafDescriptionRU;
         langToggle.textContent = 'EN';
         currentLang = 'RU';
     }
