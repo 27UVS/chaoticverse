@@ -661,7 +661,7 @@ a:hover {
 @media (max-width: 900px){
     .about-us-image {
         max-width:90%;
-        margin: 5px auto -50px auto;
+        margin: 5px auto -55px auto;
     }
 }
 
