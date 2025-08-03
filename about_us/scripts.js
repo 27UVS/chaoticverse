@@ -38,14 +38,14 @@ const textSoleProductionUTEN = `Sole Production UT is an independent non-commerc
             helping in development. The group consists of three categories of participants: directors, screenwriters, artists, and also leads
             partnerships with certain individuals and teams to help promote and spread the project in the media.`;
 
-const uvs27RU = `27UVS<br><div class="titles-text">Создатель Chaoticverse,<br>лидер Sole Production UT,<br>сценарист, создатель сайта</div>`
-const uvs27EN = `27UVS<br><div class="titles-text">Chaoticverse Creator,<br>Sole Production UT leader,<br>main scripter, web-site creator</div>`
+const uvs27RU = `27UVS<br><div class="titles-text">Создатель Chaoticverse<br>Лидер Sole Production UT<br>Сценарист<br>Создатель сайта</div>`
+const uvs27EN = `27UVS<br><div class="titles-text">Chaoticverse creator,<br>Sole Production UT leader,<br>Main scripter<br>Web-site creator</div>`
 const deltaRU = `Дельта | WDeltaG<br><div class="titles-text">Соруководитель<br>Sole Production UT<br>Создатель <a href="https://underfill.fandom.com/ru/wiki/UnderFill_Вики">UnderFill</a><br>Переводчик</div>`
-const deltaEN = `Delta | WDeltaG<br><div class="titles-text">Sole Production UT<br>co-leader<br>Creator of <a href="https://underfill.fandom.com/ru/wiki/UnderFill_Вики">UnderFill</a><br>Translator</div>`
+const deltaEN = `Delta | WDeltaG<br><div class="titles-text">Sole Production UT's<br>co-leader<br>Creator of <a href="https://underfill.fandom.com/ru/wiki/UnderFill_Вики">UnderFill</a><br>Translator</div>`
 const rafRU = `Рафели<br><div class="titles-text">Руководитель <a href="https://sole-production-ut.tumblr.com">Tumblr</a> и 
             <a href="https://x.com/SPUT_27">X</a><br>каналов Sole Production UT</div>`
 const rafEN = `Rafeli<br><div class="titles-text">Manager of <a href="https://sole-production-ut.tumblr.com">Tumblr</a> and 
-            <a href="https://x.com/SPUT_27">X</a><br> Sole Production UT channels</div>`
+            <a href="https://x.com/SPUT_27">X</a><br> Sole Production UT's channels</div>`
 
 const UVS27DescriptionRU = `Всем привет! Это я! Прямо сейчас вы читаете обо мне
                     и читаете сайт, который я написал. Спасибо, что смотрите наш контент! Вам интересно, кто я?
@@ -58,9 +58,9 @@ const UVS27DescriptionEN = `Hello everyone! It's me! Right now, you are reading 
 const deltaDescriptionRU = `Приветствую. Я Дельта. Соавтор и соруководитель проектов Sole Production UT, переводчик, 
                     а также создатель собственной мультивселенной - UnderFill и просто друг 27UVS.
                     Если вам нужно дополнить лор, исправить дыру в сюжете или ввести в историю нового персонажа - я в деле.`
-const deltaDescriptionEN = `Hello. I am Delta. I am co-author and co-director of Sole Production UT projects, 
-                    translator, the creator of my own multiverse, UnderFill, and simply a friend of 27UVS.
-                    If you need to add to the lore, fix a plot hole, or introduce a new character into the story, I'm your man.`
+const deltaDescriptionEN = `Greetings. I'm Delta. Sole Production UT's projects' co-author and co-director, translator, and 
+                    creator of the UnderFill multiverse. Also 27UVS' friend. If you ever need to expand your lore, 
+                    fix the plot holes in your story, or add a new character - I'm in.`
 const rafDescriptionRU = `Всем приветик! Меня зовут Рафели~ (ударение на "а"),
                     рада с Вами познакомиться! Я являюсь помощником/руководителем нашего главного крылатого иллюмината, ахах))<br>
                     Иногда творю хаос, но в пределах разумного. Так же помогаю вести соц.сети.`
