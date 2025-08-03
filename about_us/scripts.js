@@ -40,8 +40,8 @@ const textSoleProductionUTEN = `Sole Production UT is an independent non-commerc
 
 const uvs27RU = `27UVS<br><div class="titles-text">Создатель Chaoticverse,<br>лидер Sole Production UT,<br>сценарист, создатель сайта</div>`
 const uvs27EN = `27UVS<br><div class="titles-text">Chaoticverse Creator,<br>Sole Production UT leader,<br>main scripter, web-site creator</div>`
-const deltaRU = `Дельта<br><div class="titles-text">Соруководитель<br>Sole Production UT<br>(на данный момент не при делах)`
-const deltaEN = `Delta<br><div class="titles-text">Sole Production UT<br>co-leader<br>(at the moment not involved)`
+const deltaRU = `Дельта | WDeltaG<br><div class="titles-text">Соруководитель<br>Sole Production UT<br>Создатель <a href="https://underfill.fandom.com/ru/wiki/UnderFill_Вики">UnderFill</a><br>Переводчик</div>`
+const deltaEN = `Delta | WDeltaG<br><div class="titles-text">Sole Production UT<br>co-leader<br>Creator of <a href="https://underfill.fandom.com/ru/wiki/UnderFill_Вики">UnderFill</a><br>Translator</div>`
 const rafRU = `Рафели<br><div class="titles-text">Руководитель <a href="https://sole-production-ut.tumblr.com">Tumblr</a> и 
             <a href="https://x.com/SPUT_27">X</a><br>каналов Sole Production UT</div>`
 const rafEN = `Rafeli<br><div class="titles-text">Manager of <a href="https://sole-production-ut.tumblr.com">Tumblr</a> and 
@@ -55,11 +55,12 @@ const UVS27DescriptionEN = `Hello everyone! It's me! Right now, you are reading 
                     I created. Thank you for checking out our content! Are you curious about who I am? Consider me your 
                     friendly seraphim triangle. I am the main thinker, the creator of everything you see here, and the 
                     one who wants to bring this project to the love of users on the internet.`
-const deltaDescriptionRU = `Временами помогает с переводами, ведёт работу над
-                    собственным проектом <a href="https://underfill.fandom.com/ru/wiki/UnderFill_Вики">UnderFill</a>. 
-                    Фотомодель.`
-const deltaDescriptionEN = `Sometimes helps with translations, working on his own project 
-                    <a href="https://underfill.fandom.com/ru/wiki/UnderFill_Вики">UnderFill</a>. Model.`
+const deltaDescriptionRU = `Приветствую. Я Дельта. Соавтор и соруководитель проектов Sole Production UT, переводчик, 
+                    а также создатель собственной мультивселенной - UnderFill и просто друг 27UVS.
+                    Если вам нужно дополнить лор, исправить дыру в сюжете или ввести в историю нового персонажа - я в деле.`
+const deltaDescriptionEN = `Hello. I am Delta. I am co-author and co-director of Sole Production UT projects, 
+                    translator, the creator of my own multiverse, UnderFill, and simply a friend of 27UVS.
+                    If you need to add to the lore, fix a plot hole, or introduce a new character into the story, I'm your man.`
 const rafDescriptionRU = `Всем приветик! Меня зовут Рафели~ (ударение на "а"),
                     рада с Вами познакомиться! Я являюсь помощником/руководителем нашего главного крылатого иллюмината, ахах))<br>
                     Иногда творю хаос, но в пределах разумного. Так же помогаю вести соц.сети.`
