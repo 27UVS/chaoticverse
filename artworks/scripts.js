@@ -3,12 +3,21 @@ const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
 const artworksHeader = document.getElementById('artworksHeader');
+const artworksAnimation = document.getElementById('artworksAnimation');
+const artworksMusic = document.getElementById('artworksMusic');
+const artworksArts= document.getElementById('artworksArts');
 document.getElementById("year").textContent = new Date().getFullYear();
 
 let currentLang = 'RU';
 
 const headerRU = `Контент`;
 const headerEN = `Artworks`;
+const animationRU = `Анимации`;
+const animationEN = `Animations`;
+const musicRU = `Музыка`;
+const musicEN = `Music`;
+const artsRU = `Арты`;
+const artsEN = `Arts`;
 
 async function initVideoCarousel(containerId, videos) {
     const container = document.getElementById(containerId);
@@ -337,10 +346,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
         artworksHeader.textContent = headerEN;
+        artworksAnimation.textContent = animationEN;
+        artworksMusic.textContent = musicEN;
+        artworksArts.textContent = artsEN;
         langToggle.textContent = 'RU';
         currentLang = 'EN';
     } else {
         artworksHeader.textContent = headerRU;
+        artworksAnimation.textContent = animationRU;
+        artworksMusic.textContent = musicRU;
+        artworksArts.textContent = artsRU;
         langToggle.textContent = 'EN';
         currentLang = 'RU';
     }
