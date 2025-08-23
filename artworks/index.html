@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Contents | CHAOTICVERSE</title>
+    <title>Artworks | CHAOTICVERSE</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="../favicon.png" type="image/x-icon">
     <link rel="preload" as="image" href="../images/CHAOTICVERSE_1.webp">
@@ -13,9 +13,9 @@
     <button class="minimize-button" id="minimize">–</button>
     <button class="lang-toggle-button" id="langToggle">EN</button>
 
-    <div class="overlay-content-contents-page" id="textContent">
-        <h1 id="contentsHeader">Оглавление</h1>
-        <img src="../images/Nelson%20and%20Cowardtale!Gaster%20chill.webp" alt="Chaoticverse Nelson and Gaster" class="contents-image">
+    <div class="overlay-content-artworks-page" id="textArtworks">
+        <h1 id="artworksHeader">Контент</h1>
+        <img src="../images/NelsonInWinter.webp" alt="Nelson in Winter" class="contents-image">
 
         <hr class="divider">
 
@@ -31,6 +31,11 @@
                 </a>
             </button>
             <button class="nav-button">
+                <a href="../contents" class="nav-button">
+                    <img src="../images/buttons/contents_button.png" alt="Contents">
+                </a>
+            </button>
+            <button class="nav-button">
                 <a href="../characters" class="nav-button">
                     <img src="../images/buttons/characters_button.png" alt="Characters">
                 </a>
@@ -41,20 +46,25 @@
                 </a>
             </button>
             <button class="nav-button">
-                <a href="../" class="nav-button">
-                    <img src="../images/buttons/artworks_button.png" alt="Artworks">
-                </a>
-            </button>
-            <button class="nav-button">
                 <a href="../about_us" class="nav-button">
                     <img src="../images/buttons/about_us_button.png" alt="About Us">
                 </a>
             </button>
         </div>
+        <hr class="divider">
+
+        <h2 id="artworksMusic">Анимации</h2>
+        <div id="carousel-animation" class="video-carousel"></div>
 
         <hr class="divider">
 
-        <div id="toc"></div>
+        <h2 id="artworksMeme">Музыка</h2>
+        <div id="carousel-music" class="video-carousel"></div>
+
+        <hr class="divider">
+
+        <h2 id="artworksArts">Арты</h2>
+        <div id="gallery-container"></div>
 
         <div class="overlay-footer-text">
             © <span id="year"></span> SOLE PRODUCTION UT PROJECT

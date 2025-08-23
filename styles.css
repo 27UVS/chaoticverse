@@ -889,3 +889,94 @@ a:hover {
         height: 16px;
     }
 }
+
+/* --- Элементы страницы прогресса --- */
+.overlay-content-artworks-page{
+    font-family: 'DeterminationRusFont', monospace;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.video-carousel {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    scroll-behavior: auto; /* вместо smooth */
+    justify-content: flex-start; /* стандарт — слева */
+    cursor: grab;
+}
+
+.video-carousel a,
+.video-carousel iframe {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 225px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.video-carousel.centered {
+    justify-content: center; /* включается из JS */
+}
+
+.video-thumbnail {
+    width: 400px;
+    height: 225px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    object-fit: cover;
+    display: inline-block;
+}
+
+.subscription {
+    font-size: 20px;
+    margin-top: -15px;
+}
+
+.gallery-carousel {
+    display: flex;
+    overflow-x: hidden;
+    gap: 10px;
+    padding: 10px 0;
+    scroll-behavior: auto;
+    justify-content: flex-start;
+    margin-bottom: 40px
+}
+
+.gallery-card {
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.gallery-card img {
+    width: 400px;
+    height: 225px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-name {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.6);
+    color: rgb(251,255,0);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+}
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+

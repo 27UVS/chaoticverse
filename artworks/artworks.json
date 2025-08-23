@@ -1,0 +1,23 @@
+{
+  "animation": [
+    "2ed7USXn5CE"
+  ],
+  "music": [
+    "D8rW0cIFBZA",
+    "-k0ZNavz5iY"
+  ],
+  "gallery": {
+    "roman": ["star_sans.png", "star_duo2.png"],
+    "maria": ["nelson.png", "nelson2.png", "chaoticverse5.jpg"],
+    "sorenpo": ["load_glitch4.png", "load_glitch5.png"],
+    "grass": ["load_glitch.png"],
+    "paws": ["load_glitch3.PNG"],
+    "avokot": ["hollow_sans4.jpg", "load_glitch2.jpg"],
+    "pipets": ["chaoticverse2.png", "chaoticverse6.jpg"],
+    "badmoral": ["hollow_sans2.png", "hollow_sans3.png", "hollow_sans5.png", "hollow_sans6.png"],
+    "ayrix": ["chaoticverse3.png", "chaoticverse4.png"],
+    "redya": ["chaoticverse1.jpg"],
+    "xsevvv": ["hollow_sans.jpg"],
+    "ti_sparrow": ["star_duo.jpeg"]
+  }
+}
