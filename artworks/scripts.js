@@ -30,7 +30,6 @@ async function initVideoCarousel(containerId, videos) {
     // iframe - для компьютеров, a - для телефонов
     videos.forEach(id => {
         if (isMobile) {
-            // На телефоне — делаем превью с переходом
             const link = document.createElement("a");
             link.href = `https://www.youtube.com/watch?v=${id}`;
             link.target = "_blank"; // открывается в приложении YouTube/новой вкладке
@@ -38,8 +37,11 @@ async function initVideoCarousel(containerId, videos) {
 
             const thumbnail = document.createElement("img");
             thumbnail.classList.add("video-thumbnail");
-
             thumbnail.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+
+            thumbnail.style.width = "200px";
+            thumbnail.style.height = "auto";
+            thumbnail.style.display = "block";
 
             link.appendChild(thumbnail);
             container.appendChild(link);
