@@ -901,6 +901,19 @@ a:hover {
     margin-bottom: 5px;
 }
 
+.artworks-image {
+    display: block;
+    max-width: 50%;
+    height: auto;
+    margin: 5px auto 10px auto;
+}
+
+@media (max-width: 900px) {
+    .artworks-image {
+        max-width: 90%;
+    }
+}
+
 .video-carousel {
     display: flex;
     gap: 20px;
