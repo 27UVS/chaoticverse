@@ -39,8 +39,6 @@ async function initVideoCarousel(containerId, videos) {
             thumbnail.classList.add("video-thumbnail");
             thumbnail.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 
-            thumbnail.style.width = "200px";
-            thumbnail.style.height = "auto";
             thumbnail.style.display = "block";
 
             link.appendChild(thumbnail);
