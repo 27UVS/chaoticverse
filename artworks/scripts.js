@@ -167,7 +167,14 @@ async function initGalleryCarousels(containerId) {
 
     let images = [];
     for (const [authorId, files] of Object.entries(artworksData.gallery)) {
-        const person = peopleMap[authorId] || { link: "#", name_ru: "Неизвестно", name_en: "Unknown" };
+
+        if (!files || files.length === 0) continue;
+
+        const person = peopleMap[authorId] || {
+                link: "#",
+                name_ru: "Неизвестно",
+                name_en: "Unknown"
+            };
 
         files.forEach(file => {
             images.push({
@@ -212,7 +219,7 @@ async function initGalleryCarousels(containerId) {
             nameLink.href = imgData.link;
             nameLink.target = "_blank";
             nameLink.className = "gallery-name";
-            nameLink.textContent = currentLang === "EN" ? imgData.name_en : imgData.name_ru;
+            nameLink.innerHTML = currentLang === "EN" ? imgData.name_en : imgData.name_ru;
 
             card.appendChild(img);
             card.appendChild(nameLink);
