@@ -120,6 +120,8 @@ langToggle.addEventListener('click', () => {
     }
 });
 
+loadTOC();
+
 minimizeBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
     restoreBtn.style.display = 'flex';
@@ -129,5 +131,3 @@ restoreBtn.addEventListener('click', () => {
     overlay.classList.remove('hidden');
     restoreBtn.style.display = 'none';
 });
-
-loadTOC();

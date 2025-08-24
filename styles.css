@@ -12,12 +12,18 @@ html, body {
     padding: 0;
     overflow-x: hidden;
     background-color: black;
-    background-image: url('images/CHAOTICVERSE_1.webp');
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     will-change: background-image;
 }
+
+#backgroundHeight {
+    width: 100%;
+    aspect-ratio: 1920 / 3225;
+    background: url("images/CHAOTICVERSE_1.webp") no-repeat center top;
+    background-size: 100% auto;
+}
+
 
 img {
     width: 99.2vw;

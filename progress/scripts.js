@@ -10,46 +10,6 @@ let currentLang = 'RU';
 const headerRU = `Прогресс`;
 const headerEN = `Progress`;
 
-langToggle.addEventListener('click', () => {
-    if (currentLang === 'RU') {
-        progressHeader.textContent = headerEN;
-        langToggle.textContent = 'RU';
-        currentLang = 'EN';
-    } else {
-        progressHeader.textContent = headerRU;
-        langToggle.textContent = 'EN';
-        currentLang = 'RU';
-    }
-    loadProgress();
-});
-
-minimizeBtn.addEventListener('click', () => {
-    overlay.classList.add('hidden');
-    restoreBtn.style.display = 'flex';
-});
-
-restoreBtn.addEventListener('click', () => {
-    overlay.classList.remove('hidden');
-    restoreBtn.style.display = 'none';
-});
-
-const progressContainer = document.getElementById('progressContainer');
-
-const sectionTitles = {
-    pr: { RU: "Пролог", EN: "Prologue" },
-    fr: { RU: "Сезон 1", EN: "Season 1" },
-    sc: { RU: "Сезон 2", EN: "Season 2" },
-    tr: { RU: "Сезон 3", EN: "Season 3" },
-    fh: { RU: "Сезон 4", EN: "Season 4" }
-};
-
-const barTitles = {
-    pl: { RU: "Сюжет", EN: "Plot" },
-    scp: { RU: "Сценарии", EN: "Scripts" },
-    cmc: { RU: "Комиксы", EN: "Comics" },
-    tx: { RU: "Текст", EN: "Text" }
-};
-
 async function loadProgress() {
     const res = await fetch('progress.json');
     const data = await res.json();
@@ -120,3 +80,43 @@ function renderProgress(data) {
 }
 
 loadProgress();
+
+langToggle.addEventListener('click', () => {
+    if (currentLang === 'RU') {
+        progressHeader.textContent = headerEN;
+        langToggle.textContent = 'RU';
+        currentLang = 'EN';
+    } else {
+        progressHeader.textContent = headerRU;
+        langToggle.textContent = 'EN';
+        currentLang = 'RU';
+    }
+    loadProgress();
+});
+
+minimizeBtn.addEventListener('click', () => {
+    overlay.classList.add('hidden');
+    restoreBtn.style.display = 'flex';
+});
+
+restoreBtn.addEventListener('click', () => {
+    overlay.classList.remove('hidden');
+    restoreBtn.style.display = 'none';
+});
+
+const progressContainer = document.getElementById('progressContainer');
+
+const sectionTitles = {
+    pr: { RU: "Пролог", EN: "Prologue" },
+    fr: { RU: "Сезон 1", EN: "Season 1" },
+    sc: { RU: "Сезон 2", EN: "Season 2" },
+    tr: { RU: "Сезон 3", EN: "Season 3" },
+    fh: { RU: "Сезон 4", EN: "Season 4" }
+};
+
+const barTitles = {
+    pl: { RU: "Сюжет", EN: "Plot" },
+    scp: { RU: "Сценарии", EN: "Scripts" },
+    cmc: { RU: "Комиксы", EN: "Comics" },
+    tx: { RU: "Текст", EN: "Text" }
+};
