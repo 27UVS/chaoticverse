@@ -2,7 +2,11 @@
   "ru": {
     "Пролог": {
       "Арка Связи": [
-
+        {
+          "name": "Взгляд бога",
+          "parts": [],
+          "urls": []
+        }
       ],
       "Арка Три брата": [
         {},
@@ -47,12 +51,12 @@
       "Арка Сквозь таймлайны": [
         {
           "name": "Новый суд",
-          "parts": [],
-          "urls": []
+          "parts": [1],
+          "urls": ["https://vk.com/wall-196152977_5737"]
         },
         {
           "name": "Друг",
-          "parts": [1, 2],
+          "parts": [1, 2.1],
           "urls": ["https://vk.com/wall-196152977_5549", "https://vk.com/wall-196152977_5663"]
         },
         {},
@@ -95,13 +99,22 @@
         "name": "Глаз (аск)",
         "parts": [1, 2],
         "urls": ["https://vk.com/wall-196152977_5289", "https://boosty.to/sput27/posts/8ad5fd52-c124-43f2-8c80-544209655e47"]
+      },
+      {
+        "name": "Печенье",
+        "parts": [],
+        "urls": []
       }
     ]
   },
   "en": {
     "Prologue": {
       "Connection Arc": [
-
+        {
+          "name": "God's view",
+          "parts": [],
+          "urls": []
+        }
       ],
       "Three brothers Arc": [
         {},
@@ -154,7 +167,7 @@
         },
         {
           "name": "Friend",
-          "parts": [1, 2],
+          "parts": [1, 2.1],
           "urls": ["https://www.tumblr.com/sole-production-ut/778808653332545536/friend",
             "https://www.tumblr.com/sole-production-ut/787432603594768384/friend"]
         },
@@ -195,6 +208,11 @@
       },
       {
         "name": "Eye (ask)",
+        "parts": [],
+        "urls": []
+      },
+      {
+        "name": "Cookie",
         "parts": [],
         "urls": []
       }
