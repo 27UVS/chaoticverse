@@ -1,5 +1,7 @@
   {
-    "name": "",
+    "name_ru": "",
+    "name_en": "",
     "parts": [],
-    "urls": []
+    "urls_ru": [],
+    "urls_en": []
   },

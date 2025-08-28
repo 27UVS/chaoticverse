@@ -148,10 +148,19 @@ function renderGroup(group, container, folder) {
         const lang = currentLang.toLowerCase();
         const name = person[lang]?.name || person.en.name; // fallback на en
 
+        let extraTitle = "";
+        if (person.id === "unknown_team") {
+            extraTitle = (lang === "ru")
+                ? "Отвечает за дизайн интерфейса сайта"
+                : "Responsible for website interface design";
+        }
+
         card.innerHTML = `
             <div class="person-group-icon">
                 <a href="${person.link}" target="_blank">
-                    <img src="../images/people/${folder}/${person.image}" alt="${person.alt}">
+                    <img src="../images/people/${folder}/${person.image}" 
+                         alt="${person.alt}"
+                         ${extraTitle ? `title="${extraTitle}"` : ""}>
                 </a>
             </div>
             <div class="person-group-text">
@@ -161,6 +170,7 @@ function renderGroup(group, container, folder) {
         container.appendChild(card);
     });
 }
+
 
 loadPeople();
 
