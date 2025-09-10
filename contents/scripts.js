@@ -12,7 +12,7 @@ const headerRU = `Оглавление`;
 const headerEN = `Contents`;
 
 async function loadTOC() {
-    const res = await fetch('contents_names2.json');
+    const res = await fetch('contents_names.json');
     const data = await res.json();
     renderTOC(data);
 }
