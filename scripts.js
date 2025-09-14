@@ -14,7 +14,7 @@ const textRU = `
 
 const textEN = `
   Endless worlds, endless battles and endless possibilities!<br>
-  Meet a multiverse where there are no limits!<br>
+  Behold a multiverse where there are no limits!<br>
   Plunge into the chaos with
 `;
 
@@ -24,8 +24,8 @@ const disclaimerRU = `
 `;
 
 const disclaimerEN = `
-  This fan-project is a crossover of many third-party projects of the Undertale and Deltarune fandom.<br>
-  This fan-project is not supported by Toby Fox or other commercial organizations.
+  CHAOTICVERSE is a crossover of many third-party projects of the Undertale and Deltarune fandom.<br>
+  CHAOTICVERSE is not supported by Toby Fox or other commercial organizations.
 `;
 
 
