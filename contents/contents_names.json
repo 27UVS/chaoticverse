@@ -65,9 +65,13 @@
       {
         "name_ru": "Новый суд",
         "name_en": "New Judgement",
-        "parts": [1],
-        "urls_ru": ["https://vk.com/wall-196152977_5737"],
-        "urls_en": ["https://www.tumblr.com/sole-production-ut/794331164945137664/we-apologize-for-the-delay-in-translation-the"]
+        "parts": [1, 2],
+        "urls_ru": [
+          "https://vk.com/wall-196152977_5737",
+          "https://vk.com/wall-196152977_5806"],
+        "urls_en": [
+          "https://www.tumblr.com/sole-production-ut/794331164945137664/we-apologize-for-the-delay-in-translation-the",
+          "https://www.tumblr.com/sole-production-ut/796375992605310976/new-judgement"]
       },
       {
         "name_ru": "Друг",
@@ -127,6 +131,13 @@
       "urls_ru": ["https://vk.com/wall-196152977_5289",
         "https://boosty.to/sput27/posts/8ad5fd52-c124-43f2-8c80-544209655e47"],
       "urls_en": []
+    },
+    {
+      "name_ru": "Осень",
+      "name_en": "Autumn",
+      "parts": [1],
+      "urls_ru": ["https://vk.com/wall-196152977_5785"],
+      "urls_en": ["https://www.tumblr.com/sole-production-ut/795686231579213824/a-little-late-but-i-still-think-its-a"]
     },
     {
       "name_ru": "Печенье",

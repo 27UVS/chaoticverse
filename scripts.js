@@ -3,6 +3,7 @@ const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
 const homeText = document.getElementById('mainText');
+const anniversaryText = document.getElementById('anniversaryText');
 const disclaimerText = document.getElementById('disclaimerText');
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -16,6 +17,19 @@ const textEN = `
   Endless worlds, endless battles and endless possibilities!<br>
   Behold a multiverse where there are no limits!<br>
   Plunge into the chaos with
+`;
+
+const anniversaryEN = `
+  We are immensely grateful for your support and love for our project!<br>
+  We're happy to know you like what we do and<br>
+  are interested in following our stories!
+  <br>Thank you!
+`;
+
+const anniversaryRU = `
+  Безмерно благодарим вас за поддержку и любовь к нашему проекту!<br>
+  Мы счастливы знать, что вам нравится то, что мы делаем и<br>вам интересно следить за нашими историями!
+  <br>Спасибо вам!
 `;
 
 const disclaimerRU = `
@@ -34,11 +48,13 @@ let currentLang = 'RU';
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
         homeText.innerHTML = textEN;
+        anniversaryText.innerHTML = anniversaryEN;
         disclaimerText.innerHTML = disclaimerEN;
         langToggle.textContent = 'RU';
         currentLang = 'EN';
     } else {
         homeText.innerHTML = textRU;
+        anniversaryText.innerHTML = anniversaryRU;
         disclaimerText.innerHTML = disclaimerRU;
         langToggle.textContent = 'EN';
         currentLang = 'RU';
