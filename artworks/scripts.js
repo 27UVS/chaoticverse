@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("artworks.json");
     const data = await response.json();
 
-    await initVideoCarousel("carousel-animation", data.animation);
+    await initVideoCarousel("carousel-animation", data.animations);
     await initVideoCarousel("carousel-music", data.music);
 
 });
