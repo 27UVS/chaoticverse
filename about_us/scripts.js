@@ -4,6 +4,7 @@ const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
 const aboutUsHeader = document.getElementById('aboutUsHeader');
 const scriptersHeader = document.getElementById('scriptersHeader');
+const editorsHeader = document.getElementById('editorsHeader');
 const artistsHeader = document.getElementById('artistsHeader');
 const partnersHeader = document.getElementById('partnersHeader');
 const exParticipantsHeader = document.getElementById('ex-participantsHeader');
@@ -22,6 +23,8 @@ const headerRU = `О нас`;
 const headerEN = `About Us`;
 const scriptersEN = `Scripters`;
 const scriptersRU = `Сценаристы`;
+const editorsEN = `Editors`;
+const editorsRU = 'Редакторы'
 const artistsEN = `Artists`;
 const artistsRU = `Художники`;
 const partnersEN = `Partners`;
@@ -72,6 +75,7 @@ langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
         aboutUsHeader.textContent = headerEN;
         scriptersHeader.textContent = scriptersEN;
+        editorsHeader.textContent = editorsEN;
         artistsHeader.textContent = artistsEN;
         partnersHeader.textContent = partnersEN;
         exParticipantsHeader.textContent = exParticipantsEN;
@@ -87,6 +91,7 @@ langToggle.addEventListener('click', () => {
     } else {
         aboutUsHeader.textContent = headerRU;
         scriptersHeader.textContent = scriptersRU;
+        editorsHeader.textContent = editorsRU;
         artistsHeader.textContent = artistsRU;
         partnersHeader.textContent = partnersRU;
         exParticipantsHeader.textContent = exParticipantsRU;
@@ -117,6 +122,7 @@ restoreBtn.addEventListener('click', () => {
 let peopleData = {};
 
 const scriptersContainer = document.getElementById('scripters');
+const editorsContainer = document.getElementById('editors');
 const artistsContainer = document.getElementById('artists');
 const partnersContainer = document.getElementById('partners');
 const exParticipantsContainer = document.getElementById('ex-participants');
@@ -130,10 +136,12 @@ async function loadPeople() {
 function renderPeople() {
     scriptersContainer.innerHTML = '';
     artistsContainer.innerHTML = '';
+    editorsContainer.innerHTML = '';
     partnersContainer.innerHTML = '';
     exParticipantsContainer.innerHTML = '';
 
     renderGroup(peopleData.scripters, scriptersContainer, 'scripters');
+    renderGroup(peopleData.editors, editorsContainer, 'editors');
     renderGroup(peopleData.artists, artistsContainer, 'artists');
     renderGroup(peopleData.partners, partnersContainer, 'partners');
     renderGroup(peopleData.exparticipants, exParticipantsContainer, 'ex-participants');

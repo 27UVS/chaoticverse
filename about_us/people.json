@@ -23,6 +23,44 @@
       "ru": {
         "name": "Александр Шульга"
       }
+    },
+    {
+      "id": "TSyLizO",
+      "image": "tsylizo.webp",
+      "alt": "tsylizo",
+      "link": "https://ficbook.net/authors/5223188",
+      "en": {
+        "name": "TSyLizO"
+      },
+      "ru": {
+        "name": "TSyLizO"
+      }
+    }
+  ],
+  "editors": [
+    {
+      "id": "endy",
+      "image": "endy.webp",
+      "alt": "endy",
+      "link": "https://ficbook.net/authors/5517488",
+      "en": {
+        "name": "Endy"
+      },
+      "ru": {
+        "name": "Энди"
+      }
+    },
+    {
+      "id": "kalashnicola",
+      "image": "kalashnicola.webp",
+      "alt": "kalashnicola",
+      "link": "https://ficbook.net/authors/0196baaf-27d9-763a-bd58-0999f3e8590b",
+      "en": {
+        "name": "kalashnicola"
+      },
+      "ru": {
+        "name": "kalashnicola"
+      }
     }
   ],
   "artists": [
