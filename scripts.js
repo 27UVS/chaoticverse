@@ -3,7 +3,6 @@ const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
 const homeText = document.getElementById('mainText');
-const anniversaryText = document.getElementById('anniversaryText');
 const disclaimerText = document.getElementById('disclaimerText');
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -48,13 +47,11 @@ let currentLang = 'RU';
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
         homeText.innerHTML = textEN;
-        anniversaryText.innerHTML = anniversaryEN;
         disclaimerText.innerHTML = disclaimerEN;
         langToggle.textContent = 'RU';
         currentLang = 'EN';
     } else {
         homeText.innerHTML = textRU;
-        anniversaryText.innerHTML = anniversaryRU;
         disclaimerText.innerHTML = disclaimerRU;
         langToggle.textContent = 'EN';
         currentLang = 'RU';
