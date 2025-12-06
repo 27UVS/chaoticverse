@@ -101,18 +101,6 @@
       }
     },
     {
-      "id": "avokot",
-      "image": "avokot.webp",
-      "alt": "avokot",
-      "link": "https://vk.com/av0k0t",
-      "en": {
-        "name": "AvoKot"
-      },
-      "ru": {
-        "name": "AvoKot"
-      }
-    },
-    {
       "id": "paws",
       "image": "paws.webp",
       "alt": "paws",
@@ -134,30 +122,6 @@
       },
       "ru": {
         "name": "Sorenpo"
-      }
-    },
-    {
-      "id": "xsevvv",
-      "image": "xsevvv.webp",
-      "alt": "xsevvv",
-      "link": "https://vk.com/xsevvv",
-      "en": {
-        "name": "xsevvv"
-      },
-      "ru": {
-        "name": "xsevvv"
-      }
-    },
-    {
-      "id": "pipets",
-      "image": "Pipets.webp",
-      "alt": "pipets",
-      "link": "https://vk.com/lermonchek",
-      "en": {
-        "name": ".Pipets |∆"
-      },
-      "ru": {
-        "name": ".Пипец |∆"
       }
     },
     {
@@ -259,6 +223,30 @@
       }
     },
     {
+      "id": "xsevvv",
+      "image": "xsevvv.webp",
+      "alt": "xsevvv",
+      "link": "https://vk.com/xsevvv",
+      "en": {
+        "name": "xsevvv"
+      },
+      "ru": {
+        "name": "xsevvv"
+      }
+    },
+    {
+      "id": "pipets",
+      "image": "Pipets.webp",
+      "alt": "pipets",
+      "link": "https://vk.com/lermonchek",
+      "en": {
+        "name": ".Pipets |∆"
+      },
+      "ru": {
+        "name": ".Пипец |∆"
+      }
+    },
+    {
       "id": "dolphin",
       "image": "dolphin cult.webp",
       "alt": "dolphin",
@@ -284,6 +272,18 @@
     }
   ],
   "exparticipants": [
+    {
+      "id": "avokot",
+      "image": "avokot.webp",
+      "alt": "avokot",
+      "link": "https://vk.com/av0k0t",
+      "en": {
+        "name": "AvoKot"
+      },
+      "ru": {
+        "name": "AvoKot"
+      }
+    },
     {
       "id": "redya",
       "image": "redya.webp",
