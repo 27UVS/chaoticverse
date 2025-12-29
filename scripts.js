@@ -2,21 +2,20 @@ const overlay = document.getElementById('overlay');
 const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
-const textContentDiv = document.getElementById('textContent');
-document.getElementById("year").textContent = new Date().getFullYear();
+const textHomeDiv = document.getElementById('textHome');
+document.getElementById("year").innerText = new Date().getFullYear();
 
 let currentLang = 'RU';
 
 async function loadLanguage(lang) {
-    const fileName = lang.toLowerCase() + '.html'; // ru.html или en.html
+    const fileName = lang.toLowerCase() + '.html';
     try {
         const response = await fetch(fileName);
         if (!response.ok) {
             console.error('Не удалось загрузить файл ' + fileName);
             return;
         }
-        // Вставляем текст прямо, без лишней переменной
-        textContentDiv.innerHTML = await response.text();
+        textHomeDiv.innerHTML = await response.text();
     } catch (err) {
         console.error('Ошибка при загрузке языка:', err);
     }

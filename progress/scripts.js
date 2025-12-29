@@ -80,7 +80,7 @@ function renderProgress(data) {
 }
 
 loadProgress();
-
+progressHeader.textContent = headerRU
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
         progressHeader.textContent = headerEN;

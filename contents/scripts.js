@@ -136,7 +136,7 @@ function getLocalized(text) {
     const [ru, en] = text.split("/");
     return currentLang === "RU" ? ru : en;
 }
-
+contentsHeader.textContent = headerRU
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
         contentsHeader.textContent = headerEN;

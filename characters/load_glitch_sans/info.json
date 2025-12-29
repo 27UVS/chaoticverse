@@ -1,0 +1,45 @@
+{
+  "data": {
+    "ru_name": "Лоуд Глитч",
+    "en_name": "Load Glitch",
+    "img": "Load Glitch.webp"
+  },
+  "parameters": {
+    "biography": {
+      "name": {
+        "en": "Load Glitch",
+        "ru": "Лоуд Глитч"
+      },
+      "real_name":{
+        "en": "Sans",
+        "ru": "Санс"
+      },
+      "birth":"13.01",
+      "sex":"man",
+      "age":"",
+      "species": "glitch",
+      "kind": {
+        "en": "Skeleton",
+        "ru": "Скелетоподобный"
+      },
+      "universe": "",
+      "worldview": "CE"
+    },
+    "information": {
+      "cr_data": "22.06.2021",
+      "theme": "[Code Disaster|https://youtu.be/D8rW0cIFBZA?si=-WF_ZYWz_6okzvdC]"
+    },
+    "values": {
+      "physical_power": 9,
+      "magical_power": 6,
+      "program_power": 7,
+      "physical_stamina": 10,
+      "mental_stamina": 7,
+      "speed": 9,
+      "intelligence": 4,
+      "strategic_vision": 2,
+      "empathy": 3,
+      "mental_stability": 8
+    }
+  }
+}

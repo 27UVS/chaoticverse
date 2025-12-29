@@ -2,22 +2,45 @@ const overlay = document.getElementById('overlay');
 const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
-const artworksHeader = document.getElementById('artworksHeader');
-const artworksAnimation = document.getElementById('artworksAnimation');
-const artworksMusic = document.getElementById('artworksMusic');
-const artworksArts= document.getElementById('artworksArts');
-document.getElementById("year").textContent = new Date().getFullYear();
+const textArtworksDiv = document.getElementById('textArtworks');
+document.getElementById("year").innerText = new Date().getFullYear();
 
 let currentLang = 'RU';
+let galleryNameLinks = [];
 
-const headerRU = `Контент`;
-const headerEN = `Artworks`;
-const animationRU = `Анимации`;
-const animationEN = `Animations`;
-const musicRU = `Музыка`;
-const musicEN = `Music`;
-const artsRU = `Арты`;
-const artsEN = `Arts`;
+async function loadLanguage(lang) {
+    const fileName = lang.toLowerCase() + '.html';
+    try {
+        const response = await fetch(fileName);
+        if (!response.ok) {
+            console.error('Не удалось загрузить файл ' + fileName);
+            return;
+        }
+
+        textArtworksDiv.innerHTML = await response.text();
+        const res = await fetch("artworks.json");
+        const data = await res.json();
+
+        // После вставки HTML заново получаем элементы
+        const artworksHeader = document.getElementById('artworksHeader');
+        const artworksAnimation = document.getElementById('artworksAnimation');
+        const artworksMusic = document.getElementById('artworksMusic');
+        const artworksArts = document.getElementById('artworksArts');
+
+        // Загружаем галереи и карусели
+        await initVideoCarousel("carousel-animation", data.animations || []);
+        await initVideoCarousel("carousel-music", data.music || []);
+        await initGalleryCarousels("gallery-container");
+        initGalleryLightbox();
+
+        // Сохраняем элементы для переключения языка
+        return { artworksHeader, artworksAnimation, artworksMusic, artworksArts };
+
+    } catch (err) {
+        console.error('Ошибка при загрузке языка:', err);
+    }
+}
+
 
 async function initVideoCarousel(containerId, videos) {
     const container = document.getElementById(containerId);
@@ -132,16 +155,14 @@ async function initVideoCarousel(containerId, videos) {
     startAutoScroll();
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const response = await fetch("artworks.json");
-    const data = await response.json();
-
-    await initVideoCarousel("carousel-animation", data.animations);
-    await initVideoCarousel("carousel-music", data.music);
-
-});
-
-let galleryNameLinks = [];
+// document.addEventListener("DOMContentLoaded", async () => {
+//     const response = await fetch("artworks.json");
+//     const data = await response.json();
+//
+//     await initVideoCarousel("carousel-animation", data.animations);
+//     await initVideoCarousel("carousel-music", data.music);
+//
+// });
 
 async function initGalleryCarousels(containerId) {
     const container = document.getElementById(containerId);
@@ -346,33 +367,21 @@ function initGalleryLightbox() {
     });
 }
 
+let headerElements;
 document.addEventListener("DOMContentLoaded", async () => {
-    await initGalleryCarousels("gallery-container");
-    initGalleryLightbox();
+    headerElements = await loadLanguage(currentLang);
 });
 
-langToggle.addEventListener('click', () => {
-    if (currentLang === 'RU') {
-        artworksHeader.textContent = headerEN;
-        artworksAnimation.textContent = animationEN;
-        artworksMusic.textContent = musicEN;
-        artworksArts.textContent = artsEN;
-        langToggle.textContent = 'RU';
-        currentLang = 'EN';
-    } else {
-        artworksHeader.textContent = headerRU;
-        artworksAnimation.textContent = animationRU;
-        artworksMusic.textContent = musicRU;
-        artworksArts.textContent = artsRU;
-        langToggle.textContent = 'EN';
-        currentLang = 'RU';
-    }
+langToggle.addEventListener('click', async () => {
+    currentLang = currentLang === 'RU' ? 'EN' : 'RU';
+    langToggle.textContent = currentLang === 'RU' ? 'EN' : 'RU';
+    headerElements = await loadLanguage(currentLang);
 
-    // Обновление никнеймов авторов при смене языка
     galleryNameLinks.forEach(linkData => {
         linkData.element.textContent = currentLang === "EN" ? linkData.name_en : linkData.name_ru;
     });
 });
+
 
 minimizeBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
