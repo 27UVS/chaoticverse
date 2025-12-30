@@ -11,13 +11,35 @@ async function loadLanguage(lang) {
     const fileName = lang.toLowerCase() + '.html';
     try {
         const response = await fetch(fileName);
+
         if (!response.ok) {
             console.error('Не удалось загрузить файл ' + fileName);
             return;
         }
         textCharactersDiv.innerHTML = await response.text();
+
+        fillSlot("main-poster", "main-poster-template");
+        fillSlot("navigation", "navigation-template");
+        fillSlot("nelson-pic", "nelson-pic-template");
+        fillSlot("gaster-pic", "gaster-pic-template");
+        fillSlot("hollow-pic", "hollow-pic-template");
+        fillSlot("load-pic", "load-pic-template");
+        fillSlot("stars-pic", "stars-pic-template");
+        fillSlot("starc-pic", "starc-pic-template");
+        fillSlot("highest-pic", "highest-pic-template");
+        fillSlot("dream-pic", "dream-pic-template");
+        fillSlot("nightmare-pic", "nightmare-pic-template");
+        fillSlot("shattered-pic", "shattered-pic-template");
     } catch (err) {
         console.error('Ошибка при загрузке языка:', err);
+    }
+}
+
+function fillSlot(slotName, templateId) {
+    const slot = textCharactersDiv.querySelector(`[data-slot="${slotName}"]`);
+    const tpl = document.getElementById(templateId);
+    if (slot && tpl) {
+        slot.replaceWith(tpl.content.cloneNode(true));
     }
 }
 

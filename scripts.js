@@ -16,8 +16,18 @@ async function loadLanguage(lang) {
             return;
         }
         textHomeDiv.innerHTML = await response.text();
+
+        fillSlot("main-poster", "main-poster-template");
     } catch (err) {
         console.error('Ошибка при загрузке языка:', err);
+    }
+}
+
+function fillSlot(slotName, templateId) {
+    const slot = textHomeDiv.querySelector(`[data-slot="${slotName}"]`);
+    const tpl = document.getElementById(templateId);
+    if (slot && tpl) {
+        slot.replaceWith(tpl.content.cloneNode(true));
     }
 }
 

@@ -21,6 +21,17 @@ async function loadLanguage(lang) {
         const res = await fetch('people.json');
         peopleData = await res.json();
 
+        fillSlot("main-poster", "main-poster-template");
+        fillSlot("navigation", "navigation-template");
+        fillSlot("27uvs-pic", "27uvs-pic-template");
+        fillSlot("delta-pic", "delta-pic-template");
+        fillSlot("raf-pic", "raf-pic-template");
+        fillSlot("scripters", "scripters-template");
+        fillSlot("editors", "editors-template");
+        fillSlot("artists", "artists-template");
+        fillSlot("partners", "partners-template");
+        fillSlot("ex-participants", "ex-participants-template");
+
         const scriptersContainer = document.getElementById('scripters');
         const editorsContainer = document.getElementById('editors');
         const artistsContainer = document.getElementById('artists');
@@ -31,6 +42,14 @@ async function loadLanguage(lang) {
 
     } catch (err) {
         console.error('Ошибка при загрузке языка:', err);
+    }
+}
+
+function fillSlot(slotName, templateId) {
+    const slot = textAboutUsDiv.querySelector(`[data-slot="${slotName}"]`);
+    const tpl = document.getElementById(templateId);
+    if (slot && tpl) {
+        slot.replaceWith(tpl.content.cloneNode(true));
     }
 }
 

@@ -1,40 +1,9 @@
 <h1 id="aboutUsHeader">About Us</h1>
-<img src="../images/SPUT_logo.webp" alt="Creative Space" class="about-us-image">
+<div data-slot="main-poster"></div>
 
 <hr class="divider">
 
-<div class="button-row">
-  <button class="nav-button">
-    <a href="../" class="nav-button">
-      <img src="../images/buttons/home_button.png" alt="Home">
-    </a>
-  </button>
-  <button class="nav-button">
-    <a href="../information" class="nav-button">
-      <img src="../images/buttons/information_button.png" alt="Information">
-    </a>
-  </button>
-  <button class="nav-button">
-    <a href="../characters" class="nav-button">
-      <img src="../images/buttons/characters_button.png" alt="Characters">
-    </a>
-  </button>
-  <button class="nav-button">
-    <a href="../contents" class="nav-button">
-      <img src="../images/buttons/contents_button.png" alt="Contents">
-    </a>
-  </button>
-  <button class="nav-button">
-    <a href="../progress" class="nav-button">
-      <img src="../images/buttons/progress_button.png" alt="Progress">
-    </a>
-  </button>
-  <button class="nav-button">
-    <a href="../artworks" class="nav-button">
-      <img src="../images/buttons/artworks_button.png" alt="Artworks">
-    </a>
-  </button>
-</div>
+<div data-slot="navigation"></div>
 
 <hr class="divider">
 
@@ -49,9 +18,7 @@
 
 <div class="people-info-section">
   <div class="person-info-block">
-    <div class="person-icon">
-      <img src="../images/people/27UVS.webp" alt="27UVS">
-    </div>
+    <div data-slot="27uvs-pic"></div>
     <div class="person-name" id="uvs27">
       27UVS<br>
       <div class="titles-text">Chaoticverse creator,<br>
@@ -66,9 +33,7 @@
     </div>
   </div>
   <div class="person-info-block">
-    <div class="person-icon">
-      <img src="../images/people/Delta.webp" alt="Delta">
-    </div>
+    <div data-slot="delta-pic"></div>
     <div class="person-name" id="delta">
       Delta | WDeltaG<br>
       <div class="titles-text">Sole Production UT's<br>
@@ -81,9 +46,7 @@
       fix the plot holes in your story, or add a new character - I'm in.</div>
   </div>
   <div class="person-info-block">
-    <div class="person-icon">
-      <img src="../images/people/Raf.webp" alt="Raf">
-    </div>
+    <div data-slot="raf-pic"></div>
     <div class="person-name" id="raf">
       Rafeli<br>
       <div class="titles-text">
@@ -98,31 +61,21 @@
 </div>
 
 <hr class="divider">
-
 <h2 id="scriptersHeader">Scripters</h2>
-
-<div class="people-grid" id="scripters"></div>
+<div data-slot="scripters"></div>
 
 <hr class="divider">
-
 <h2 id="editorsHeader">Editors</h2>
-
-<div class="people-grid" id="editors"></div>
+<div data-slot="editors"></div>
 
 <hr class="divider">
-
 <h2 id="artistsHeader">Artists</h2>
-
-<div class="people-grid" id="artists"></div>
+<div data-slot="artists"></div>
 
 <hr class="divider">
-
 <h2 id="partnersHeader">Partners</h2>
-
-<div class="people-grid" id="partners"></div>
+<div data-slot="partners"></div>
 
 <hr class="divider">
-
 <h2 id="ex-participantsHeader">Ex-participants</h2>
-
-<div class="people-grid" id="ex-participants"></div>
+<div data-slot="ex-participants"></div>

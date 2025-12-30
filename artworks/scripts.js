@@ -27,6 +27,12 @@ async function loadLanguage(lang) {
         const artworksMusic = document.getElementById('artworksMusic');
         const artworksArts = document.getElementById('artworksArts');
 
+        fillSlot("main-poster", "main-poster-template");
+        fillSlot("navigation", "navigation-template");
+        fillSlot("carousel-animation", "carousel-animation-template");
+        fillSlot("carousel-music", "carousel-music-template");
+        fillSlot("gallery-container", "gallery-container-template");
+
         // Загружаем галереи и карусели
         await initVideoCarousel("carousel-animation", data.animations || []);
         await initVideoCarousel("carousel-music", data.music || []);
@@ -41,6 +47,13 @@ async function loadLanguage(lang) {
     }
 }
 
+function fillSlot(slotName, templateId) {
+    const slot = textArtworksDiv.querySelector(`[data-slot="${slotName}"]`);
+    const tpl = document.getElementById(templateId);
+    if (slot && tpl) {
+        slot.replaceWith(tpl.content.cloneNode(true));
+    }
+}
 
 async function initVideoCarousel(containerId, videos) {
     const container = document.getElementById(containerId);

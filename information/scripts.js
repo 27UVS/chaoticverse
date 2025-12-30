@@ -11,18 +11,33 @@ async function loadLanguage(lang) {
     const fileName = lang.toLowerCase() + '.html';
     try {
         const response = await fetch(fileName);
+
         if (!response.ok) {
             console.error('Не удалось загрузить файл ' + fileName);
             return;
         }
         textInformationDiv.innerHTML = await response.text();
+
+        fillSlot("main-poster", "main-poster-template");
+        fillSlot("navigation", "navigation-template");
+        fillSlot("resistance-poster", "resistance-poster-template");
+        fillSlot("timestream-image", "timestream-image-template");
+
+
     } catch (err) {
         console.error('Ошибка при загрузке языка:', err);
     }
 }
 
-loadLanguage(currentLang);
+function fillSlot(slotName, templateId) {
+    const slot = textInformationDiv.querySelector(`[data-slot="${slotName}"]`);
+    const tpl = document.getElementById(templateId);
+    if (slot && tpl) {
+        slot.replaceWith(tpl.content.cloneNode(true));
+    }
+}
 
+loadLanguage(currentLang);
 
 langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'RU' ? 'EN' : 'RU';
