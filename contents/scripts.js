@@ -2,19 +2,28 @@ const overlay = document.getElementById('overlay');
 const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const langToggle = document.getElementById('langToggle');
-const contentsHeader = document.getElementById('contentsHeader');
+const contentsTitle = document.getElementById('contentsTitle');
 const tocContainer = document.getElementById('toc');
 document.getElementById("year").textContent = new Date().getFullYear();
 
 let currentLang = 'RU';
 
-const headerRU = `Оглавление`;
-const headerEN = `Contents`;
-
 async function loadTOC() {
     const res = await fetch('contents_names.json');
     const data = await res.json();
     renderTOC(data);
+}
+
+function updateLanguageAssets() {
+    if (!contentsTitle) return;
+
+    const src = currentLang === 'RU'
+        ? contentsTitle.dataset.srcRu
+        : contentsTitle.dataset.srcEn;
+
+    if (src) {
+        contentsTitle.src = src;
+    }
 }
 
 function renderTOC(languageData) {
@@ -136,21 +145,19 @@ function getLocalized(text) {
     const [ru, en] = text.split("/");
     return currentLang === "RU" ? ru : en;
 }
-contentsHeader.textContent = headerRU
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
-        contentsHeader.textContent = headerEN;
         langToggle.textContent = 'RU';
         currentLang = 'EN';
-        loadTOC();
     } else {
-        contentsHeader.textContent = headerRU;
         langToggle.textContent = 'EN';
         currentLang = 'RU';
-        loadTOC();
     }
+    updateLanguageAssets();
+    loadTOC();
 });
 
+updateLanguageAssets();
 loadTOC();
 
 minimizeBtn.addEventListener('click', () => {

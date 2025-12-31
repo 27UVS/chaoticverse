@@ -1,19 +1,29 @@
 const overlay = document.getElementById('overlay');
 const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
+const progressTitle = document.getElementById('progressTitle');
 const langToggle = document.getElementById('langToggle');
-const progressHeader = document.getElementById('progressHeader');
+
 document.getElementById("year").textContent = new Date().getFullYear();
 
 let currentLang = 'RU';
-
-const headerRU = `Прогресс`;
-const headerEN = `Progress`;
 
 async function loadProgress() {
     const res = await fetch('progress.json');
     const data = await res.json();
     renderProgress(data);
+}
+
+function updateLanguageAssets() {
+    if (!progressTitle) return;
+
+    const src = currentLang === 'RU'
+        ? progressTitle.dataset.srcRu
+        : progressTitle.dataset.srcEn;
+
+    if (src) {
+        progressTitle.src = src;
+    }
 }
 
 function renderProgress(data) {
@@ -79,18 +89,18 @@ function renderProgress(data) {
     }
 }
 
+updateLanguageAssets()
 loadProgress();
-progressHeader.textContent = headerRU
+
 langToggle.addEventListener('click', () => {
     if (currentLang === 'RU') {
-        progressHeader.textContent = headerEN;
         langToggle.textContent = 'RU';
         currentLang = 'EN';
     } else {
-        progressHeader.textContent = headerRU;
         langToggle.textContent = 'EN';
         currentLang = 'RU';
     }
+    updateLanguageAssets()
     loadProgress();
 });
 

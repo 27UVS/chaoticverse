@@ -18,7 +18,8 @@ async function loadLanguage(lang) {
         }
         textInformationDiv.innerHTML = await response.text();
 
-        fillSlot("main-poster", "main-poster-template");
+        fillTitle(lang)
+        fillSlot("poster", "poster-template");
         fillSlot("navigation", "navigation-template");
         fillSlot("resistance-poster", "resistance-poster-template");
         fillSlot("timestream-image", "timestream-image-template");
@@ -35,6 +36,21 @@ function fillSlot(slotName, templateId) {
     if (slot && tpl) {
         slot.replaceWith(tpl.content.cloneNode(true));
     }
+}
+
+const titles = {
+    RU: "../images/titles/Informatsia.webp",
+    EN: "../images/titles/Information.webp"
+};
+
+function fillTitle(lang) {
+    const slot = document.querySelector('[data-i18n="title"]');
+    if (!slot) return;
+
+    const img = document.createElement("img");
+    img.src = titles[lang];
+    img.className = "image-title";
+    slot.replaceWith(img);
 }
 
 loadLanguage(currentLang);

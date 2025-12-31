@@ -204,6 +204,20 @@ a:hover {
     }
 }
 
+.image-title {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin: 5px auto auto auto;
+}
+
+@media (max-width: 900px){
+    .image-title {
+        max-width: 90%;
+        margin: 5px auto auto auto;
+    }
+}
+
 /* --- Элементы главной страницы --- */
 .overlay-content-home-page {
     font-family: 'DeterminationRusFont', monospace;
@@ -307,19 +321,6 @@ a:hover {
 @media (max-width: 900px){
     .link-text{
         font-size: 16px
-    }
-}
-
-.characters-image {
-    display: block;
-    max-width: 50%;
-    height: auto;
-    margin: 5px auto 10px auto;
-}
-
-@media (max-width: 900px) {
-    .characters-image {
-        max-width: 90%;
     }
 }
 
@@ -463,6 +464,198 @@ a:hover {
     }
 }
 
+/*/ --- Текст о персонаже --- /*/
+.character-text {
+    line-height: 1.6;
+    font-size: 21px;
+    text-align: left;
+}
+
+/*/ Настройка картинок /*/
+.text-image {
+    height: auto;
+    margin: 1rem 1.5rem 1rem 0;
+    border-radius: 12px;
+}
+
+.text-image.left {
+    float: left;
+    margin-right: 1.5rem;
+    margin-left: 0;
+}
+
+.text-image.right {
+    float: right;
+    margin-left: 1.5rem;
+    margin-right: 0;
+}
+
+.text-image.center {
+    display: block;
+    float: none;
+    margin: 2rem auto;
+}
+
+.text-image.tiny { max-width: 120px; }
+.text-image.small { max-width: 180px; }
+.text-image.medium-small { max-width: 240px; }
+.text-image.medium { max-width: 320px; }
+.text-image.medium-large { max-width: 400px; }
+.text-image.large { max-width: 520px; }
+.text-image.largest { max-width: 600px; }
+.clearfix { clear: both; }
+
+@media (max-width: 768px) {
+    .text-image.left,
+    .text-image.right {
+        float: none;
+        display: block;
+        margin: 1.5rem auto;
+        max-width: 90%;
+    }
+}
+
+/*/ --- Элементы инфобокса персонажа --- /*/
+.infobox {
+    max-width: 500px;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.85);
+    border: 1px solid #333;
+    padding: 14px;
+    font-family: 'DeterminationRusFont', monospace;
+    font-size: 20px;
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+.infobox-section {
+    margin-top: 14px;
+}
+
+.infobox-section h3 {
+    font-size: 22px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+.infobox-image {
+    width: 100%;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.infobox-image img {
+    max-width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    border: 1px solid #333;
+    background: #111;
+}
+
+.infobox-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.infobox-label {
+    color: #aaa;
+}
+
+.infobox-value {
+    min-width: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tooltip {
+    position: relative;
+    cursor: help;
+    border-bottom: 1px dotted #777;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;               /* базовая точка — левый край элемента */
+    bottom: 75%;          /* как раньше, чуть выше элемента */
+    transform: translateX(-90%); /* сдвигаем тултип полностью влево относительно левого края */
+    background: #111;
+    color: #fff;
+    padding: 6px 8px;
+    border: 1px solid #444;
+    white-space: pre-line;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    width: 300px;
+    z-index: 100;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}
+
+/* шкалы */
+.value-bar {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #222;
+    margin-top: 6px;
+    cursor: help;
+    overflow: visible;
+    display: block;
+    transition: background 0.3s, width 0.3s;
+}
+
+/* деления */
+.value-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+            to right,
+            #444 0,
+            #444 1px,
+            transparent 1px,
+            transparent 10%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* заполнение */
+.value-bar span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: rgba(156, 204, 51, 0.85);
+    z-index: 1;
+}
+
+.value-bar span.rainbow-fill {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 100%;
+    animation: rainbowShift 3s linear infinite;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes rainbowShift {
+    0%   { background-position: 0 0; }
+    50%  { background-position: 200% 0; }
+    100% { background-position: 400% 0; }
+}
+
+
 /* --- Элементы страницы информации --- */
 .overlay-content-information-page{
     font-family: 'DeterminationRusFont', monospace;
@@ -520,19 +713,6 @@ a:hover {
     padding: 40px;
     line-height: 1.6;
     margin-bottom: 5px;
-}
-
-.contents-image {
-    display: block;
-    max-width: 50%;
-    height: auto;
-    margin: 5px auto 10px auto;
-}
-
-@media (max-width: 900px) {
-    .contents-image {
-        max-width: 90%;
-    }
 }
 
 #toc {
@@ -652,11 +832,12 @@ a:hover {
     line-height: 1.6;
     margin-bottom: 5px;
 }
+
 .about-us-image {
     display: block;
     max-width: 60%;
     height: auto;
-    margin: 5px auto -100px auto;
+    margin: 5px auto -150px auto;
 }
 
 @media (max-width: 900px){
@@ -821,13 +1002,6 @@ a:hover {
     margin-bottom: 5px;
 }
 
-.progress-image {
-    display: block;
-    max-width: 40%;
-    height: auto;
-    margin: 5px auto auto auto;
-}
-
 .progress-section {
     padding: 0 10px;
     margin-bottom: 40px;
@@ -900,19 +1074,6 @@ a:hover {
     padding: 40px;
     line-height: 1.6;
     margin-bottom: 5px;
-}
-
-.artworks-image {
-    display: block;
-    max-width: 50%;
-    height: auto;
-    margin: 5px auto 10px auto;
-}
-
-@media (max-width: 900px) {
-    .artworks-image {
-        max-width: 90%;
-    }
 }
 
 .video-carousel {

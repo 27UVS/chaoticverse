@@ -21,7 +21,8 @@ async function loadLanguage(lang) {
         const res = await fetch('people.json');
         peopleData = await res.json();
 
-        fillSlot("main-poster", "main-poster-template");
+        fillTitle(lang)
+        fillSlot("poster", "poster-template");
         fillSlot("navigation", "navigation-template");
         fillSlot("27uvs-pic", "27uvs-pic-template");
         fillSlot("delta-pic", "delta-pic-template");
@@ -51,6 +52,21 @@ function fillSlot(slotName, templateId) {
     if (slot && tpl) {
         slot.replaceWith(tpl.content.cloneNode(true));
     }
+}
+
+const titles = {
+    RU: "../images/titles/O_nas.webp",
+    EN: "../images/titles/About_us.webp"
+};
+
+function fillTitle(lang) {
+    const slot = document.querySelector('[data-i18n="title"]');
+    if (!slot) return;
+
+    const img = document.createElement("img");
+    img.src = titles[lang];
+    img.className = "image-title";
+    slot.replaceWith(img);
 }
 
 loadLanguage(currentLang);

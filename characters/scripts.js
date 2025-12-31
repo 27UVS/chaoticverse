@@ -18,7 +18,7 @@ async function loadLanguage(lang) {
         }
         textCharactersDiv.innerHTML = await response.text();
 
-        fillSlot("main-poster", "main-poster-template");
+        fillTitle(lang)
         fillSlot("navigation", "navigation-template");
         fillSlot("nelson-pic", "nelson-pic-template");
         fillSlot("gaster-pic", "gaster-pic-template");
@@ -41,6 +41,21 @@ function fillSlot(slotName, templateId) {
     if (slot && tpl) {
         slot.replaceWith(tpl.content.cloneNode(true));
     }
+}
+
+const titles = {
+    RU: "../images/titles/Personazhi_Rework.webp",
+    EN: "../images/titles/Characters_Rework.webp"
+};
+
+function fillTitle(lang) {
+    const slot = document.querySelector('[data-i18n="title"]');
+    if (!slot) return;
+
+    const img = document.createElement("img");
+    img.src = titles[lang];
+    img.className = "image-title";
+    slot.replaceWith(img);
 }
 
 loadLanguage(currentLang);

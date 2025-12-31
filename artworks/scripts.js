@@ -27,7 +27,7 @@ async function loadLanguage(lang) {
         const artworksMusic = document.getElementById('artworksMusic');
         const artworksArts = document.getElementById('artworksArts');
 
-        fillSlot("main-poster", "main-poster-template");
+        fillTitle(lang)
         fillSlot("navigation", "navigation-template");
         fillSlot("carousel-animation", "carousel-animation-template");
         fillSlot("carousel-music", "carousel-music-template");
@@ -53,6 +53,21 @@ function fillSlot(slotName, templateId) {
     if (slot && tpl) {
         slot.replaceWith(tpl.content.cloneNode(true));
     }
+}
+
+const titles = {
+    RU: "../images/titles/Kontent.webp",
+    EN: "../images/titles/Artworks.webp",
+};
+
+function fillTitle(lang) {
+    const slot = document.querySelector('[data-i18n="title"]');
+    if (!slot) return;
+
+    const img = document.createElement("img");
+    img.src = titles[lang];
+    img.className = "image-title";
+    slot.replaceWith(img);
 }
 
 async function initVideoCarousel(containerId, videos) {
@@ -167,15 +182,6 @@ async function initVideoCarousel(containerId, videos) {
 
     startAutoScroll();
 }
-
-// document.addEventListener("DOMContentLoaded", async () => {
-//     const response = await fetch("artworks.json");
-//     const data = await response.json();
-//
-//     await initVideoCarousel("carousel-animation", data.animations);
-//     await initVideoCarousel("carousel-music", data.music);
-//
-// });
 
 async function initGalleryCarousels(containerId) {
     const container = document.getElementById(containerId);
