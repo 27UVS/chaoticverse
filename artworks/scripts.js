@@ -93,15 +93,19 @@ async function initVideoCarousel(containerId, videos) {
     const container = $(containerId);
     if (!container || !videos.length) return;
 
-    container._players?.forEach(p => p.destroy());
+    container._players?.forEach(p => p.destroy?.());
     container._players = [];
     container.innerHTML = "";
+
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent)
+        || (navigator.maxTouchPoints && navigator.maxTouchPoints > 1);
 
     videos.forEach(id => {
         if (isMobile) {
             const a = document.createElement("a");
             a.href = `https://www.youtube.com/watch?v=${id}`;
             a.target = "_blank";
+            a.rel = "noopener noreferrer";
 
             const img = new Image();
             img.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
@@ -119,7 +123,16 @@ async function initVideoCarousel(containerId, videos) {
         }
     });
 
-    if (isMobile) return;
+    if (isMobile) {
+        container.style.display = "flex";
+        container.style.overflowX = "auto";
+        container.style.scrollSnapType = "x mandatory";
+        container.querySelectorAll("a").forEach(a => {
+            a.style.flex = "0 0 auto";
+            a.style.scrollSnapAlign = "start";
+        });
+        return;
+    }
 
     await loadYouTubeAPI();
 
@@ -132,6 +145,7 @@ async function initVideoCarousel(containerId, videos) {
                 events: {
                     onStateChange: e => {
                         if (e.data === YT.PlayerState.PLAYING) {
+                            // Останавливаем все остальные
                             players.forEach((p, i) => i !== idx && p.stopVideo());
                         }
                     }
@@ -139,6 +153,7 @@ async function initVideoCarousel(containerId, videos) {
             })
         );
     });
+
     container.addEventListener("mouseenter", () => {
         players.forEach(p => {
             if (p.getPlayerState?.() === YT.PlayerState.PLAYING) {
@@ -147,9 +162,7 @@ async function initVideoCarousel(containerId, videos) {
         });
     });
 
-    initInfiniteScroll(container, {
-        disableClone: true
-    });
+    initInfiniteScroll(container, { disableClone: true });
 }
 
 /* ================== GALLERY ================== */
