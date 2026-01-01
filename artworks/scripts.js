@@ -1,418 +1,311 @@
-const overlay = document.getElementById('overlay');
-const minimizeBtn = document.getElementById('minimize');
-const restoreBtn = document.getElementById('restore');
-const langToggle = document.getElementById('langToggle');
-const textArtworksDiv = document.getElementById('textArtworks');
-document.getElementById("year").innerText = new Date().getFullYear();
+/* ================== BASE ================== */
 
-let currentLang = 'RU';
+const $ = id => document.getElementById(id);
+const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+const overlay = $("overlay");
+const minimizeBtn = $("minimize");
+const restoreBtn = $("restore");
+const langToggle = $("langToggle");
+const textArtworksDiv = $("textArtworks");
+
+$("year").textContent = new Date().getFullYear();
+
+let currentLang = "RU";
 let galleryNameLinks = [];
+let artworksDataCache = null;
+let ytApiPromise = null;
+
+/* ================== DATA LOAD ================== */
+
+async function loadJSON(path) {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error(`Ошибка загрузки ${path}`);
+    return res.json();
+}
+
+async function getArtworksData() {
+    if (!artworksDataCache) {
+        artworksDataCache = await loadJSON("artworks.json");
+    }
+    return artworksDataCache;
+}
+
+/* ================== LANGUAGE ================== */
+
+const titles = {
+    RU: "../images/titles/Kontent.webp",
+    EN: "../images/titles/Artworks.webp"
+};
 
 async function loadLanguage(lang) {
-    const fileName = lang.toLowerCase() + '.html';
-    try {
-        const response = await fetch(fileName);
-        if (!response.ok) {
-            console.error('Не удалось загрузить файл ' + fileName);
-            return;
-        }
+    textArtworksDiv.innerHTML = await fetch(`${lang.toLowerCase()}.html`).then(r => r.text());
 
-        textArtworksDiv.innerHTML = await response.text();
-        const res = await fetch("artworks.json");
-        const data = await res.json();
+    fillTitle(lang);
+    fillSlot("navigation", "navigation-template");
+    fillSlot("carousel-animation", "carousel-animation-template");
+    fillSlot("carousel-music", "carousel-music-template");
+    fillSlot("gallery-container", "gallery-container-template");
 
-        // После вставки HTML заново получаем элементы
-        const artworksHeader = document.getElementById('artworksHeader');
-        const artworksAnimation = document.getElementById('artworksAnimation');
-        const artworksMusic = document.getElementById('artworksMusic');
-        const artworksArts = document.getElementById('artworksArts');
+    const data = await getArtworksData();
 
-        fillTitle(lang)
-        fillSlot("navigation", "navigation-template");
-        fillSlot("carousel-animation", "carousel-animation-template");
-        fillSlot("carousel-music", "carousel-music-template");
-        fillSlot("gallery-container", "gallery-container-template");
+    await initVideoCarousel("carousel-animation", data.animations || []);
+    await initVideoCarousel("carousel-music", data.music || []);
+    await initGalleryCarousels("gallery-container");
 
-        // Загружаем галереи и карусели
-        await initVideoCarousel("carousel-animation", data.animations || []);
-        await initVideoCarousel("carousel-music", data.music || []);
-        await initGalleryCarousels("gallery-container");
-        initGalleryLightbox();
-
-        // Сохраняем элементы для переключения языка
-        return { artworksHeader, artworksAnimation, artworksMusic, artworksArts };
-
-    } catch (err) {
-        console.error('Ошибка при загрузке языка:', err);
-    }
+    initGalleryLightbox();
 }
 
 function fillSlot(slotName, templateId) {
     const slot = textArtworksDiv.querySelector(`[data-slot="${slotName}"]`);
-    const tpl = document.getElementById(templateId);
-    if (slot && tpl) {
-        slot.replaceWith(tpl.content.cloneNode(true));
-    }
+    const tpl = $(templateId);
+    if (slot && tpl) slot.replaceWith(tpl.content.cloneNode(true));
 }
-
-const titles = {
-    RU: "../images/titles/Kontent.webp",
-    EN: "../images/titles/Artworks.webp",
-};
 
 function fillTitle(lang) {
     const slot = document.querySelector('[data-i18n="title"]');
     if (!slot) return;
 
-    const img = document.createElement("img");
+    const img = new Image();
     img.src = titles[lang];
     img.className = "image-title";
     slot.replaceWith(img);
 }
 
+/* ================== YOUTUBE ================== */
+
+function loadYouTubeAPI() {
+    if (ytApiPromise) return ytApiPromise;
+
+    ytApiPromise = new Promise(resolve => {
+        if (window.YT?.Player) return resolve();
+
+        const tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(tag);
+        window.onYouTubeIframeAPIReady = resolve;
+    });
+
+    return ytApiPromise;
+}
+
 async function initVideoCarousel(containerId, videos) {
-    const container = document.getElementById(containerId);
+    const container = $(containerId);
+    if (!container || !videos.length) return;
 
-    if (!container || videos.length === 0) return;
+    container._players?.forEach(p => p.destroy());
+    container._players = [];
+    container.innerHTML = "";
 
-    // Проверка на мобильное устройство
-    const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-
-    // iframe - для компьютеров, a - для телефонов
     videos.forEach(id => {
         if (isMobile) {
-            const link = document.createElement("a");
-            link.href = `https://www.youtube.com/watch?v=${id}`;
-            link.target = "_blank"; // открывается в приложении YouTube/новой вкладке
-            link.style.display = "inline-block";
+            const a = document.createElement("a");
+            a.href = `https://www.youtube.com/watch?v=${id}`;
+            a.target = "_blank";
 
-            const thumbnail = document.createElement("img");
-            thumbnail.classList.add("video-thumbnail");
-            thumbnail.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-            thumbnail.style.display = "block";
+            const img = new Image();
+            img.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+            img.className = "video-thumbnail";
 
-            link.appendChild(thumbnail);
-            container.appendChild(link);
+            a.appendChild(img);
+            container.appendChild(a);
         } else {
             const iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube.com/embed/${id}?enablejsapi=1`;
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             iframe.allowFullscreen = true;
+            iframe.allow =
+                "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             container.appendChild(iframe);
         }
     });
-    // === YouTube API ===
-    function loadYouTubeAPI() {
-        return new Promise(resolve => {
-            if (window.YT && window.YT.Player) {
-                resolve();
-            } else {
-                const tag = document.createElement('script');
-                tag.src = "https://www.youtube.com/iframe_api";
-                document.body.appendChild(tag);
 
-                window.onYouTubeIframeAPIReady = () => resolve();
-            }
-        });
-    }
+    if (isMobile) return;
 
     await loadYouTubeAPI();
 
-    // Проверка на проигрывание только одного плеера
-    const iframes = container.querySelectorAll("iframe");
     const players = [];
+    container._players = players;
 
-    iframes.forEach((iframe, idx) => {
-        const player = new YT.Player(iframe, {
-            events: {
-                'onStateChange': function (event) {
-                    if (event.data === YT.PlayerState.PLAYING) {
-                        players.forEach((p, i) => {
-                            if (i !== idx) p.stopVideo();
-                        });
+    container.querySelectorAll("iframe").forEach((iframe, idx) => {
+        players.push(
+            new YT.Player(iframe, {
+                events: {
+                    onStateChange: e => {
+                        if (e.data === YT.PlayerState.PLAYING) {
+                            players.forEach((p, i) => i !== idx && p.stopVideo());
+                        }
                     }
                 }
+            })
+        );
+    });
+    container.addEventListener("mouseenter", () => {
+        players.forEach(p => {
+            if (p.getPlayerState?.() === YT.PlayerState.PLAYING) {
+                p.pauseVideo();
             }
         });
-        players.push(player);
     });
 
-    // При малом количество - центрирование
-    if (container.scrollWidth <= container.clientWidth) {
-        container.classList.add("centered");
-        return; // авто-скролл не нужен
-    }
-
-    // Клонирование для бесконечного скролла
-    const items = Array.from(container.children);
-    items.forEach(item => {
-        const clone = item.cloneNode(true);
-        container.appendChild(clone);
+    initInfiniteScroll(container, {
+        disableClone: true
     });
-
-    let scrollSpeed = 0.5;
-    let autoScroll;
-
-    function startAutoScroll() {
-        stopAutoScroll();
-        autoScroll = setInterval(() => {
-            container.scrollLeft += scrollSpeed;
-
-            if (container.scrollLeft >= container.scrollWidth / 2) {
-                container.scrollLeft = 0;
-            }
-        }, 20);
-    }
-
-    function stopAutoScroll() {
-        clearInterval(autoScroll);
-    }
-
-    // Остановка скролла при наведении
-    container.addEventListener("mouseenter", stopAutoScroll);
-    // Возобновить скролл при выходе + остановка видео
-    container.addEventListener("mouseleave", () => {
-        // Сброс видео
-        const iframes = container.querySelectorAll("iframe");
-        iframes.forEach(iframe => {
-            iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
-        });
-        startAutoScroll();
-    });
-
-    startAutoScroll();
 }
 
+/* ================== GALLERY ================== */
+
 async function initGalleryCarousels(containerId) {
-    const container = document.getElementById(containerId);
-
-    // Загружаем данные
-    const [artworksRes, peopleRes] = await Promise.all([
-        fetch("artworks.json"),
-        fetch("../about_us/people.json")
-    ]);
-
-    const artworksData = await artworksRes.json();
-    const peopleData = await peopleRes.json();
-
-    const peopleMap = {};
-    [...peopleData.scripters, ...peopleData.artists,
-        ...peopleData.partners, ...peopleData.exparticipants].forEach(person => {
-        peopleMap[person.id] = {
-            link: person.link,
-            name_ru: person.ru.name,
-            name_en: person.en.name
-        };
-    });
-
-    let images = [];
-    for (const [authorId, files] of Object.entries(artworksData.gallery)) {
-
-        if (!files || files.length === 0) continue;
-
-        const person = peopleMap[authorId] || {
-                link: "#",
-                name_ru: "Неизвестно",
-                name_en: "Unknown"
-            };
-
-        files.forEach(file => {
-            images.push({
-                src: `../images/gallery/${file}`,
-                link: person.link,
-                name_ru: person.name_ru,
-                name_en: person.name_en
-            });
-        });
-    }
-
+    const container = $(containerId);
+    container.innerHTML = "";
     galleryNameLinks = [];
 
-    // При каждой загрузке страницы, картинки размещаются рандомно
-    for (let i = images.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [images[i], images[j]] = [images[j], images[i]];
-    }
+    const [artworks, people] = await Promise.all([
+        getArtworksData(),
+        loadJSON("../about_us/people.json")
+    ]);
 
-    // На одно поле скролла - 10 картинок
-    const chunks = [];
+    const peopleMap = {};
+    [...people.scripters, ...people.artists, ...people.partners, ...people.exparticipants]
+        .forEach(p => {
+            peopleMap[p.id] = {
+                link: p.link,
+                ru: p.ru.name,
+                en: p.en.name
+            };
+        });
+
+    let images = [];
+    Object.entries(artworks.gallery).forEach(([id, files]) => {
+        const p = peopleMap[id] || { link: "#", ru: "Неизвестно", en: "Unknown" };
+        files.forEach(f =>
+            images.push({
+                src: `../images/gallery/${f}`,
+                ...p
+            })
+        );
+    });
+
+    images.sort(() => Math.random() - 0.5);
+
     for (let i = 0; i < images.length; i += 10) {
-        chunks.push(images.slice(i, i + 10));
-    }
-
-    // Создание скроллов
-    chunks.forEach((chunk) => {
         const row = document.createElement("div");
         row.className = "gallery-carousel";
-        container.appendChild(row);
 
-        // Добавляем картинки
-        chunk.forEach(imgData => {
+        images.slice(i, i + 10).forEach(imgData => {
             const card = document.createElement("div");
             card.className = "gallery-card";
 
-            const img = document.createElement("img");
+            const img = new Image();
             img.src = imgData.src;
             img.className = "gallery-image";
 
-            const nameLink = document.createElement("a");
-            nameLink.href = imgData.link;
-            nameLink.target = "_blank";
-            nameLink.className = "gallery-name";
-            nameLink.innerHTML = currentLang === "EN" ? imgData.name_en : imgData.name_ru;
-
-            card.appendChild(img);
-            card.appendChild(nameLink);
-            row.appendChild(card);
+            const a = document.createElement("a");
+            a.href = imgData.link;
+            a.target = "_blank";
+            a.className = "gallery-name";
+            a.innerHTML = currentLang === "EN" ? imgData.en : imgData.ru;
 
             galleryNameLinks.push({
-                element: nameLink,
-                name_ru: imgData.name_ru,
-                name_en: imgData.name_en
+                element: a,
+                ru: imgData.ru,
+                en: imgData.en
             });
+
+            card.append(img, a);
+            row.appendChild(card);
         });
 
-        initAutoScroll(row);
-    });
+        container.appendChild(row);
+        initInfiniteScroll(row);
+    }
 }
 
-function initAutoScroll(row) {
-    const scrollSpeed = 0.5;
-    let autoScroll;
+/* ================== SCROLL ================== */
 
-    const items = Array.from(row.children);
-    if (items.length === 0) return;
+function initInfiniteScroll(container, options = {}) {
+    const items = [...container.children];
+    if (!items.length) return;
 
-    // Общая ширина всех карточек + margin
-    const totalWidth = items.reduce((sum, el) => sum + el.offsetWidth + 10, 0); // 10 — margin-right
-
-    // Если картинок меньше ширины контейнера — картинки центрируются, а иначе классический скролл
-    if (totalWidth <= row.clientWidth) {
-        row.style.justifyContent = "center";
+    const totalWidth = items.reduce((w, el) => w + el.offsetWidth + 10, 0);
+    if (totalWidth <= container.clientWidth) {
+        container.style.justifyContent = "center";
         return;
-    } else {
-        row.style.justifyContent = "flex-start";
     }
 
-    // Клонирование для бесконечного скролла
-    items.forEach(item => row.appendChild(item.cloneNode(true)));
-
-    function startAutoScroll() {
-        stopAutoScroll();
-        autoScroll = setInterval(() => {
-            row.scrollLeft += scrollSpeed;
-
-            // когда дошли до конца первого блока — плавно сбрасываем
-            if (row.scrollLeft >= totalWidth) {
-                row.scrollLeft -= totalWidth;
-            }
-        }, 20);
+    if (!options.disableClone) {
+        items.forEach(el => container.appendChild(el.cloneNode(true)));
     }
 
-    function stopAutoScroll() {
-        clearInterval(autoScroll);
+    let rafId;
+    const speed = 0.5;
+
+    function step() {
+        container.scrollLeft += speed;
+        if (!options.disableClone && container.scrollLeft >= totalWidth) {
+            container.scrollLeft -= totalWidth;
+        }
+        rafId = requestAnimationFrame(step);
     }
 
-    row.addEventListener("mouseenter", stopAutoScroll);
-    row.addEventListener("mouseleave", startAutoScroll);
+    container.addEventListener("mouseenter", () => cancelAnimationFrame(rafId));
+    container.addEventListener("mouseleave", step);
 
-    startAutoScroll();
+    step();
 }
+
+
+/* ================== LIGHTBOX ================== */
 
 function initGalleryLightbox() {
-    // Отвечает за полноэкранный показ картинок
-    const lightbox = document.createElement("div");
-    lightbox.style.position = "fixed";
-    lightbox.style.top = 0;
-    lightbox.style.left = 0;
-    lightbox.style.width = "100%";
-    lightbox.style.height = "100%";
-    lightbox.style.background = "rgba(0,0,0,0.8)";
-    lightbox.style.display = "none";
-    lightbox.style.alignItems = "center";
-    lightbox.style.justifyContent = "center";
-    lightbox.style.zIndex = 9999;
-    lightbox.style.cursor = "pointer";
+    if (document.getElementById("lightbox")) return;
+
+    const box = document.createElement("div");
+    box.id = "lightbox";
+    box.style.cssText =
+        "position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.8);z-index:9999";
 
     const img = document.createElement("img");
-    img.style.maxWidth = "90%";   // ограничение, чтобы не выходила за экран
-    img.style.maxHeight = "90%";
-    img.style.boxShadow = "0 0 20px rgba(0,0,0,0.5)";
-    img.style.borderRadius = "5px";
-    img.style.cursor = "default";
+    img.style.cssText = "max-width:90%;max-height:90%;border-radius:6px";
+    box.appendChild(img);
+    document.body.appendChild(box);
 
-    lightbox.appendChild(img);
-    document.body.appendChild(lightbox);
-
-    // Клик по фону = закрыть
-    lightbox.addEventListener("click", () => {
-        lightbox.style.display = "none";
-    });
-
-    // Клик по самой картинке не закрывает ее
+    box.addEventListener("click", () => (box.style.display = "none"));
     img.addEventListener("click", e => e.stopPropagation());
 
-    document.querySelectorAll(".gallery-image").forEach(galleryImg => {
-        galleryImg.addEventListener("click", () => {
-            img.src = galleryImg.src;
-
-            // Оригинальный размер картинки
-            const naturalWidth = galleryImg.naturalWidth;
-            const naturalHeight = galleryImg.naturalHeight;
-
-            // Ограничение по экрану
-            const maxWidth = window.innerWidth * 0.9;
-            const maxHeight = window.innerHeight * 0.9;
-            let width = naturalWidth;
-            let height = naturalHeight;
-
-            // Масштабируем, если картинка слишком большая
-            if (width > maxWidth) {
-                const ratio = maxWidth / width;
-                width = maxWidth;
-                height = height * ratio;
-            }
-            if (height > maxHeight) {
-                const ratio = maxHeight / height;
-                height = maxHeight;
-                width = width * ratio;
-            }
-
-            img.style.width = width + "px";
-            img.style.height = height + "px";
-
-            lightbox.style.display = "flex";
-        });
+    document.body.addEventListener("click", e => {
+        if (e.target.classList.contains("gallery-image")) {
+            img.src = e.target.src;
+            box.style.display = "flex";
+        }
     });
 }
 
-let headerElements;
-document.addEventListener("DOMContentLoaded", async () => {
-    headerElements = await loadLanguage(currentLang);
-});
+/* ================== UI ================== */
 
-langToggle.addEventListener('click', async () => {
-    currentLang = currentLang === 'RU' ? 'EN' : 'RU';
-    langToggle.textContent = currentLang === 'RU' ? 'EN' : 'RU';
-    headerElements = await loadLanguage(currentLang);
+langToggle.onclick = async () => {
+    currentLang = currentLang === "RU" ? "EN" : "RU";
+    langToggle.textContent = currentLang === "RU" ? "EN" : "RU";
+    await loadLanguage(currentLang);
 
-    galleryNameLinks.forEach(linkData => {
-        linkData.element.textContent = currentLang === "EN" ? linkData.name_en : linkData.name_ru;
-    });
-});
+    galleryNameLinks.forEach(l =>
+        (l.element.textContent = currentLang === "EN" ? l.en : l.ru)
+    );
+};
 
+minimizeBtn.onclick = () => {
+    overlay.classList.add("hidden");
+    restoreBtn.style.display = "flex";
+};
 
-minimizeBtn.addEventListener('click', () => {
-    overlay.classList.add('hidden');
-    restoreBtn.style.display = 'flex';
-});
+restoreBtn.onclick = () => {
+    overlay.classList.remove("hidden");
+    restoreBtn.style.display = "none";
+};
 
-restoreBtn.addEventListener('click', () => {
-    overlay.classList.remove('hidden');
-    restoreBtn.style.display = 'none';
-});
+/* ================== INIT ================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+    loadLanguage(currentLang);
     const bgImage = new Image();
     bgImage.src = "../images/CHAOTICVERSE_1.webp";
 
