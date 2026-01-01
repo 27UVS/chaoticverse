@@ -837,14 +837,11 @@ a:hover {
     display: block;
     max-width: 60%;
     height: auto;
-    margin: 5px auto -150px auto;
+    margin: 5px auto auto auto;
 }
 
 @media (max-width: 900px){
-    .about-us-image {
-        max-width:90%;
-        margin: 5px auto -55px auto;
-    }
+    .about-us-image {max-width:90%;}
 }
 
 .people-info-section {

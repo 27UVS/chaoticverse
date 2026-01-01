@@ -145,7 +145,6 @@ async function initVideoCarousel(containerId, videos) {
                 events: {
                     onStateChange: e => {
                         if (e.data === YT.PlayerState.PLAYING) {
-                            // Останавливаем все остальные
                             players.forEach((p, i) => i !== idx && p.stopVideo());
                         }
                     }
