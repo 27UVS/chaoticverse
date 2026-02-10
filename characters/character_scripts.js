@@ -79,17 +79,17 @@ async function loadArticle(path) {
     return await res.text();
 }
 
-function getCharacterDir() {
-    const parts = window.location.pathname.split('/');
-    return parts[parts.length - 2];
-}
+// function getCharacterDir() {
+//     const parts = window.location.pathname.split('/');
+//     return parts[parts.length - 2];
+// }
 
 /* ================== CHARACTER LOADING ================== */
 async function loadInfoboxCharacter() {
-    const dir = getCharacterDir();
-    const base = `/characters/${dir}/`;
+    // const dir = getCharacterDir();
+    // const base = `${dir}/`;
 
-    const info = await loadJSON(base + 'info.json');
+    const info = await loadJSON('./info.json');
 
     characterHeaderEN = info.data.en_name;
     characterHeaderRU = info.data.ru_name;
@@ -103,16 +103,16 @@ async function loadInfoboxCharacter() {
 let characterArticle = { ru: '', en: '' };
 
 async function loadArticleCharacter() {
-    const dir = getCharacterDir();
-    const base = `${dir}/`;
+    // const dir = getCharacterDir();
+    // const base = `${dir}/`;
 
-    const info = await loadJSON(base + 'info.json');
+    const info = await loadJSON('./info.json');
 
     if (info.data.article) {
         if (info.data.article.ru)
-            characterArticle.ru = await loadArticle(base + info.data.article.ru);
+            characterArticle.ru = await loadArticle(info.data.article.ru);
         if (info.data.article.en)
-            characterArticle.en = await loadArticle(base + info.data.article.en);
+            characterArticle.en = await loadArticle(info.data.article.en);
     }
 
     return info.parameters;
