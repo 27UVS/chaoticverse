@@ -165,7 +165,7 @@ function renderCharacterImage(parent, imgName, altText) {
 
 async function renderArticle(lang = 'ru') {
     const article = document.getElementById('Article')
-    const params = await loadArticleCharacter()
+    await loadArticleCharacter()
     article.innerHTML = characterArticle[lang] || '';
     console.log(article)
     console.log(characterArticle['ru'])
@@ -233,7 +233,7 @@ function renderSection(parent, title, schemaBlock, dataBlock, lang) {
         }
         else if (schema.class === 'link-text') {
             // value в формате "[Текст|URL]"
-            const match = /\[([^\]|]+)\|([^\]]+)\]/.exec(value);
+            const match = value.match(/\[([^|]+)\|([^\]]+)\]/);
             if (match) {
                 const text = match[1];
                 const url = match[2];
@@ -243,7 +243,7 @@ function renderSection(parent, title, schemaBlock, dataBlock, lang) {
                 a.textContent = text;
                 a.target = "_blank"; // открывать в новой вкладке
                 a.rel = "noopener noreferrer";
-                a.style.color = (251,255,0);
+                a.style.color = "#fbff00";
                 a.style.textDecoration = "underline";
 
                 val.appendChild(a);
