@@ -87,7 +87,7 @@ async function loadInfoboxCharacter() {
     characterHeaderRU = info.data.ru_name;
 
     return {
-        img: `../../images/characters/${info.data.img}`,
+        img: info.data.img,
         parameters: info.parameters
     };
 }
@@ -144,7 +144,7 @@ function renderCharacterImage(parent, imgName, altText) {
     imgWrapper.className = 'infobox-image';
 
     const img = document.createElement('img');
-    img.src = `/images/characters/${imgName}`;
+    img.src = `../../images/characters/${imgName}`;
     img.alt = altText || '';
     img.loading = 'lazy';
 
