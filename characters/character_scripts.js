@@ -71,9 +71,6 @@ function formatDate(dateStr, lang) {
 /// Загрузка json файла ///
 async function loadJSON(path) {
     const res = await fetch(path);
-    if (!res.ok) {
-        throw new Error(`Failed to load ${path} : ${res.status}`);
-    }
     return await res.json();
 }
 
@@ -107,9 +104,9 @@ let characterArticle = { ru: '', en: '' };
 
 async function loadArticleCharacter() {
     const dir = getCharacterDir();
-    const base = `/characters/${dir}/`;
+    const base = `${dir}/`;
 
-    const info = await loadJSON(new URL('info.json', window.location.href));
+    const info = await loadJSON(base + 'info.json');
 
     if (info.data.article) {
         if (info.data.article.ru)
