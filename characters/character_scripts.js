@@ -79,23 +79,15 @@ async function loadArticle(path) {
     return await res.text();
 }
 
-// function getCharacterDir() {
-//     const parts = window.location.pathname.split('/');
-//     return parts[parts.length - 2];
-// }
-
 /* ================== CHARACTER LOADING ================== */
 async function loadInfoboxCharacter() {
-    // const dir = getCharacterDir();
-    // const base = `${dir}/`;
-
     const info = await loadJSON('./info.json');
 
     characterHeaderEN = info.data.en_name;
     characterHeaderRU = info.data.ru_name;
 
     return {
-        img: info.data.img,
+        img: `../../images/characters/${info.data.img}`,
         parameters: info.parameters
     };
 }
@@ -103,9 +95,6 @@ async function loadInfoboxCharacter() {
 let characterArticle = { ru: '', en: '' };
 
 async function loadArticleCharacter() {
-    // const dir = getCharacterDir();
-    // const base = `${dir}/`;
-
     const info = await loadJSON('./info.json');
 
     if (info.data.article) {
