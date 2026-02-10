@@ -71,6 +71,9 @@ function formatDate(dateStr, lang) {
 /// Загрузка json файла ///
 async function loadJSON(path) {
     const res = await fetch(path);
+    if (!res.ok) {
+        throw new Error(`Failed to load ${path} : ${res.status}`);
+    }
     return await res.json();
 }
 
@@ -106,7 +109,7 @@ async function loadArticleCharacter() {
     const dir = getCharacterDir();
     const base = `/characters/${dir}/`;
 
-    const info = await loadJSON(base + 'info.json');
+    const info = await loadJSON(new URL('info.json', window.location.href));
 
     if (info.data.article) {
         if (info.data.article.ru)
@@ -233,7 +236,7 @@ function renderSection(parent, title, schemaBlock, dataBlock, lang) {
         }
         else if (schema.class === 'link-text') {
             // value в формате "[Текст|URL]"
-            const match = value.match(/\[([^|]+)\|([^\]]+)\]/);
+            const match = value.match(/\[([^|]+)\|([^]]+)]/);
             if (match) {
                 const text = match[1];
                 const url = match[2];
