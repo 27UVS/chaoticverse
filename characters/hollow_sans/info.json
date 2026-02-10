@@ -1,0 +1,49 @@
+{
+  "data": {
+    "ru_name": "Холлоу",
+    "en_name": "Hollow",
+    "img": "Hollow Sans.webp",
+    "article": {
+      "ru": "article_ru.html",
+      "en": "article_en.html"
+    }
+  },
+  "parameters": {
+    "biography": {
+      "name": {
+        "en": "Hollow",
+        "ru": "Холлоу"
+      },
+      "real_name":{
+        "en": "Sans",
+        "ru": "Санс"
+      },
+      "birth":"16.10",
+      "sex":"man",
+      "age":"",
+      "species": "monster",
+      "kind": {
+        "en": "Skeleton",
+        "ru": "Скелетоподобный"
+      },
+      "universe": "Hollowtale",
+      "worldview": "U"
+    },
+    "information": {
+      "cr_data": "27.04.2022",
+      "theme": ""
+    },
+    "values": {
+      "physical_power": 6,
+      "magical_power": 10,
+      "program_power": 0,
+      "physical_stamina": 8,
+      "mental_stamina": 10,
+      "speed": 7,
+      "intelligence": 999,
+      "strategic_vision": 8,
+      "empathy": 0,
+      "mental_stability": 8
+    }
+  }
+}

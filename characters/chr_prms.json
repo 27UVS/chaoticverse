@@ -1,0 +1,196 @@
+{
+  "parameters": {
+    "biography": {
+      "name": {
+        "class": "text",
+        "tag": ""
+      },
+      "real_name": {
+        "class": "text",
+        "tag": ""
+      },
+      "birth": {
+        "class": "date",
+        "tag": ""
+      },
+      "sex": {
+        "class": "choose",
+        "variants": {
+          "man": {
+            "en": "",
+            "ru": ""
+          },
+          "woman": {
+            "en": "",
+            "ru": ""
+          },
+          "androgyne": {
+            "en": "Androgyne is a creature with two sexes at once.",
+            "ru": "Андрогин - существо обладающее сразу двумя полами."
+          },
+          "asexual": {
+            "en": "Asexual is a creature that does not possess any of the sexes.",
+            "ru": "Бесполый - существо, не обладающие ни одним из полов."
+          }
+        },
+        "tag": ""
+      },
+      "age": {
+        "class": "text",
+        "tag": ""
+      },
+      "species": {
+        "class": "choose",
+        "variants": {
+          "human": {
+            "en": "A being whose soul contains determination and possesses a specific trait.",
+            "ru": "Существо, в чьей душе заключена решительность и обладающее конкретной чертой."
+          },
+          "monster": {
+            "en": "A being made of magic.",
+            "ru": "Существо, состоящее из магии."
+          },
+          "energy": {
+            "en": "A being doesn't (didn't) have a physical shell from the beginning, but it has a mind.",
+            "ru": "Существо не имеет(-ло) изначально физической оболочки, но обладает разумом."
+          },
+          "program": {
+            "en": "A program that sets a specific goal.",
+            "ru": "Программа, в которой установлена конкретная цель."
+          },
+          "glitch": {
+            "en": "A being with an unstable code state.",
+            "ru": "Существо с нестабильным состоянием кода."
+          },
+          "virus": {
+            "en": "A program whose purpose is to destroy/infect someone else's code and spread.",
+            "ru": "Программа, чья цель разрушать/заражать чужой код и распространяться."
+          },
+          "error": {
+            "en": "A being that violates any laws of the multiverse.",
+            "ru": "Существо, нарушающее любые законы мультивселенной."
+          },
+          "amalgamate": {
+            "en": "Merging monsters by means of determination.",
+            "ru": "Слияние монстров по средствам решительности."
+          },
+          "undefined": {
+            "en": "",
+            "ru": ""
+          }
+        },
+        "tag": ""
+      },
+      "kind": {
+        "class": "text",
+        "tag": ""
+      },
+      "universe": {
+        "class": "text",
+        "tag": ""
+      },
+      "worldview": {
+        "class": "choose",
+        "variants": {
+          "LG": {
+            "en": "Lawful Good - a character who follows the call of law and goodness, destroying evil. This character often gets into a dilemma when they have to choose between law and goodness.",
+            "ru": "Lawful Good - персонаж, что следует зову закона и добра, уничтожая зло. Данный персонаж часто впадают в дилемму, когда должны выбирать между законом и добром."
+          },
+          "NG": {
+            "en": "Neutral Good - a character who is willing to do anything for the well-being of others. His actions may not always be considered morally correct, but they definitely contribute to improving the situation.",
+            "ru": "Neutral Good - персонаж, готовый пойти на что угодно ради благополучия окружающих. Его действия не всегда можно расценивать правильными с точки зрения морали, но определенно способствующие улучшению ситуации."
+          },
+          "CG": {
+            "en": "Chaotic Good - the archetype of a 'hero' who wants to help everyone in need. Such a character has his own principles and moral code.",
+            "ru": "Chaotic Good - архетип 'героя', желающего помогать всем нуждающимся. У такого персонажа собственные принципы и моральный кодекс."
+          },
+          "LN": {
+            "en": "Lawful Neutral - a character values laws and established orders, regardless of the form of government and their brutality. Such a character is less concerned about the issue of morality.",
+            "ru": "Lawful Neutral - персонаж ценит законы и установленные порядки независимо от формы правления и их жестокости. Такого героя меньше волнует вопрос морали."
+          },
+          "TN": {
+            "en": "True Neutral - a character who appreciates goodness, but does not commit it for any reason. The character is not a hero or a villain, but something in between.",
+            "ru": "True Neutral - персонаж, что ценит добро, но не совершает его по каким-либо причинам. Персонаж не герой или злодей, а что-то среднее."
+          },
+          "U": {
+            "en": "Unaligned - a character with no worldview. The character does not care about good and evil, character is above or beyond these concepts.",
+            "ru": "Unaligned - персонаж без мировоззрения. Его не волнуют добро и зло, он выше или за пределами данных понятий."
+          },
+          "CN": {
+            "en": "Chaotic Neutral - an individualist who does whatever he wants. A character doesn't care if he's acting badly or well, as long as his actions please him.",
+            "ru": "Chaotic Neutral - индивидуалист, делающий что захочет. Персонажа не волнует, поступает он плохо или хорошо, если его действия радуют его."
+          },
+          "LE": {
+            "en": "Lawful Evil - an extremely insidious character who follows established principles for himself. Actions are aimed at achieving personal gain or well-being through the suffering of others.",
+            "ru": "Lawful Evil - крайне коварный персонаж, следующий установленным для себя принципам. Действия направлены на достижения личной выгоды или благополучия путем чужих страданий."
+          },
+          "NE": {
+            "en": "Neutral Evil - a character who achieves the greatest benefit for himself by any means The character is capable of cooperation, but he can never be trusted.",
+            "ru": "Neutral Evil - персонаж, достигающий наибольшей для себя выгоды любыми путями. Способен к сотрудничеству, но такому никогда нельзя доверять."
+          },
+          "CE": {
+            "en": "Chaotic Evil - a character who creates chaos for his own pleasure. This type is not used to following complex plans and actions and working in a team.",
+            "ru": "Chaotic Evil - персонаж, творящий хаос сам в свое удовольствие. Такой тип не привык следовать сложным планам и действиям и работе в команде."
+          }
+        },
+        "tag": {
+          "en": "A worldview defines a character's goals, role, and character in the world. This parameter is taken from the D&D game.",
+          "ru": "Мировоззрение определяет цели, роль и характер персонажа в мире. Данный параметр взят из игры D&D."
+        }
+      }
+    },
+    "information": {
+      "cr_data": {
+        "class": "date",
+        "tag": ""
+      },
+      "theme": {
+        "class": "link-text",
+        "tag": ""
+      }
+    },
+    "values": {
+      "physical_power": {
+        "en": "",
+        "ru": ""
+      },
+      "magical_power": {
+        "en": "",
+        "ru": ""
+      },
+      "program_power": {
+        "en": "The degree of impact on third-party code.",
+        "ru": "Степень силы воздействия на сторонний код."
+      },
+      "physical_stamina": {
+        "en": "",
+        "ru": ""
+      },
+      "mental_stamina": {
+        "en": "The degree of protection from mental effects/harm from smt/smb.",
+        "ru": "Степень защиты от психического воздействия/вреда со стороны."
+      },
+      "speed": {
+        "en": "",
+        "ru": ""
+      },
+      "intelligence": {
+        "en": "The degree of education and knowledge about the outside world.",
+        "ru": "Степень образованности и знаний об окружающем мире."
+      },
+      "strategic_vision": {
+        "en": "The degree of planning and thinking through the character's actions.",
+        "ru": "Степень планирования и продумывания действий персонажа."
+      },
+      "empathy": {
+        "en": "The character's degree of communication and empathy for others.",
+        "ru": "Степень персонажа к коммуникации и сочувствия к другим."
+      },
+      "mental_stability": {
+        "en": "The degree of stability of the character's psyche, the absence of psychological abnormalities.",
+        "ru": "Степень устойчивости психики персонажа, отсутствия психологических отклонений."
+      }
+    }
+  }
+
+}
