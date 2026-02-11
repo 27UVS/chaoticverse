@@ -222,10 +222,10 @@ function renderSection(parent, title, schemaBlock, dataBlock, lang) {
         }
         else if (schema.class === 'link-text') {
             // value в формате "[Текст|URL]"
-            const match = value.match(/\[([^|]+)\|([^]]+)]/);
+            const match = value.match(/^\[([^|]+)\|(.+)]$/);
             if (match) {
-                const text = match[1];
-                const url = match[2];
+                const text = match[1].trim();
+                const url = match[2].trim();
 
                 const a = document.createElement('a');
                 a.href = url;
