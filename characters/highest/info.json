@@ -1,0 +1,42 @@
+{
+  "data": {
+    "ru_name": "Высший",
+    "en_name": "Highest",
+    "img": "Highest.webp"
+  },
+  "parameters": {
+    "biography": {
+      "name": {
+        "en": "Highest",
+        "ru": "Высший"
+      },
+      "real_name":{
+        "en": "Unknown",
+        "ru": "Неизвестно"
+      },
+      "birth": "28.01",
+      "sex": "man",
+      "age":  {
+        "en": "23 years",
+        "ru": "23 года"
+      },
+      "species": "player",
+      "worldview": "CN"
+    },
+    "information": {
+      "cr_data": "25.06.2023"
+    },
+    "values": {
+      "physical_power": 100,
+      "magical_power": 0,
+      "program_power": 100,
+      "physical_stamina": 100,
+      "mental_stamina": 7,
+      "speed": 10,
+      "intelligence": 9,
+      "strategic_vision": 8,
+      "empathy": 0,
+      "mental_stability": 9
+    }
+  }
+}
