@@ -1,0 +1,29 @@
+{
+  "$schema": "./people-role.schema.json",
+  "people": [
+    {
+      "id": "endy",
+      "image": "endy.webp",
+      "alt": "endy",
+      "link": "https://ficbook.net/authors/5517488",
+      "en": {
+        "name": "Endy's Mayhem"
+      },
+      "ru": {
+        "name": "Endy's Mayhem"
+      }
+    },
+    {
+      "id": "kalashnicola",
+      "image": "kalashnicola.webp",
+      "alt": "kalashnicola",
+      "link": "https://ficbook.net/authors/0196baaf-27d9-763a-bd58-0999f3e8590b",
+      "en": {
+        "name": "kalashnicola"
+      },
+      "ru": {
+        "name": "kalashnicola"
+      }
+    }
+  ]
+}

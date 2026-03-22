@@ -179,7 +179,7 @@ async function initGalleryCarousels(containerId) {
 
     const [artworks, people] = await Promise.all([
         getArtworksData(),
-        loadJSON("../about_us/people.json")
+        loadPeopleData("../about_us/")
     ]);
 
     const peopleMap = {};
@@ -193,7 +193,9 @@ async function initGalleryCarousels(containerId) {
         });
 
     let images = [];
-    Object.entries(artworks.gallery).forEach(([id, files]) => {
+    for (const entry of artworks.gallery) {
+        const id = entry.authorId;
+        const files = entry.files;
         const p = peopleMap[id] || { link: "#", ru: "Неизвестно", en: "Unknown" };
         files.forEach(f =>
             images.push({
@@ -201,7 +203,7 @@ async function initGalleryCarousels(containerId) {
                 ...p
             })
         );
-    });
+    }
 
     images.sort(() => Math.random() - 0.5);
 

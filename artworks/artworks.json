@@ -1,4 +1,5 @@
 {
+  "$schema": "./artworks.schema.json",
   "animations": [
     "2ed7USXn5CE",
     "45vwAMjFYzs"
@@ -8,39 +9,226 @@
     "-k0ZNavz5iY",
     "I0cDgHHks4M"
   ],
-  "gallery": {
-    "asun": ["halloween.webp", "hb_hollow.webp"],
-    "ti_sparrow": ["star_duo.webp", "hollow_and_kris.webp"],
-    "tok": ["star_chara_and_nelson_in_frisk_body.webp"],
-    "avokot": ["hollow_and_ink.webp", "load_glitch_in_dancetale.webp"],
-    "paws": ["load_glitch_and_baggs.webp"],
-    "sorenpo": ["cowardtale_poster.webp", "rgb_trio.webp"],
-    "xsevvv": ["hollow_sans.webp", "load_glitch_in_box.webp"],
-    "pipets": ["nelson_and_goopy.webp", "multiverses.webp"],
-    "maria": ["nelson_and_sky.webp", "barbie_gaster.webp"],
-    "unknown_team": ["nelson_in_pocket.webp"],
-    "pnonytale": ["MariDreamtale.webp"],
-    "grass": ["load_glitch_in_uvs.webp"],
-    "arkashka": ["ErrorLoadGlitch.webp"],
-    "horizon": ["neutral_vs_nelson.webp", "NewJudgement_Poster.webp"],
-    "roman": ["star_duo_attack.webp", "star_sans_attack.webp"],
-    "redark": ["star_duo_heads.webp", "hollow_in_ny.webp"],
-    "redya": ["load_glitch_pun.webp", "epic_x_and_nelson.webp"],
-    "ayrix": ["our_determination.webp", "xgaster_meet_gaster.webp"],
-    "som": ["nelson_and_gaster.webp"],
-    "sara": ["load_glitch_and_nightmare.webp", "nelson_in_his_nightmare.webp"],
-    "diaf": ["ny_with_load_glitch.webp", "ny_with_resistance.webp"],
-    "dump": ["redraw_hollow_sans.webp"],
-    "sillyswoop": ["load_glitch_rap.webp", "fresh_hollow.webp"],
-    "niko": ["infinite_habitant_hollow.webp"],
-    "nazlygul": ["trojan_hollow.webp", "load_glitch_in_flowerfell.webp"],
-    "saya_krazy": ["star_hollow.webp", "Load_Glitch_with_strings.webp"],
-    "kitsa": ["HollowsWay.webp", "nelson_hollow_bsPapyrus.webp"],
-    "yomagvear": ["hollow_has_headache.webp", "hollow_sees_birthday.webp"],
-    "mad": ["load_glitch_vs_kira.webp"],
-    "pl_hour": ["perfect_hollow.webp", "hollow_eats_soul.webp"],
-    "badmoral": ["he_knows_a_lot.webp", "hollow_sans_with_spears.webp"],
-    "apricoskaart": ["hollow_and_ink2.webp", "hollow_in_rus_sexyman.webp"],
-    "misha_in_hat": ["load_glitch_in_flowerfell2.webp"]
-  }
+  "gallery": [
+    {
+      "authorId": "asun",
+      "files": [
+        "halloween.webp",
+        "hb_hollow.webp"
+      ]
+    },
+    {
+      "authorId": "ti_sparrow",
+      "files": [
+        "star_duo.webp",
+        "hollow_and_kris.webp"
+      ]
+    },
+    {
+      "authorId": "tok",
+      "files": [
+        "star_chara_and_nelson_in_frisk_body.webp"
+      ]
+    },
+    {
+      "authorId": "avokot",
+      "files": [
+        "hollow_and_ink.webp",
+        "load_glitch_in_dancetale.webp"
+      ]
+    },
+    {
+      "authorId": "paws",
+      "files": [
+        "load_glitch_and_baggs.webp"
+      ]
+    },
+    {
+      "authorId": "sorenpo",
+      "files": [
+        "cowardtale_poster.webp",
+        "rgb_trio.webp"
+      ]
+    },
+    {
+      "authorId": "xsevvv",
+      "files": [
+        "hollow_sans.webp",
+        "load_glitch_in_box.webp"
+      ]
+    },
+    {
+      "authorId": "pipets",
+      "files": [
+        "nelson_and_goopy.webp",
+        "multiverses.webp"
+      ]
+    },
+    {
+      "authorId": "maria",
+      "files": [
+        "nelson_and_sky.webp",
+        "barbie_gaster.webp"
+      ]
+    },
+    {
+      "authorId": "unknown_team",
+      "files": [
+        "nelson_in_pocket.webp"
+      ]
+    },
+    {
+      "authorId": "pnonytale",
+      "files": [
+        "MariDreamtale.webp"
+      ]
+    },
+    {
+      "authorId": "grass",
+      "files": [
+        "load_glitch_in_uvs.webp"
+      ]
+    },
+    {
+      "authorId": "arkashka",
+      "files": [
+        "ErrorLoadGlitch.webp"
+      ]
+    },
+    {
+      "authorId": "horizon",
+      "files": [
+        "neutral_vs_nelson.webp",
+        "NewJudgement_Poster.webp"
+      ]
+    },
+    {
+      "authorId": "roman",
+      "files": [
+        "star_duo_attack.webp",
+        "star_sans_attack.webp"
+      ]
+    },
+    {
+      "authorId": "redark",
+      "files": [
+        "star_duo_heads.webp",
+        "hollow_in_ny.webp"
+      ]
+    },
+    {
+      "authorId": "redya",
+      "files": [
+        "load_glitch_pun.webp",
+        "epic_x_and_nelson.webp"
+      ]
+    },
+    {
+      "authorId": "ayrix",
+      "files": [
+        "our_determination.webp",
+        "xgaster_meet_gaster.webp"
+      ]
+    },
+    {
+      "authorId": "som",
+      "files": [
+        "nelson_and_gaster.webp"
+      ]
+    },
+    {
+      "authorId": "sara",
+      "files": [
+        "load_glitch_and_nightmare.webp",
+        "nelson_in_his_nightmare.webp"
+      ]
+    },
+    {
+      "authorId": "diaf",
+      "files": [
+        "ny_with_load_glitch.webp",
+        "ny_with_resistance.webp"
+      ]
+    },
+    {
+      "authorId": "dump",
+      "files": [
+        "redraw_hollow_sans.webp"
+      ]
+    },
+    {
+      "authorId": "sillyswoop",
+      "files": [
+        "load_glitch_rap.webp",
+        "fresh_hollow.webp"
+      ]
+    },
+    {
+      "authorId": "niko",
+      "files": [
+        "infinite_habitant_hollow.webp"
+      ]
+    },
+    {
+      "authorId": "nazlygul",
+      "files": [
+        "trojan_hollow.webp",
+        "load_glitch_in_flowerfell.webp"
+      ]
+    },
+    {
+      "authorId": "saya_krazy",
+      "files": [
+        "star_hollow.webp",
+        "Load_Glitch_with_strings.webp"
+      ]
+    },
+    {
+      "authorId": "kitsa",
+      "files": [
+        "HollowsWay.webp",
+        "nelson_hollow_bsPapyrus.webp"
+      ]
+    },
+    {
+      "authorId": "yomagvear",
+      "files": [
+        "hollow_has_headache.webp",
+        "hollow_sees_birthday.webp"
+      ]
+    },
+    {
+      "authorId": "mad",
+      "files": [
+        "load_glitch_vs_kira.webp"
+      ]
+    },
+    {
+      "authorId": "pl_hour",
+      "files": [
+        "perfect_hollow.webp",
+        "hollow_eats_soul.webp"
+      ]
+    },
+    {
+      "authorId": "badmoral",
+      "files": [
+        "he_knows_a_lot.webp",
+        "hollow_sans_with_spears.webp"
+      ]
+    },
+    {
+      "authorId": "apricoskaart",
+      "files": [
+        "hollow_and_ink2.webp",
+        "hollow_in_rus_sexyman.webp"
+      ]
+    },
+    {
+      "authorId": "misha_in_hat",
+      "files": [
+        "load_glitch_in_flowerfell2.webp"
+      ]
+    }
+  ]
 }

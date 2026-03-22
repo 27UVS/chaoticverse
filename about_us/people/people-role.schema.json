@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chaoticverse.local/schemas/people-role.schema.json",
+  "title": "One role group (e.g. scripters)",
+  "type": "object",
+  "required": ["people"],
+  "properties": {
+    "people": {
+      "type": "array",
+      "items": {
+        "$ref": "person.schema.json"
+      }
+    }
+  }
+}

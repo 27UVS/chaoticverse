@@ -19,8 +19,7 @@ async function loadLanguage(lang) {
         }
         textAboutUsDiv.innerHTML = await response.text();
 
-        const res = await fetch('people.json');
-        peopleData = await res.json();
+        peopleData = await loadPeopleData('');
 
         fillTitle(lang)
         fillSlot("poster", "poster-template");
@@ -96,15 +95,15 @@ function renderPeople(scriptersContainer, editorsContainer, artistsContainer, pa
     partnersContainer.innerHTML = '';
     exParticipantsContainer.innerHTML = '';
 
-    renderGroup(peopleData.scripters, scriptersContainer, 'scripters');
-    renderGroup(peopleData.editors, editorsContainer, 'editors');
-    renderGroup(peopleData.artists, artistsContainer, 'artists');
-    renderGroup(peopleData.partners, partnersContainer, 'partners');
-    renderGroup(peopleData.exparticipants, exParticipantsContainer, 'ex-participants');
+    renderGroup(peopleData.scripters, scriptersContainer);
+    renderGroup(peopleData.editors, editorsContainer);
+    renderGroup(peopleData.artists, artistsContainer);
+    renderGroup(peopleData.partners, partnersContainer);
+    renderGroup(peopleData.exparticipants, exParticipantsContainer);
 }
 
-
-function renderGroup(group, container, folder) {
+/** Avatars: images/people/ plus filename (one shared folder for all roles). */
+function renderGroup(group, container) {
     group.forEach(person => {
         const card = document.createElement('div');
         card.className = 'person-group-card';
@@ -122,7 +121,7 @@ function renderGroup(group, container, folder) {
         card.innerHTML = `
             <div class="person-group-icon">
                 <a href="${person.link}" target="_blank">
-                    <img src="../images/people/${folder}/${person.image}" 
+                    <img src="../images/people/${person.image}" 
                          alt="${person.alt}"
                          ${extraTitle ? `title="${extraTitle}"` : ""}>
                 </a>

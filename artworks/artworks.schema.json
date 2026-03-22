@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chaoticverse.local/schemas/artworks.schema.json",
+  "title": "Artworks page (animations, music, gallery)",
+  "description": "gallery[].authorId must match an id from about_us/people (scripters, artists, partners, exparticipants — not editors). Update $defs.galleryAuthorId.enum when people data changes.",
+  "type": "object",
+  "required": [
+    "animations",
+    "music",
+    "gallery"
+  ],
+  "properties": {
+    "animations": {
+      "type": "array",
+      "description": "YouTube video ids for the animation carousel",
+      "items": {
+        "type": "string",
+        "minLength": 11,
+        "maxLength": 12
+      }
+    },
+    "music": {
+      "type": "array",
+      "description": "YouTube video ids for the music carousel",
+      "items": {
+        "type": "string",
+        "minLength": 11,
+        "maxLength": 12
+      }
+    },
+    "gallery": {
+      "type": "array",
+      "description": "Artwork files in images/gallery/ grouped by author",
+      "items": {
+        "type": "object",
+        "required": [
+          "authorId",
+          "files"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "authorId": {
+            "$ref": "#/$defs/galleryAuthorId"
+          },
+          "files": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "\\.webp$"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "galleryAuthorId": {
+      "description": "Id from about_us/people (roles used on the artworks page: scripters, artists, partners, exparticipants)",
+      "type": "string",
+      "enum": [
+        "TSyLizO",
+        "apricoskaart",
+        "aqshzik",
+        "arkashka",
+        "asun",
+        "avokot",
+        "ayrix",
+        "badmoral",
+        "diaf",
+        "dolphin",
+        "dump",
+        "emmy",
+        "grass",
+        "horizon",
+        "idea",
+        "kitsa",
+        "mad",
+        "makmi",
+        "maria",
+        "meta_kaj",
+        "miathess",
+        "misha_in_hat",
+        "musicavocado",
+        "nazlygul",
+        "niko",
+        "oneiro",
+        "paws",
+        "peora",
+        "pipets",
+        "pl_hour",
+        "pnonytale",
+        "redark",
+        "redya",
+        "roman",
+        "sara",
+        "saya_krazy",
+        "shulga",
+        "sillyswoop",
+        "som",
+        "sorenpo",
+        "ti_sparrow",
+        "toffi",
+        "tok",
+        "tsuno_airite",
+        "unknown_team",
+        "victoria",
+        "xenan",
+        "xsevvv",
+        "yomagvear",
+        "yukkesha"
+      ]
+    }
+  }
+}

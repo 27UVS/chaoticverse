@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chaoticverse.local/schemas/person.schema.json",
+  "title": "About page person",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "image", "alt", "link", "en", "ru"],
+  "properties": {
+    "id": {
+      "type": "string",
+        "description": "Stable id (matches gallery[].authorId in artworks/artworks.json where applicable)."
+    },
+    "image": {
+      "type": "string",
+      "description": "Filename in images/people/ (shared across roles; move person in JSON only)."
+    },
+    "alt": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string",
+      "description": "External URL (https://…)"
+    },
+    "en": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Display name; may include HTML such as <br>."
+        }
+      }
+    },
+    "ru": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

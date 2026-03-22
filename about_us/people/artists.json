@@ -1,0 +1,137 @@
+{
+  "$schema": "./people-role.schema.json",
+  "people": [
+    {
+      "id": "asun",
+      "image": "A-Sun.webp",
+      "alt": "a-sun",
+      "link": "https://vk.com/a_sun_comix",
+      "en": {
+        "name": "A-Sun"
+      },
+      "ru": {
+        "name": "A-Sun"
+      }
+    },
+    {
+      "id": "tok",
+      "image": "tok.webp",
+      "alt": "tok",
+      "link": "https://vk.com/tok_1",
+      "en": {
+        "name": "Т.О.К"
+      },
+      "ru": {
+        "name": "Т.О.К"
+      }
+    },
+    {
+      "id": "paws",
+      "image": "paws.webp",
+      "alt": "paws",
+      "link": "https://vk.com/club223254276",
+      "en": {
+        "name": "Mighty Paws"
+      },
+      "ru": {
+        "name": "Могучие лапки"
+      }
+    },
+    {
+      "id": "sorenpo",
+      "image": "Sorenpo.webp",
+      "alt": "sorenpo",
+      "link": "https://vk.com/soren_po",
+      "en": {
+        "name": "Sorenpo"
+      },
+      "ru": {
+        "name": "Sorenpo"
+      }
+    },
+    {
+      "id": "maria",
+      "image": "Maria Reidman.webp",
+      "alt": "maria",
+      "link": "https://vk.com/id614033191",
+      "en": {
+        "name": "Maria Reidman"
+      },
+      "ru": {
+        "name": "Мария Рейдман"
+      }
+    },
+    {
+      "id": "unknown_team",
+      "image": "BPCN Studio.webp",
+      "alt": "unknown team",
+      "link": "https://vk.com/forgottenandunknownman",
+      "en": {
+        "name": "Unknown Team"
+      },
+      "ru": {
+        "name": "Unknown Team"
+      }
+    },
+    {
+      "id": "pnonytale",
+      "image": "PnonyTale.webp",
+      "alt": "pnonytale",
+      "link": "https://vk.com/club229553141",
+      "en": {
+        "name": "Nest || PnonyTale"
+      },
+      "ru": {
+        "name": "Гнездо || PnonyTale"
+      }
+    },
+    {
+      "id": "grass",
+      "image": "Caustic Grass.webp",
+      "alt": "grass",
+      "link": "https://vk.com/causticgrassmaingroup",
+      "en": {
+        "name": "Caustic Grass"
+      },
+      "ru": {
+        "name": "Caustic Grass"
+      }
+    },
+    {
+      "id": "arkashka",
+      "image": "arkashka.webp",
+      "alt": "arkashka",
+      "link": "https://t.me/Thought120",
+      "en": {
+        "name": "Arkashka"
+      },
+      "ru": {
+        "name": "Arkashka"
+      }
+    },
+    {
+      "id": "meta_kaj",
+      "image": "meta_kaj.webp",
+      "alt": "meta_kaj",
+      "link": "https://www.instagram.com/meta_kaj/",
+      "en": {
+        "name": "Meta Kaj"
+      },
+      "ru": {
+        "name": "Сан Хи"
+      }
+    },
+    {
+      "id": "tsuno_airite",
+      "image": "tsuno_airite.webp",
+      "alt": "tsuno_airite",
+      "link": "https://vk.com/club169822038",
+      "en": {
+        "name": "Tsuno Airite's<br>Jewelry Box"
+      },
+      "ru": {
+        "name": "Шкатулка Цуно Айрэйт"
+      }
+    }
+  ]
+}

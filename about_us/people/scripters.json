@@ -1,0 +1,41 @@
+{
+  "$schema": "./people-role.schema.json",
+  "people": [
+    {
+      "id": "victoria",
+      "image": "Victoria Polyakova.webp",
+      "alt": "victoria",
+      "link": "https://vk.com/vistral_close3",
+      "en": {
+        "name": "Victoria Polyakova"
+      },
+      "ru": {
+        "name": "Виктория Полякова"
+      }
+    },
+    {
+      "id": "shulga",
+      "image": "shulga.webp",
+      "alt": "shulga",
+      "link": "https://t.me/alexshula",
+      "en": {
+        "name": "Alexander Shulga"
+      },
+      "ru": {
+        "name": "Александр Шульга"
+      }
+    },
+    {
+      "id": "TSyLizO",
+      "image": "tsylizo.webp",
+      "alt": "tsylizo",
+      "link": "https://ficbook.net/authors/5223188",
+      "en": {
+        "name": "TSyLizO"
+      },
+      "ru": {
+        "name": "TSyLizO"
+      }
+    }
+  ]
+}
