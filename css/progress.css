@@ -1,0 +1,77 @@
+/* --- Прогресс (колонка оверлея — в common.css) --- */
+
+.progress-section {
+    padding: 0 10px;
+    margin-bottom: 40px;
+}
+
+.progress-section h2 {
+    font-size: 50px;
+    color: rgb(251, 204, 0);
+    margin-bottom: 10px;
+}
+
+.progress-bar-container {
+    margin-bottom: 15px;
+}
+
+.progress-bar-label {
+    font-size: 26px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.progress-bar {
+    height: 20px;
+    transition: width 0.5s ease;
+}
+
+.progress-bar.plot {
+    background-color: rgb(237, 35, 85);
+}
+
+.progress-bar.scripts {
+    background-color: rgb(255, 123, 0);
+}
+
+.progress-bar.comics {
+    background-color: rgb(251, 255, 0);
+}
+
+.progress-bar.text {
+    background-color: rgb(251, 249, 250);
+}
+
+@media (max-width: 900px) {
+    .progress-section {
+        margin-bottom: 30px;
+    }
+
+    .progress-section h2 {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+
+    .progress-bar-label {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .progress-bar {
+        height: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .progress-section h2 {
+        font-size: 26px;
+    }
+
+    .progress-bar-label {
+        font-size: 15px;
+    }
+
+    .progress-bar {
+        height: 14px;
+    }
+}

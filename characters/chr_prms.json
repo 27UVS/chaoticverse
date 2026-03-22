@@ -70,6 +70,10 @@
             "en": "A being that violates any laws of the multiverse.",
             "ru": "Существо, нарушающее любые законы мультивселенной."
           },
+          "player": {
+            "en": "A person from the real world interacting by means of an avatar.",
+            "ru": "Человек из реального мира, взаимодействующий по-средствам аватара."
+          },
           "amalgamate": {
             "en": "Merging monsters by means of determination.",
             "ru": "Слияние монстров по средствам решительности."

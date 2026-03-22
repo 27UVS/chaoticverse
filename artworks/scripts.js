@@ -39,6 +39,8 @@ const titles = {
 };
 
 async function loadLanguage(lang) {
+    teardownCarousels();
+
     textArtworksDiv.innerHTML = await fetch(`${lang.toLowerCase()}.html`).then(r => r.text());
 
     fillTitle(lang);
@@ -110,12 +112,15 @@ async function initVideoCarousel(containerId, videos) {
             const img = new Image();
             img.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
             img.className = "video-thumbnail";
+            img.loading = "eager";
+            img.decoding = "async";
 
             a.appendChild(img);
             container.appendChild(a);
         } else {
             const iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube.com/embed/${id}?enablejsapi=1`;
+            iframe.loading = "lazy";
             iframe.allowFullscreen = true;
             iframe.allow =
                 "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
@@ -199,6 +204,15 @@ async function initGalleryCarousels(containerId) {
 
     images.sort(() => Math.random() - 0.5);
 
+    galleryHydrateIo = new IntersectionObserver(
+        entries => {
+            for (const e of entries) {
+                if (e.isIntersecting) hydrateGalleryRow(/** @type {HTMLElement} */(e.target));
+            }
+        },
+        { root: null, rootMargin: "280px 0px", threshold: 0 }
+    );
+
     for (let i = 0; i < images.length; i += 10) {
         const row = document.createElement("div");
         row.className = "gallery-carousel";
@@ -208,8 +222,11 @@ async function initGalleryCarousels(containerId) {
             card.className = "gallery-card";
 
             const img = new Image();
-            img.src = imgData.src;
+            img.dataset.src = imgData.src;
             img.className = "gallery-image";
+            img.decoding = "async";
+            img.setAttribute("width", "400");
+            img.setAttribute("height", "225");
 
             const a = document.createElement("a");
             a.href = imgData.link;
@@ -228,13 +245,62 @@ async function initGalleryCarousels(containerId) {
         });
 
         container.appendChild(row);
+        if (i < 20) {
+            hydrateGalleryRow(row);
+        }
+        galleryHydrateIo.observe(row);
         initInfiniteScroll(row);
     }
 }
 
-/* ================== SCROLL ================== */
+/* ================== SCROLL (один RAF на все карусели + пауза вне экрана) ================== */
+
+/** @type {IntersectionObserver | null} */
+let galleryHydrateIo = null;
+
+/** @type {Array<{ el: HTMLElement, totalWidth: number, speed: number, disableClone: boolean, inView: boolean, hoverPaused: boolean, io?: IntersectionObserver }>} */
+let carouselRegistry = [];
+let carouselRafId = null;
+
+function carouselTick() {
+    carouselRafId = null;
+    if (!carouselRegistry.length) return;
+
+    for (const entry of carouselRegistry) {
+        if (!entry.inView || entry.hoverPaused) continue;
+        const c = entry.el;
+        c.scrollLeft += entry.speed;
+        if (!entry.disableClone && c.scrollLeft >= entry.totalWidth) {
+            c.scrollLeft -= entry.totalWidth;
+        }
+    }
+
+    carouselRafId = requestAnimationFrame(carouselTick);
+}
+
+function scheduleCarouselTick() {
+    if (carouselRafId == null && carouselRegistry.length) {
+        carouselRafId = requestAnimationFrame(carouselTick);
+    }
+}
+
+function teardownCarousels() {
+    galleryHydrateIo?.disconnect();
+    galleryHydrateIo = null;
+    for (const e of carouselRegistry) {
+        e.io?.disconnect();
+    }
+    carouselRegistry = [];
+    if (carouselRafId != null) {
+        cancelAnimationFrame(carouselRafId);
+        carouselRafId = null;
+    }
+}
 
 function initInfiniteScroll(container, options = {}) {
+    const speed = options.speed ?? 0.5;
+    const disableClone = options.disableClone ?? false;
+
     const items = [...container.children];
     if (!items.length) return;
 
@@ -244,25 +310,52 @@ function initInfiniteScroll(container, options = {}) {
         return;
     }
 
-    if (!options.disableClone) {
+    if (!disableClone) {
         items.forEach(el => container.appendChild(el.cloneNode(true)));
     }
 
-    let rafId;
-    const speed = 0.5;
+    const entry = {
+        el: container,
+        totalWidth,
+        speed,
+        disableClone,
+        inView: true,
+        hoverPaused: false
+    };
 
-    function step() {
-        container.scrollLeft += speed;
-        if (!options.disableClone && container.scrollLeft >= totalWidth) {
-            container.scrollLeft -= totalWidth;
-        }
-        rafId = requestAnimationFrame(step);
-    }
+    const io = new IntersectionObserver(
+        records => {
+            for (const rec of records) {
+                entry.inView = rec.isIntersecting;
+            }
+        },
+        { root: null, rootMargin: "100px 0px", threshold: 0 }
+    );
+    io.observe(container);
+    entry.io = io;
 
-    container.addEventListener("mouseenter", () => cancelAnimationFrame(rafId));
-    container.addEventListener("mouseleave", step);
+    container.addEventListener("mouseenter", () => {
+        entry.hoverPaused = true;
+    });
+    container.addEventListener("mouseleave", () => {
+        entry.hoverPaused = false;
+    });
 
-    step();
+    carouselRegistry.push(entry);
+    scheduleCarouselTick();
+}
+
+/** Подставить реальный URL только когда строка галереи близко к viewport (уменьшает одновременные загрузки). */
+function hydrateGalleryRow(row) {
+    if (row.dataset.galleryHydrated === "1") return;
+    row.dataset.galleryHydrated = "1";
+    row.querySelectorAll("img.gallery-image[data-src]").forEach(img => {
+        const url = img.dataset.src;
+        if (!url) return;
+        img.src = url;
+        img.removeAttribute("data-src");
+        if ("fetchPriority" in img) img.fetchPriority = "low";
+    });
 }
 
 
@@ -273,20 +366,23 @@ function initGalleryLightbox() {
 
     const box = document.createElement("div");
     box.id = "lightbox";
-    box.style.cssText =
-        "position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.8);z-index:9999";
+    box.className = "gallery-lightbox-backdrop";
 
     const img = document.createElement("img");
-    img.style.cssText = "max-width:90%;max-height:90%;border-radius:6px";
+    img.className = "gallery-lightbox-image";
+    img.alt = "";
     box.appendChild(img);
     document.body.appendChild(box);
 
-    box.addEventListener("click", () => (box.style.display = "none"));
+    box.addEventListener("click", () => {
+        box.style.display = "none";
+        img.removeAttribute("src");
+    });
     img.addEventListener("click", e => e.stopPropagation());
 
     document.body.addEventListener("click", e => {
         if (e.target.classList.contains("gallery-image")) {
-            img.src = e.target.src;
+            img.src = e.target.currentSrc || e.target.src;
             box.style.display = "flex";
         }
     });
@@ -318,32 +414,4 @@ restoreBtn.onclick = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     loadLanguage(currentLang);
-    const bgImage = new Image();
-    bgImage.src = "../images/CHAOTICVERSE_1.webp";
-
-    bgImage.onload = () => {
-        const aspectRatio = bgImage.height / bgImage.width; // высота / ширина картинки
-        const resizableDiv = document.querySelector("#backgroundHeight");
-
-        function resizeDiv() {
-            const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-            let newWidth, newHeight, backgroundSize;
-
-            if (isMobile) {
-                backgroundSize = "auto 100%";
-                newHeight = window.innerHeight;
-                newWidth = newHeight / aspectRatio;
-            } else {
-                backgroundSize = "100% auto";
-                newWidth = window.innerWidth;
-                newHeight = newWidth * aspectRatio;
-            }
-            resizableDiv.style.backgroundSize = backgroundSize
-            resizableDiv.style.width = `${newWidth}px`;
-            resizableDiv.style.height = `${newHeight}px`;
-        }
-
-        resizeDiv();
-        window.addEventListener("resize", resizeDiv);
-    };
 });

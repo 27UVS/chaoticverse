@@ -13,6 +13,7 @@ const LABELS = {
     real_name: { ru: 'Реальное имя', en: 'Real Name' },
     birth: { ru: 'День рождения', en: 'Birthday' },
     sex: { ru: 'Пол', en: 'Sex' },
+    age: { ru: 'Возраст', en: 'Age' },
     species: { ru: 'Раса', en: 'Species' },
     kind: { ru: 'Вид', en: 'Kind' },
     universe: { ru: 'Родная вселенная', en: 'Native universe' },
@@ -46,6 +47,7 @@ const CHOOSE_TRANSLATIONS = {
         glitch: { ru: 'Глюк', en: 'Glitch' },
         virus: { ru: 'Вирус', en: 'Virus' },
         error: { ru: 'Ошибка', en: 'Error' },
+        player: { ru: 'Игрок', en: 'Player' },
         amalgamate: { ru: 'Амальгамет', en: 'Amalgamate' },
         undefined: { ru: 'Не определено', en: 'Undefined' }
     }
@@ -76,6 +78,7 @@ async function loadJSON(path) {
 
 async function loadArticle(path) {
     const res = await fetch(path);
+    if (!res.ok) throw new Error(`Article load failed ${res.status}: ${res.url}`);
     return await res.text();
 }
 
@@ -97,12 +100,11 @@ let characterArticle = { ru: '', en: '' };
 async function loadArticleCharacter() {
     const info = await loadJSON('./info.json');
 
-    if (info.data.article) {
-        if (info.data.article.ru)
-            characterArticle.ru = await loadArticle(info.data.article.ru);
-        if (info.data.article.en)
-            characterArticle.en = await loadArticle(info.data.article.en);
-    }
+    console.log('article.ru from json =', JSON.stringify(info.data.article?.ru));
+    console.log('resolved url =', new URL(info.data.article?.ru || '', location.href).href);
+
+    if (info.data.article?.ru) characterArticle.ru = await loadArticle(info.data.article.ru);
+    if (info.data.article?.en) characterArticle.en = await loadArticle(info.data.article.en);
 
     return info.parameters;
 }
@@ -344,36 +346,4 @@ minimizeBtn.addEventListener('click', () => {
 restoreBtn.addEventListener('click', () => {
     overlay.classList.remove('hidden');
     restoreBtn.style.display = 'none';
-});
-
-/* ================== BACKGROUND ================== */
-document.addEventListener("DOMContentLoaded", () => {
-    const bgImage = new Image();
-    bgImage.src = "../../images/CHAOTICVERSE_1.webp";
-
-    bgImage.onload = () => {
-        const aspectRatio = bgImage.height / bgImage.width; // высота / ширина картинки
-        const resizableDiv = document.querySelector("#backgroundHeight");
-
-        function resizeDiv() {
-            const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-            let newWidth, newHeight, backgroundSize;
-
-            if (isMobile) {
-                backgroundSize = "auto 100%";
-                newHeight = window.innerHeight;
-                newWidth = newHeight / aspectRatio;
-            } else {
-                backgroundSize = "100% auto";
-                newWidth = window.innerWidth;
-                newHeight = newWidth * aspectRatio;
-            }
-            resizableDiv.style.backgroundSize = backgroundSize
-            resizableDiv.style.width = `${newWidth}px`;
-            resizableDiv.style.height = `${newHeight}px`;
-        }
-
-        resizeDiv();
-        window.addEventListener("resize", resizeDiv);
-    };
 });

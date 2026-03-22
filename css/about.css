@@ -1,0 +1,14 @@
+/* --- Только страница «О нас» (карточки людей — в common.css) --- */
+
+.about-us-image {
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 5px auto auto auto;
+}
+
+@media (max-width: 900px) {
+    .about-us-image {
+        max-width: 90%;
+    }
+}

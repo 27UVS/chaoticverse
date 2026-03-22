@@ -3,6 +3,7 @@ const minimizeBtn = document.getElementById('minimize');
 const restoreBtn = document.getElementById('restore');
 const progressTitle = document.getElementById('progressTitle');
 const langToggle = document.getElementById('langToggle');
+const progressContainer = document.getElementById('progressContainer');
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -114,8 +115,6 @@ restoreBtn.addEventListener('click', () => {
     restoreBtn.style.display = 'none';
 });
 
-const progressContainer = document.getElementById('progressContainer');
-
 const sectionTitles = {
     pr: { RU: "Пролог", EN: "Prologue" },
     fr: { RU: "Сезон 1", EN: "Season 1" },
@@ -130,34 +129,3 @@ const barTitles = {
     cmc: { RU: "Комиксы", EN: "Comics" },
     tx: { RU: "Текст", EN: "Text" }
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-    const bgImage = new Image();
-    bgImage.src = "../images/CHAOTICVERSE_1.webp";
-
-    bgImage.onload = () => {
-        const aspectRatio = bgImage.height / bgImage.width; // высота / ширина картинки
-        const resizableDiv = document.querySelector("#backgroundHeight");
-
-        function resizeDiv() {
-            const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-            let newWidth, newHeight, backgroundSize;
-
-            if (isMobile) {
-                backgroundSize = "auto 100%";
-                newHeight = window.innerHeight;
-                newWidth = newHeight / aspectRatio;
-            } else {
-                backgroundSize = "100% auto";
-                newWidth = window.innerWidth;
-                newHeight = newWidth * aspectRatio;
-            }
-            resizableDiv.style.backgroundSize = backgroundSize
-            resizableDiv.style.width = `${newWidth}px`;
-            resizableDiv.style.height = `${newHeight}px`;
-        }
-
-        resizeDiv();
-        window.addEventListener("resize", resizeDiv);
-    };
-});

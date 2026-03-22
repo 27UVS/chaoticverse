@@ -2,7 +2,11 @@
   "data": {
     "ru_name": "Лоуд Глитч",
     "en_name": "Load Glitch",
-    "img": "Load Glitch.webp"
+    "img": "Load Glitch.webp",
+    "article": {
+      "ru": "article_ru.html",
+      "en": "article_en.html"
+    }
   },
   "parameters": {
     "biography": {

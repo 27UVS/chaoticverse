@@ -1,0 +1,173 @@
+/* --- Artworks (колонка оверлея — в common.css) --- */
+
+.video-carousel {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    scroll-behavior: auto; /* вместо smooth */
+    justify-content: flex-start; /* стандарт — слева */
+    cursor: grab;
+}
+
+.video-carousel a,
+.video-carousel iframe {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 225px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.video-carousel.centered {
+    justify-content: center; /* включается из JS */
+}
+
+/* Специфичнее, чем .fixed-overlay img в common.css — иначе превью тянутся на 99.2vw и пропадают в карусели */
+.fixed-overlay img.video-thumbnail {
+    width: 400px;
+    height: 225px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .video-carousel a {
+        width: min(92vw, 400px);
+        height: auto;
+        flex: 0 0 auto;
+    }
+
+    .fixed-overlay img.video-thumbnail {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        max-width: none;
+    }
+}
+
+/* Телефоны: компактнее ролики и галерея, 16:9 сохранён — превью остаются видимыми */
+@media (max-width: 600px) {
+    .video-carousel {
+        padding: 6px 4px;
+        gap: 8px;
+    }
+
+    .video-carousel a,
+    .video-carousel iframe {
+        width: min(300px, 86vw);
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        flex: 0 0 auto;
+    }
+
+    .fixed-overlay img.video-thumbnail {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+    }
+
+    .gallery-carousel {
+        gap: 8px;
+        padding: 8px 0;
+        margin-bottom: 28px;
+    }
+
+    .gallery-card img {
+        width: min(280px, 82vw);
+        height: auto;
+        aspect-ratio: 16 / 9;
+        max-width: 100%;
+    }
+}
+
+.subscription {
+    font-size: 20px;
+    margin-top: -15px;
+}
+
+.gallery-carousel {
+    display: flex;
+    overflow-x: hidden;
+    gap: 10px;
+    padding: 10px 0;
+    scroll-behavior: auto;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    contain: layout paint;
+}
+
+.gallery-card {
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.gallery-card img {
+    width: 400px;
+    height: 225px;
+    object-fit: cover;
+    display: block;
+    background: #141414;
+}
+
+.gallery-name {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.6);
+    color: rgb(251,255,0);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+}
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox вне .fixed-overlay — картинки не получают ширину оверлея */
+.gallery-lightbox-backdrop {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.gallery-lightbox-image {
+    width: auto;
+    height: auto;
+    max-width: min(90vw, 100%);
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .subscription {
+        font-size: 15px;
+    }
+
+    .gallery-name {
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+}

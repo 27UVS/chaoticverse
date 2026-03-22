@@ -1,0 +1,78 @@
+/* --- Главная страница (базовая колонка оверлея — в common.css) --- */
+
+.disclaimer {
+    font-size: 18px;
+    opacity: 0.75;
+}
+
+.logo-image {
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 5px auto 10px auto;
+}
+
+.nav-app-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-app-icon img {
+    width: 80px;
+    height: auto;
+    max-width: 100%;
+    transition: transform 0.2s ease;
+}
+
+.nav-app-icon:hover img {
+    transform: scale(1.1);
+}
+
+.center-row {
+    justify-content: center;
+    padding: 0 40px;
+    margin-top: 20px;
+}
+
+.gif-picture {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.gif-picture img {
+    width: 500px;
+    height: auto;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .gif-picture img {
+        width: 390px;
+    }
+
+    .nav-app-icon img {
+        width: 50px;
+    }
+
+    .disclaimer {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .disclaimer {
+        font-size: 14px;
+    }
+
+    /* Логотип крупнее на телефоне, но внутри колонки оверлея (не шире контентной области) */
+    .overlay-content-home-page .logo-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
