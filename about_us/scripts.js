@@ -5,7 +5,8 @@ const langToggle = document.getElementById('langToggle');
 const textAboutUsDiv = document.getElementById('textAboutUs');
 document.getElementById("year").innerText = new Date().getFullYear();
 
-let currentLang = 'RU';
+let currentLang = getStoredLang();
+langToggle.textContent = currentLang === 'RU' ? 'EN' : 'RU';
 let peopleData = {};
 
 async function loadLanguage(lang) {
@@ -74,6 +75,7 @@ loadLanguage(currentLang);
 langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'RU' ? 'EN' : 'RU';
     langToggle.textContent = currentLang === 'RU' ? 'EN' : 'RU';
+    setStoredLang(currentLang);
     loadLanguage(currentLang);
 });
 

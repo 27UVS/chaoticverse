@@ -3,6 +3,12 @@
     "ru_name": "Лоуд Глитч",
     "en_name": "Load Glitch",
     "img": "Load Glitch.webp",
+    "infobox": {
+      "accent": "#ff8c60",
+      "accent2": "#baf7bb",
+      "background": "#2e292d",
+      "muted": "#7f7470"
+    },
     "article": {
       "ru": "article_ru.html",
       "en": "article_en.html"

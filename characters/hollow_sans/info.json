@@ -3,6 +3,12 @@
     "ru_name": "Холлоу",
     "en_name": "Hollow",
     "img": "Hollow Sans.webp",
+    "infobox": {
+      "accent": "#f3dd77",
+      "accent2": "#1c9db3",
+      "background": "#81402e",
+      "muted": "#d1d1b9"
+    },
     "article": {
       "ru": "article_ru.html",
       "en": "article_en.html"

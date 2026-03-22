@@ -1,4 +1,5 @@
 /* --- Только страница персонажей / статьи (общие карточки — в common.css) --- */
+@import url("special.css");
 
 .char-author {
     color: #ccc;
@@ -63,12 +64,29 @@
     }
 }
 
-/* --- Инфобокс персонажа --- */
+/* --- Инфобокс персонажа (персональные цвета: data.infobox в info.json → --ib-*) --- */
 .infobox {
+    --ib-bg: rgba(15, 15, 15, 0.85);
+    --ib-border: #333;
+    --ib-section-border: #444;
+    --ib-label: #aaa;
+    --ib-text: #eee;
+    --ib-heading: inherit;
+    --ib-img-border: #333;
+    --ib-img-bg: #111;
+    --ib-link: #fbff00;
+    --ib-tooltip-bg: #111;
+    --ib-tooltip-border: #444;
+    --ib-tooltip-text: #fff;
+    --ib-tooltip-underline: #777;
+    --ib-bar-track: #222;
+    --ib-bar-grid: #444;
+
     max-width: 500px;
     width: 100%;
-    background: rgba(15, 15, 15, 0.85);
-    border: 1px solid #333;
+    background: var(--ib-bg);
+    border: 1px solid var(--ib-border);
+    color: var(--ib-text);
     padding: 14px;
     font-family: var(--font-determination);
     font-size: 20px;
@@ -82,7 +100,8 @@
 
 .infobox-section h3 {
     font-size: 22px;
-    border-bottom: 1px solid #444;
+    color: var(--ib-heading);
+    border-bottom: 1px solid var(--ib-section-border);
     padding-bottom: 4px;
     margin-bottom: 8px;
 }
@@ -98,8 +117,8 @@
     max-width: 100%;
     max-height: 260px;
     object-fit: contain;
-    border: 1px solid #333;
-    background: #111;
+    border: 1px solid var(--ib-img-border);
+    background: var(--ib-img-bg);
 }
 
 .infobox-row {
@@ -110,31 +129,32 @@
 }
 
 .infobox-label {
-    color: #aaa;
+    color: var(--ib-label);
 }
 
 .infobox-value {
     min-width: 0;
     display: flex;
     justify-content: flex-end;
+    color: var(--ib-text);
 }
 
-.tooltip {
+.infobox .tooltip {
     position: relative;
     cursor: help;
-    border-bottom: 1px dotted #777;
+    border-bottom: 1px dotted var(--ib-tooltip-underline);
 }
 
-.tooltip::after {
+.infobox .tooltip::after {
     content: attr(data-tooltip);
     position: absolute;
     left: 0;
     bottom: 75%;
     transform: translateX(-90%);
-    background: #111;
-    color: #fff;
+    background: var(--ib-tooltip-bg);
+    color: var(--ib-tooltip-text);
     padding: 6px 8px;
-    border: 1px solid #444;
+    border: 1px solid var(--ib-tooltip-border);
     white-space: pre-line;
     opacity: 0;
     pointer-events: none;
@@ -145,16 +165,16 @@
     line-height: 1.4;
 }
 
-.tooltip:hover::after {
+.infobox .tooltip:hover::after {
     opacity: 1;
 }
 
 /* шкалы */
-.value-bar {
+.infobox .value-bar {
     position: relative;
     width: 100%;
     height: 10px;
-    background-color: #222;
+    background-color: var(--ib-bar-track);
     margin-top: 6px;
     cursor: help;
     overflow: visible;
@@ -162,14 +182,30 @@
     transition: background 0.3s, width 0.3s;
 }
 
-.value-bar::before {
+/* значение 0: полоска медленно «дышит» белым */
+.infobox .value-bar--zero {
+    animation: valueBarZeroPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes valueBarZeroPulse {
+    0%, 100% {
+        background-color: var(--ib-bar-track);
+        box-shadow: none;
+    }
+    50% {
+        background-color: color-mix(in srgb, var(--ib-bar-track) 35%, #fff);
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.45);
+    }
+}
+
+.infobox .value-bar::before {
     content: "";
     position: absolute;
     inset: 0;
     background-image: repeating-linear-gradient(
             to right,
-            #444 0,
-            #444 1px,
+            var(--ib-bar-grid) 0,
+            var(--ib-bar-grid) 1px,
             transparent 1px,
             transparent 10%
     );
@@ -177,7 +213,7 @@
     z-index: 2;
 }
 
-.value-bar span {
+.infobox .value-bar span {
     position: absolute;
     left: 0;
     top: 0;
@@ -186,7 +222,7 @@
     z-index: 1;
 }
 
-.value-bar span.rainbow-fill {
+.infobox .value-bar span.rainbow-fill {
     background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
     background-size: 400% 100%;
     animation: rainbowShift 3s linear infinite;
@@ -219,7 +255,7 @@
         font-size: 17px;
     }
 
-    .tooltip::after {
+    .infobox .tooltip::after {
         font-size: 13px;
         width: min(280px, 85vw);
     }

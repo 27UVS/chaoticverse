@@ -67,50 +67,97 @@ const MONTHS = {
 function formatDate(dateStr, lang) {
     const parts = dateStr.split('.');
     if (parts.length < 2) return dateStr;
-    return `${parts[0]} ${MONTHS[lang][+parts[1] - 1]}${parts[2] ? ' ' + parts[2] : ''}`;
+    const monthIdx = +parts[1] - 1;
+    const monthName = MONTHS[lang]?.[monthIdx];
+    if (monthName == null) return dateStr;
+    return `${parts[0]} ${monthName}${parts[2] ? ' ' + parts[2] : ''}`;
 }
 
-/// Загрузка json файла ///
 async function loadJSON(path) {
     const res = await fetch(path);
-    return await res.json();
+    if (!res.ok) throw new Error(`JSON load failed ${res.status}: ${res.url}`);
+    return res.json();
 }
 
 async function loadArticle(path) {
     const res = await fetch(path);
     if (!res.ok) throw new Error(`Article load failed ${res.status}: ${res.url}`);
-    return await res.text();
+    return res.text();
 }
 
-/* ================== CHARACTER LOADING ================== */
-async function loadInfoboxCharacter() {
-    const info = await loadJSON('./info.json');
-
-    characterHeaderEN = info.data.en_name;
-    characterHeaderRU = info.data.ru_name;
-
-    return {
-        img: info.data.img,
-        parameters: info.parameters
-    };
-}
-
+/* ================== CHARACTER LOADING (cached) ================== */
+let chrSchema = null;
+let infoData = null;
 let characterArticle = { ru: '', en: '' };
 
-async function loadArticleCharacter() {
-    const info = await loadJSON('./info.json');
+let loadPromise = null;
 
-    console.log('article.ru from json =', JSON.stringify(info.data.article?.ru));
-    console.log('resolved url =', new URL(info.data.article?.ru || '', location.href).href);
+function ensureCharacterData() {
+    if (!loadPromise) {
+        loadPromise = (async () => {
+            const [schema, info] = await Promise.all([
+                loadJSON('../chr_prms.json'),
+                loadJSON('./info.json')
+            ]);
+            chrSchema = schema;
+            infoData = info;
+            characterHeaderEN = info.data.en_name;
+            characterHeaderRU = info.data.ru_name;
 
-    if (info.data.article?.ru) characterArticle.ru = await loadArticle(info.data.article.ru);
-    if (info.data.article?.en) characterArticle.en = await loadArticle(info.data.article.en);
+            const art = info.data.article;
+            if (art?.ru) characterArticle.ru = await loadArticle(art.ru);
+            if (art?.en) characterArticle.en = await loadArticle(art.en);
+        })();
+    }
+    return loadPromise;
+}
 
-    return info.parameters;
+/* ================== INFOBOX THEME ================== */
+const INFOBOX_THEME_PROPS = [
+    '--ib-bg', '--ib-border', '--ib-section-border', '--ib-label', '--ib-text', '--ib-heading',
+    '--ib-img-border', '--ib-img-bg', '--ib-link', '--ib-tooltip-bg', '--ib-tooltip-border',
+    '--ib-tooltip-text', '--ib-tooltip-underline', '--ib-bar-track', '--ib-bar-grid'
+];
+
+function applyInfoboxTheme(theme) {
+    const box = document.getElementById('infobox');
+    if (!box) return;
+
+    INFOBOX_THEME_PROPS.forEach((p) => box.style.removeProperty(p));
+    box.classList.remove('infobox--themed');
+
+    if (!theme || typeof theme !== 'object') return;
+
+    const { accent, accent2, background, muted } = theme;
+    if (!accent && !accent2 && !background && !muted) return;
+
+    box.classList.add('infobox--themed');
+
+    if (background) {
+        box.style.setProperty('--ib-bg', background);
+        box.style.setProperty('--ib-img-bg', `color-mix(in srgb, ${background} 72%, #000)`);
+        box.style.setProperty('--ib-tooltip-bg', `color-mix(in srgb, ${background} 88%, #000)`);
+        box.style.setProperty('--ib-bar-track', `color-mix(in srgb, ${background} 48%, #000)`);
+    }
+    if (accent) {
+        box.style.setProperty('--ib-heading', accent);
+        box.style.setProperty('--ib-link', accent);
+    }
+    if (accent2) {
+        box.style.setProperty('--ib-text', accent2);
+    }
+    if (muted) {
+        box.style.setProperty('--ib-border', muted);
+        box.style.setProperty('--ib-section-border', muted);
+        box.style.setProperty('--ib-label', muted);
+        box.style.setProperty('--ib-img-border', muted);
+        box.style.setProperty('--ib-tooltip-border', muted);
+        box.style.setProperty('--ib-tooltip-underline', muted);
+        box.style.setProperty('--ib-bar-grid', `color-mix(in srgb, ${muted} 42%, transparent)`);
+    }
 }
 
 /* ================== COLORS ================== */
-/// Функция подгона цветов для шкал при разных значениях ///
 function getBarColor(val) {
     if (val === 0) return '#ffffff';
     if (val <= 3) return '#e74c3c';
@@ -122,11 +169,16 @@ function getBarColor(val) {
 
 /* ================== RENDER ================== */
 async function renderInfobox(lang = 'ru') {
-    const schema = await loadJSON('../chr_prms.json');
-    const character = await loadInfoboxCharacter();
+    await ensureCharacterData();
 
     const box = document.getElementById('infobox');
+    applyInfoboxTheme(infoData.data.infobox);
     box.innerHTML = '';
+
+    const character = {
+        img: infoData.data.img,
+        parameters: infoData.parameters
+    };
 
     renderCharacterImage(
         box,
@@ -134,9 +186,9 @@ async function renderInfobox(lang = 'ru') {
         lang === 'ru' ? characterHeaderRU : characterHeaderEN
     );
 
-    renderSection(box, 'Биография', schema.parameters.biography, character.parameters.biography, lang);
-    renderSection(box, 'Информация', schema.parameters.information, character.parameters.information, lang);
-    renderValues(box, schema.parameters.values, character.parameters.values, lang);
+    renderSection(box, 'Биография', chrSchema.parameters.biography, character.parameters.biography, lang);
+    renderSection(box, 'Информация', chrSchema.parameters.information, character.parameters.information, lang);
+    renderValues(box, chrSchema.parameters.values, character.parameters.values, lang);
 }
 
 function renderCharacterImage(parent, imgName, altText) {
@@ -155,11 +207,9 @@ function renderCharacterImage(parent, imgName, altText) {
 }
 
 async function renderArticle(lang = 'ru') {
-    const article = document.getElementById('Article')
-    await loadArticleCharacter()
+    await ensureCharacterData();
+    const article = document.getElementById('Article');
     article.innerHTML = characterArticle[lang] || '';
-    console.log(article)
-    console.log(characterArticle['ru'])
 }
 
 /* ================== NORMALIZATION ================== */
@@ -223,7 +273,6 @@ function renderSection(parent, title, schemaBlock, dataBlock, lang) {
             }
         }
         else if (schema.class === 'link-text') {
-            // value в формате "[Текст|URL]"
             const match = value.match(/^\[([^|]+)\|(.+)]$/);
             if (match) {
                 const text = match[1].trim();
@@ -232,14 +281,14 @@ function renderSection(parent, title, schemaBlock, dataBlock, lang) {
                 const a = document.createElement('a');
                 a.href = url;
                 a.textContent = text;
-                a.target = "_blank"; // открывать в новой вкладке
+                a.target = "_blank";
                 a.rel = "noopener noreferrer";
-                a.style.color = "#fbff00";
+                a.style.color = "var(--ib-link, #fbff00)";
                 a.style.textDecoration = "underline";
 
                 val.appendChild(a);
             } else {
-                val.textContent = value; // fallback, если формат не тот
+                val.textContent = value;
             }
         }
         else {
@@ -284,9 +333,11 @@ function renderValues(parent, schema, data, lang) {
 
         const bar = document.createElement('div');
         bar.className = 'value-bar tooltip';
-        bar.dataset.tooltip = `${val} / 10`;
+        bar.dataset.tooltip = val > 10 ? '??? / 10' : `${val} / 10`;
 
-        // Радужный эффект при значениях > 10
+        if (val === 0) {
+            bar.classList.add('value-bar--zero');
+        }
         if (color === 'rainbow') {
             bar.classList.add('rainbow-bar');
         }
@@ -296,7 +347,7 @@ function renderValues(parent, schema, data, lang) {
 
         if (color === 'rainbow') {
             fill.classList.add('rainbow-fill');
-        } else {
+        } else if (val !== 0) {
             fill.style.backgroundColor = color;
         }
 
@@ -314,27 +365,41 @@ function renderValues(parent, schema, data, lang) {
 let characterHeaderEN = '';
 let characterHeaderRU = '';
 
-let currentLang = 'RU';
-renderInfobox(currentLang === 'RU' ? 'ru' : 'en');
-renderArticle(currentLang === 'RU' ? 'ru' : 'en');
+let currentLang = getStoredLang();
 
-langToggle.addEventListener('click', () => {
-    if (currentLang === 'RU') {
-        characterHeader.textContent = characterHeaderEN;
-        langToggle.textContent = 'RU';
+async function applyLanguageUI() {
+    const langCode = currentLang === 'RU' ? 'ru' : 'en';
+    await renderInfobox(langCode);
+    await renderArticle(langCode);
+}
 
-        currentLang = 'EN';
-        renderInfobox(currentLang === 'RU' ? 'ru' : 'en');
-        renderArticle(currentLang === 'RU' ? 'ru' : 'en');
-    } else {
-        characterHeader.textContent = characterHeaderRU;
-        langToggle.textContent = 'EN';
-
-        currentLang = 'RU';
-        renderInfobox(currentLang === 'RU' ? 'ru' : 'en');
-        renderArticle(currentLang === 'RU' ? 'ru' : 'en');
+(async function initCharacterPage() {
+    try {
+        await ensureCharacterData();
+        characterHeader.textContent = currentLang === 'RU' ? characterHeaderRU : characterHeaderEN;
+        langToggle.textContent = currentLang === 'RU' ? 'EN' : 'RU';
+        await applyLanguageUI();
+    } catch (err) {
+        console.error('Character page load failed:', err);
     }
-    renderCharacters();
+})();
+
+langToggle.addEventListener('click', async () => {
+    try {
+        if (currentLang === 'RU') {
+            characterHeader.textContent = characterHeaderEN;
+            langToggle.textContent = 'RU';
+            currentLang = 'EN';
+        } else {
+            characterHeader.textContent = characterHeaderRU;
+            langToggle.textContent = 'EN';
+            currentLang = 'RU';
+        }
+        setStoredLang(currentLang);
+        await applyLanguageUI();
+    } catch (err) {
+        console.error('Language switch failed:', err);
+    }
 });
 
 /* ================== OVERLAY ================== */

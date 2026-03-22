@@ -6,7 +6,8 @@ const contentsTitle = document.getElementById('contentsTitle');
 const tocContainer = document.getElementById('toc');
 document.getElementById("year").textContent = new Date().getFullYear();
 
-let currentLang = 'RU';
+let currentLang = getStoredLang();
+langToggle.textContent = currentLang === 'RU' ? 'EN' : 'RU';
 
 async function loadTOC() {
     const res = await fetch('contents_names.json');
@@ -153,6 +154,7 @@ langToggle.addEventListener('click', () => {
         langToggle.textContent = 'EN';
         currentLang = 'RU';
     }
+    setStoredLang(currentLang);
     updateLanguageAssets();
     loadTOC();
 });

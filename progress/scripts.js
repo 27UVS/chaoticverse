@@ -7,7 +7,8 @@ const progressContainer = document.getElementById('progressContainer');
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-let currentLang = 'RU';
+let currentLang = getStoredLang();
+langToggle.textContent = currentLang === 'RU' ? 'EN' : 'RU';
 
 async function loadProgress() {
     const res = await fetch('progress.json');
@@ -101,6 +102,7 @@ langToggle.addEventListener('click', () => {
         langToggle.textContent = 'EN';
         currentLang = 'RU';
     }
+    setStoredLang(currentLang);
     updateLanguageAssets()
     loadProgress();
 });

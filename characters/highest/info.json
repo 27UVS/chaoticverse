@@ -2,7 +2,13 @@
   "data": {
     "ru_name": "Высший",
     "en_name": "Highest",
-    "img": "Highest.webp"
+    "img": "Highest.webp",
+    "infobox": {
+      "accent": "#b86ecf",
+      "accent2": "#d6303a",
+      "background": "#23072d",
+      "muted": "#ffffff"
+    }
   },
   "parameters": {
     "biography": {

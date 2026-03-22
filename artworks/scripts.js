@@ -11,7 +11,8 @@ const textArtworksDiv = $("textArtworks");
 
 $("year").textContent = new Date().getFullYear();
 
-let currentLang = "RU";
+let currentLang = getStoredLang();
+langToggle.textContent = currentLang === "RU" ? "EN" : "RU";
 let galleryNameLinks = [];
 let artworksDataCache = null;
 let ytApiPromise = null;
@@ -393,6 +394,7 @@ function initGalleryLightbox() {
 langToggle.onclick = async () => {
     currentLang = currentLang === "RU" ? "EN" : "RU";
     langToggle.textContent = currentLang === "RU" ? "EN" : "RU";
+    setStoredLang(currentLang);
     await loadLanguage(currentLang);
 
     galleryNameLinks.forEach(l =>
