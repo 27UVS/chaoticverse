@@ -1,20 +1,23 @@
 {
+  "$schema": "./contents.schema.json",
   "Пролог/Prologue": {
     "Арка Связи/Connections Arc": [
       {
         "name_ru": "Взгляд бога",
         "name_en": "The God's View",
-        "parts": [1],
+        "parts_ru": [1],
+        "parts_en": [1],
         "urls_ru": ["https://vk.com/wall-196152977_5887"],
         "urls_en": ["https://www.tumblr.com/sole-production-ut/800909885226336256/the-gods-view"]
       }
     ],
     "Арка Три брата/Three brothers Arc": [
-      {},
+      {"placeholder": true},
       {
         "name_ru": "Закат",
         "name_en": "Sunset",
-        "parts": [1, 2],
+        "parts_ru": [1, 2],
+        "parts_en": [1, 2],
         "urls_ru": ["https://vk.com/wall-196152977_5605", "https://vk.com/wall-196152977_5642"],
         "urls_en": ["https://www.tumblr.com/sole-production-ut/781802237219536896/sunset",
           "https://www.tumblr.com/sole-production-ut/785189007338405888/sunset"]
@@ -22,13 +25,14 @@
       {
         "name_ru": "Полнолуние",
         "name_en": "Full Moon",
-        "parts_ru": [1],
-        "parts_en": [1.1, 1.2],
-        "urls_ru": ["https://vk.com/wall-196152977_5915"],
+        "parts_ru": [1, 2.1],
+        "parts_en": [1.1, 1.2, 2.1],
+        "urls_ru": ["https://vk.com/wall-196152977_5915", "https://vk.com/wall-196152977_5978"],
         "urls_en": ["https://www.tumblr.com/sole-production-ut/802220307960283136/full-moon",
-        "https://www.tumblr.com/sole-production-ut/802220314990870528/full-moon-part-12-part-11-next-part"]
+        "https://www.tumblr.com/sole-production-ut/802220314990870528/full-moon-part-12-part-11-next-part",
+        "https://www.tumblr.com/sole-production-ut/807991187455754240/full-moon-part-21-pages-1-4-previous"]
       },
-      {}
+      {"placeholder": true}
     ],
     "Арка Поработитель вселенных/Enslaver of universes Arc": [
 
@@ -45,7 +49,8 @@
       {
         "name_ru": "Cowardtale",
         "name_en": "Cowardtale (only rus)",
-        "chapters": [0, 1.1, 1.2],
+        "parts_ru": [0, 1.1, 1.2],
+        "parts_en": [0, 1.1, 1.2],
         "urls_ru": ["https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38047183#part_content",
           "https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38080420#part_content",
           "https://ficbook.net/readfic/018f4e46-1c3e-74bb-886f-99f6da19e7b4/38143035#part_content"],
@@ -58,7 +63,8 @@
       {
         "name_ru": "Сделка",
         "name_en": "The Deal",
-        "parts": [1, 2, 3, 4],
+        "parts_ru": [1, 2, 3, 4],
+        "parts_en": [1, 2, 3, 4],
         "urls_ru": ["https://vk.com/wall-196152977_4988", "https://vk.com/wall-196152977_5033",
           "https://vk.com/wall-196152977_5101", "https://vk.com/wall-196152977_5176"],
         "urls_en": ["https://www.tumblr.com/sole-production-ut/760681213975543808/the-deal",
@@ -66,7 +72,7 @@
           "https://www.tumblr.com/sole-production-ut/765542298346012672/the-deal",
           "https://www.tumblr.com/sole-production-ut/766134203390853120/the-deal"]
       },
-      {}
+      {"placeholder": true}
     ]
   },
   "Сезон 2/Season 2": {
@@ -74,7 +80,8 @@
       {
         "name_ru": "Новый суд",
         "name_en": "New Judgement",
-        "parts": [1, 2],
+        "parts_ru": [1, 2],
+        "parts_en": [1, 2],
         "urls_ru": [
           "https://vk.com/wall-196152977_5737",
           "https://vk.com/wall-196152977_5806"],
@@ -85,20 +92,23 @@
       {
         "name_ru": "Друг",
         "name_en": "Friend",
-        "parts": [1, 2.1],
-        "urls_ru": ["https://vk.com/wall-196152977_5549", "https://vk.com/wall-196152977_5663"],
+        "parts_ru": [1, 2.1, 2.2],
+        "parts_en": [1, 2.1, 2.2],
+        "urls_ru": ["https://vk.com/wall-196152977_5549", "https://vk.com/wall-196152977_5663", "https://vk.com/wall-196152977_5840"],
         "urls_en": ["https://www.tumblr.com/sole-production-ut/778808653332545536/friend",
-          "https://www.tumblr.com/sole-production-ut/787432603594768384/friend"]
+          "https://www.tumblr.com/sole-production-ut/787432603594768384/friend",
+          "https://www.tumblr.com/sole-production-ut/798207192118493184/friend"]
       },
-      {},
+      {"placeholder": true},
       {
         "name_ru": "Дом",
         "name_en": "The Home",
-        "parts": [1],
+        "parts_ru": [1],
+        "parts_en": [1],
         "urls_ru": ["https://vk.com/wall-196152977_5460"],
         "urls_en": ["https://www.tumblr.com/sole-production-ut/775030645332295680/the-home"]
       },
-      {}
+      {"placeholder": true}
     ],
     "Арка Омега Таймлайн/Omega Timeline Arc": [
 
@@ -144,16 +154,26 @@
     {
       "name_ru": "Осень",
       "name_en": "Autumn",
-      "parts": [1],
+      "parts_ru": [1],
+      "parts_en": [1],
       "urls_ru": ["https://vk.com/wall-196152977_5785"],
       "urls_en": ["https://www.tumblr.com/sole-production-ut/795686231579213824/a-little-late-but-i-still-think-its-a"]
     },
     {
       "name_ru": "Печенье",
       "name_en": "Cookie",
-      "parts": [],
-      "urls_ru": [],
-      "urls_en": []
+      "parts_ru": [1],
+      "parts_en": [1],
+      "urls_ru": ["https://vk.com/wall-196152977_5958"],
+      "urls_en": ["https://www.tumblr.com/sole-production-ut/806114606664794112/hi-guys-were-jumping-right-in-with-a-meme-comic"]
+    },
+    {
+      "name_ru": "Хэллоуин",
+      "name_en": "Halloween",
+      "parts_ru": [1],
+      "parts_en": [1],
+      "urls_ru": ["https://vk.com/wall-196152977_5857"],
+      "urls_en": ["https://www.tumblr.com/sole-production-ut/798932167233306624/guys-are-totally-ready-for-halloween-thanks-for"]
     }
   ]
 }

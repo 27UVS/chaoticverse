@@ -1,4 +1,6 @@
-/* --- Оглавление (колонка оверлея — в common.css) --- */
+/* --- Оглавление (колонка оверлея — в common.css) ---
+   Палитра: заголовки сезона/арки — золото; название многочастной истории — светлый текст (не ссылка);
+   главы — неоново-жёлтые ссылки; одна глава целиком — тёплый янтарь (не совпадает с h2/h3 и с главами). */
 
 #toc {
     padding: 0 30px;
@@ -29,11 +31,29 @@
     margin-bottom: 20px;
 }
 
-.entry strong {
+/* Название истории, когда ниже список глав (не кликабельно само по себе) */
+.entry-title {
     display: block;
     font-size: 32px;
     margin-bottom: 10px;
-    color: rgb(255, 255, 243);
+    color: rgb(255, 252, 235);
+    font-weight: bold;
+}
+
+/* Одна часть: весь заголовок — ссылка (янтарь; не h2/h3 и не rgb(251,255,0) у глав) */
+a.entry-title-link {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(255, 196, 72);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a.entry-title-link:hover {
+    color: rgb(255, 222, 130);
+    text-decoration: underline;
 }
 
 .entry ul {
@@ -51,19 +71,20 @@
     margin: 0;
 }
 
-.entry a {
+/* Отдельные главы (под заголовком многочастной истории) */
+a.entry-chapter-link {
     color: rgb(251, 255, 0);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.entry a:hover {
+a.entry-chapter-link:hover {
     color: rgb(250, 179, 7);
     text-decoration: underline;
 }
 
 .dash-entry {
-    color: rgb(255, 255, 251);
+    color: rgb(200, 200, 198);
     font-style: italic;
     font-size: 22px;
     margin-bottom: 12px;
@@ -86,7 +107,12 @@
         margin-bottom: 8px;
     }
 
-    .entry strong {
+    .entry-title {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    a.entry-title-link {
         font-size: 24px;
         margin-bottom: 8px;
     }
@@ -114,7 +140,11 @@
         font-size: 20px;
     }
 
-    .entry strong {
+    .entry-title {
+        font-size: 17px;
+    }
+
+    a.entry-title-link {
         font-size: 17px;
     }
 

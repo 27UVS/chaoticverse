@@ -9,10 +9,25 @@ document.getElementById("year").textContent = new Date().getFullYear();
 let currentLang = getStoredLang();
 langToggle.textContent = currentLang === 'RU' ? 'EN' : 'RU';
 
+/** @type {object | null} */
+let tocDataCache = null;
+
 async function loadTOC() {
-    const res = await fetch('contents_names.json');
-    const data = await res.json();
-    renderTOC(data);
+    if (!tocDataCache) {
+        const res = await fetch('contents_names.json');
+        if (!res.ok) {
+            console.error('Не удалось загрузить contents_names.json');
+            return;
+        }
+        tocDataCache = await res.json();
+    }
+    renderTOC(tocDataCache);
+}
+
+function isPlaceholder(entry) {
+    if (!entry || typeof entry !== 'object') return true;
+    if (entry.placeholder === true) return true;
+    return Object.keys(entry).length === 0;
 }
 
 function updateLanguageAssets() {
@@ -30,7 +45,7 @@ function updateLanguageAssets() {
 function renderTOC(languageData) {
     tocContainer.innerHTML = '';
 
-    const seasonNames = Object.keys(languageData);
+    const seasonNames = Object.keys(languageData).filter((k) => !k.startsWith('$'));
     seasonNames.forEach((season, index) => {
         if (index > 0) {
             const divider = document.createElement('hr');
@@ -41,7 +56,6 @@ function renderTOC(languageData) {
         const seasonBlock = document.createElement('div');
         seasonBlock.className = 'season-block';
 
-        // Заголовок сезона (до / — русский, после / — английский)
         const seasonTitle = document.createElement('h2');
         seasonTitle.textContent = getLocalized(season);
         seasonBlock.appendChild(seasonTitle);
@@ -49,18 +63,16 @@ function renderTOC(languageData) {
         const arcs = languageData[season];
 
         if (Array.isArray(arcs)) {
-            // Если это массив историй
             if (!arcs.length) {
                 seasonBlock.appendChild(createDashEntry());
             } else {
                 arcs.forEach(entry => {
                     seasonBlock.appendChild(
-                        Object.keys(entry).length ? createEntry(entry) : createDashEntry()
+                        isPlaceholder(entry) ? createDashEntry() : createEntry(entry)
                     );
                 });
             }
         } else {
-            // Если это объект арок
             for (const arc in arcs) {
                 const arcTitle = document.createElement('h3');
                 arcTitle.textContent = getLocalized(arc);
@@ -72,7 +84,7 @@ function renderTOC(languageData) {
                 } else {
                     entries.forEach(entry => {
                         seasonBlock.appendChild(
-                            Object.keys(entry).length ? createEntry(entry) : createDashEntry()
+                            isPlaceholder(entry) ? createDashEntry() : createEntry(entry)
                         );
                     });
                 }
@@ -83,25 +95,41 @@ function renderTOC(languageData) {
     });
 }
 
+/**
+ * @param {object} entry
+ * @returns {{ parts: (number|string)[], urls: string[] }}
+ */
+function getPartsAndUrls(entry) {
+    const parts = currentLang === "RU" ? (entry.parts_ru || []) : (entry.parts_en || []);
+    const urls = currentLang === "RU" ? (entry.urls_ru || []) : (entry.urls_en || []);
+    return { parts, urls };
+}
+
 function createEntry(entry) {
     const div = document.createElement('div');
     div.className = 'entry';
 
-    // Заголовок истории
-    const name = document.createElement('strong');
-    name.textContent = currentLang === "RU" ? (entry.name_ru || '—') : (entry.name_en || '—');
-    div.appendChild(name);
+    const titleText = currentLang === "RU" ? (entry.name_ru || '—') : (entry.name_en || '—');
+    const { parts, urls } = getPartsAndUrls(entry);
+    const firstUrl = urls[0] && String(urls[0]).trim();
 
-    // Определяем список частей и ссылок
-    let parts, urls;
+    const isSingleLinked = parts.length === 1 && firstUrl;
 
-    if ("parts_ru" in entry || "parts_en" in entry) {
-        parts = currentLang === "RU" ? (entry.parts_ru || []) : (entry.parts_en || []);
-    } else {
-        parts = entry.parts || entry.chapters || [];
+    if (isSingleLinked) {
+        const a = document.createElement('a');
+        a.href = firstUrl;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.className = 'entry-title-link';
+        a.textContent = titleText;
+        div.appendChild(a);
+        return div;
     }
 
-    urls = currentLang === "RU" ? (entry.urls_ru || []) : (entry.urls_en || []);
+    const name = document.createElement('strong');
+    name.className = 'entry-title';
+    name.textContent = titleText;
+    div.appendChild(name);
 
     if (parts.length && urls.length) {
         const list = document.createElement('ul');
@@ -109,14 +137,15 @@ function createEntry(entry) {
             const li = document.createElement('li');
             const url = urls[i] ?? "";
 
-            if (url && url.trim() !== "") {
+            if (url && String(url).trim() !== "") {
                 const a = document.createElement('a');
                 a.href = url;
                 a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.className = 'entry-chapter-link';
                 a.textContent = part ?? `Part ${i + 1}`;
                 li.appendChild(a);
             } else {
-                // Если ссылка пустая, показываем просто текст
                 li.textContent = part ?? `Part ${i + 1}`;
             }
 
@@ -124,7 +153,6 @@ function createEntry(entry) {
         });
         div.appendChild(list);
     } else {
-        // если нет частей или ссылок — прочерк
         const dash = document.createElement('div');
         dash.className = 'dash-entry';
         dash.textContent = '–';

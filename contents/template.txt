@@ -1,7 +1,0 @@
-  {
-    "name_ru": "",
-    "name_en": "",
-    "parts": [],
-    "urls_ru": [],
-    "urls_en": []
-  },

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chaoticverse.local/schemas/contents.schema.json",
+  "title": "Contents page (оглавление)",
+  "description": "Сезон: массив историй (Other) или объект «арка → массив». В массиве — история (parts_ru/en + urls_ru/en) или {\"placeholder\": true}. У истории всегда четыре массива parts_ru, parts_en, urls_ru, urls_en.",
+  "type": "object",
+  "additionalProperties": {
+    "oneOf": [
+      {
+        "type": "string",
+        "description": "Только для ключа $schema в contents_names.json (ссылка на эту схему)."
+      },
+      {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/listItem"
+        }
+      },
+      {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/listItem"
+          }
+        }
+      }
+    ]
+  },
+  "$defs": {
+    "listItem": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "placeholder": {
+              "const": true
+            }
+          },
+          "required": ["placeholder"],
+          "additionalProperties": false
+        },
+        {
+          "$ref": "#/$defs/story"
+        }
+      ]
+    },
+    "story": {
+      "type": "object",
+      "required": ["name_ru", "name_en", "parts_ru", "parts_en", "urls_ru", "urls_en"],
+      "additionalProperties": false,
+      "properties": {
+        "name_ru": {
+          "type": "string"
+        },
+        "name_en": {
+          "type": "string"
+        },
+        "parts_ru": {
+          "type": "array",
+          "items": {
+            "type": ["number", "string"]
+          }
+        },
+        "parts_en": {
+          "type": "array",
+          "items": {
+            "type": ["number", "string"]
+          }
+        },
+        "urls_ru": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "urls_en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
