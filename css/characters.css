@@ -20,6 +20,47 @@
     text-align: left;
 }
 
+/* Вложенные списки в статье (напр. «Дополнительная информация»): семантика ul/ol, без «*» и <br> */
+.character-text article ul,
+.character-text article ol {
+    margin: 0.5em 0 1em 0;
+    padding-left: 1.35em;
+    text-align: left;
+}
+
+.character-text article ul {
+    list-style-type: disc;
+}
+
+.character-text article ol {
+    list-style-type: decimal;
+}
+
+.character-text article ul ul,
+.character-text article ol ol,
+.character-text article ul ol,
+.character-text article ol ul {
+    margin: 0.35em 0 0.55em 0;
+    padding-left: 1.25em;
+}
+
+.character-text article ul ul {
+    list-style-type: circle;
+}
+
+.character-text article ul ul ul {
+    list-style-type: square;
+}
+
+.character-text article li {
+    margin: 0.3em 0;
+}
+
+/* Обёртка вокруг «картинка + текст до следующего h2–h4» — см. wrapArticleFloatSections в character_scripts.js */
+.character-text .article-float-wrap {
+    display: flow-root;
+}
+
 /* --- Картинки в тексте статьи --- */
 .text-image {
     height: auto;
@@ -88,7 +129,7 @@
     border: 1px solid var(--ib-border);
     color: var(--ib-text);
     padding: 14px;
-    font-family: var(--font-determination);
+    font-family: var(--font-determination), monospace;
     font-size: 20px;
     float: right;
     margin: 0 0 10px 10px;

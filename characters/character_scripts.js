@@ -206,10 +206,34 @@ function renderCharacterImage(parent, imgName, altText) {
     parent.appendChild(imgWrapper);
 }
 
+/**
+ * Изолирует float у .text-image внутри коротких блоков, чтобы следующий заголовок
+ * не прилипал к чужой картинке. Обёртка с flow-root только на сегмент статьи, не на
+ * весь article — текст снова может заходить под инфобокс ниже по колонке.
+ */
+function wrapArticleFloatSections(articleEl) {
+    if (!articleEl) return;
+    let img;
+    while ((img = articleEl.querySelector('img.text-image:not(.article-float-wrap img)'))) {
+        const wrap = document.createElement('div');
+        wrap.className = 'article-float-wrap';
+        img.parentNode.insertBefore(wrap, img);
+        let node = img;
+        while (node) {
+            const cur = node;
+            node = cur.nextSibling;
+            wrap.appendChild(cur);
+            if (!node) break;
+            if (node.nodeType === Node.ELEMENT_NODE && /^H[234]$/i.test(node.tagName)) break;
+        }
+    }
+}
+
 async function renderArticle(lang = 'ru') {
     await ensureCharacterData();
     const article = document.getElementById('Article');
     article.innerHTML = characterArticle[lang] || '';
+    wrapArticleFloatSections(article);
 }
 
 /* ================== NORMALIZATION ================== */

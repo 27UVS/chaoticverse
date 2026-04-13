@@ -281,3 +281,173 @@
         animation: none;
     }
 }
+
+/**
+ * ER-UN — белый текст с цветными глюками и редкой подменой на "ERROR".
+ * Для более выразительного эффекта можно добавить атрибут data-text
+ * (он используется для псевдо-слоёв), но без него стиль всё равно работает.
+ *
+ * Пример:
+ * <span class="er-un" data-text="Spear of JUSTICE">Spear of JUSTICE</span>
+ */
+.er-un {
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    text-shadow:
+        0.06em 0 0 rgba(0, 190, 255, 0.85),
+        -0.06em 0 0 rgba(255, 55, 55, 0.8),
+        0.02em 0.04em 0 rgba(0, 140, 255, 0.45),
+        -0.02em -0.05em 0 rgba(255, 0, 80, 0.4);
+    animation: er-un-jitter 2.2s steps(1, end) infinite;
+}
+
+.er-un::before,
+.er-un::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Дополнительные «слои» текста, смещённые и окрашенные */
+.er-un::before {
+    content: attr(data-text);
+    opacity: 0.9;
+    transform: translate(1px, 0);
+    mix-blend-mode: screen;
+    text-shadow:
+        0.09em 0 0 rgba(0, 180, 255, 0.9),
+        -0.08em 0 0 rgba(255, 35, 70, 0.85);
+    animation: er-un-slice 1.35s steps(1, end) infinite;
+}
+
+/* Слой "ERROR", который иногда подменяет текст */
+.er-un::after {
+    content: "ERROR";
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    opacity: 0;
+    transform: translate(0, 0);
+    text-shadow:
+        0.1em 0 0 rgba(0, 200, 255, 0.95),
+        -0.1em 0 0 rgba(255, 0, 60, 0.9),
+        0 0 0.35em rgba(255, 255, 255, 0.35);
+    animation: er-un-error 2.2s steps(1, end) infinite;
+}
+
+@keyframes er-un-jitter {
+    0%,
+    100% {
+        transform: translate(0, 0) skewX(0);
+        filter: none;
+    }
+    6% {
+        transform: translate(-2px, 1px) skewX(-1deg);
+        filter: contrast(1.05) saturate(1.1);
+    }
+    8% {
+        transform: translate(3px, -1px) skewX(0.8deg);
+    }
+    12% {
+        transform: translate(0, 0) skewX(0);
+    }
+    52% {
+        transform: translate(1px, 0) skewX(0.4deg);
+    }
+    54% {
+        transform: translate(-4px, 2px) skewX(-1.6deg);
+        filter: contrast(1.12) saturate(1.2);
+    }
+    56% {
+        transform: translate(0, 0) skewX(0);
+        filter: none;
+    }
+    84% {
+        transform: translate(-1px, -3px) skewX(1.2deg);
+    }
+    86% {
+        transform: translate(0, 0) skewX(0);
+    }
+}
+
+@keyframes er-un-slice {
+    0%,
+    100% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(1px, 0);
+        opacity: 0.85;
+    }
+    9% {
+        clip-path: inset(62% 0 18% 0);
+        transform: translate(-3px, 1px);
+        opacity: 0.95;
+    }
+    12% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(1px, 0);
+        opacity: 0.85;
+    }
+    49% {
+        clip-path: inset(12% 0 66% 0);
+        transform: translate(4px, -1px);
+        opacity: 0.92;
+    }
+    52% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(1px, 0);
+        opacity: 0.85;
+    }
+    78% {
+        clip-path: inset(36% 0 38% 0);
+        transform: translate(-2px, 0);
+        opacity: 0.98;
+    }
+    81% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(1px, 0);
+        opacity: 0.85;
+    }
+}
+
+@keyframes er-un-error {
+    0%,
+    100% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    /* короткие вспышки подмены текста */
+    7% {
+        opacity: 1;
+        transform: translate(-2px, 1px);
+    }
+    9% {
+        opacity: 0;
+    }
+    55% {
+        opacity: 1;
+        transform: translate(3px, -2px);
+    }
+    57% {
+        opacity: 0;
+    }
+    86% {
+        opacity: 1;
+        transform: translate(-1px, -3px);
+    }
+    88% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .er-un,
+    .er-un::before,
+    .er-un::after {
+        animation: none;
+    }
+
+    .er-un::after {
+        opacity: 0;
+    }
+}
