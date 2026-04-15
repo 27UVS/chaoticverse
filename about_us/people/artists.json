@@ -132,6 +132,30 @@
       "ru": {
         "name": "Шкатулка Цуно Айрэйт"
       }
+    },
+    {
+      "id": "anti",
+      "image": "anti.webp",
+      "alt": "anti",
+      "link": "https://vk.com/anti_undertale_artist",
+      "en": {
+        "name": "ANTI"
+      },
+      "ru": {
+        "name": "ANTI"
+      }
+    },
+    {
+      "id": "husky",
+      "image": "hell_husky.webp",
+      "alt": "husky",
+      "link": "https://vk.com/6husky6hell6",
+      "en": {
+        "name": "^°•°•Hell~Husky•°•°^"
+      },
+      "ru": {
+        "name": "^°•°•Hell~Husky•°•°^"
+      }
     }
   ]
 }
