@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Language fragments (not standalone pages)
+Disallow: /en.html$
+Disallow: /ru.html$
+Disallow: /*/en.html$
+Disallow: /*/ru.html$
+
+# Article fragments loaded via JS (not standalone pages)
+Disallow: /characters/*/article_*.html
+
+Sitemap: https://chaoticverse.art/sitemap.xml
