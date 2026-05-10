@@ -1,6 +1,88 @@
 /* --- Только страница персонажей / статьи (общие карточки — в common.css) --- */
 @import url("special.css");
 
+/* Статичный фон на весь экран (не двигается при прокрутке); картинка задаётся inline на #backgroundHeight */
+body.character-page-static-bg #backgroundHeight {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    pointer-events: none;
+}
+
+/* Окно персонажа (статья + infobox): палитра из info.json (character_scripts.js) — темнее блока infobox, фон полупрозрачный */
+.fixed-overlay.fixed-overlay--character-panel-themed {
+    /* Значения по умолчанию для резолва IDE и до темизации скриптом */
+    --character-panel-bg: rgba(0, 0, 0, 0.85);
+    --character-panel-border: #ffffff;
+    --character-panel-text: #ffffff;
+    --character-panel-heading: #ffffff;
+    --character-panel-link: rgb(251, 255, 0);
+
+    background-color: var(--character-panel-bg);
+    border-color: var(--character-panel-border);
+    color: var(--character-panel-text);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .overlay-content-characters-page {
+    /* Перебивает common.css color:white у колонки, чтобы наследование совпадало с палитрой infobox */
+    color: var(--character-panel-text);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .overlay-content-characters-page h1 {
+    color: var(--character-panel-heading);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .character-text,
+.fixed-overlay.fixed-overlay--character-panel-themed .character-text article {
+    color: var(--character-panel-text);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .character-text h2,
+.fixed-overlay.fixed-overlay--character-panel-themed .character-text h3 {
+    color: var(--character-panel-heading);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .character-text a {
+    color: var(--character-panel-link);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .character-text a:hover {
+    color: color-mix(in srgb, var(--character-panel-link) 82%, #ffffff);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed hr.divider {
+    background-color: var(--character-panel-border);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .overlay-footer-text {
+    color: var(--character-panel-text);
+    opacity: 0.75;
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .minimize-button {
+    color: var(--character-panel-text);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .lang-toggle-button {
+    color: var(--character-panel-text);
+    border-color: var(--character-panel-border);
+    background-color: color-mix(in srgb, var(--character-panel-text) 10%, transparent);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed .lang-toggle-button:hover {
+    background-color: color-mix(in srgb, var(--character-panel-text) 20%, transparent);
+}
+
+.fixed-overlay.fixed-overlay--character-panel-themed::-webkit-scrollbar-thumb {
+    background-color: color-mix(in srgb, var(--character-panel-border) 55%, transparent);
+}
+
 .char-author {
     color: #ccc;
     font-size: 20px;
@@ -105,7 +187,7 @@
     }
 }
 
-/* --- Инфобокс персонажа (персональные цвета: data.infobox в info.json → --ib-*) --- */
+/* --- Infobox персонажа (персональные цвета: data.infobox в info.json → --ib-*) --- */
 .infobox {
     --ib-bg: rgba(15, 15, 15, 0.85);
     --ib-border: #333;

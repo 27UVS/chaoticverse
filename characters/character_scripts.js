@@ -119,12 +119,57 @@ const INFOBOX_THEME_PROPS = [
     '--ib-tooltip-text', '--ib-tooltip-underline', '--ib-bar-track', '--ib-bar-grid'
 ];
 
+const OVERLAY_PANEL_THEME_CLASS = 'fixed-overlay--character-panel-themed';
+const OVERLAY_PANEL_THEME_PROPS = [
+    '--character-panel-bg',
+    '--character-panel-border',
+    '--character-panel-text',
+    '--character-panel-heading',
+    '--character-panel-link'
+];
+
+function clearOverlayCharacterPanelTheme() {
+    const ov = document.getElementById('overlay');
+    if (!ov) return;
+    ov.classList.remove(OVERLAY_PANEL_THEME_CLASS);
+    OVERLAY_PANEL_THEME_PROPS.forEach((p) => ov.style.removeProperty(p));
+    document.getElementById('Article')?.style.removeProperty('color');
+}
+
+/** Окно со статьёй и инфобоксом: темнее палитры инфобокса, полупрозрачный фон */
+function applyOverlayCharacterPanelTheme(theme) {
+    const ov = document.getElementById('overlay');
+    if (!ov || !theme) return;
+
+    const { accent, accent2, background, muted } = theme;
+
+    const darkBase = background
+        ? `color-mix(in srgb, ${background} 52%, #000000)`
+        : 'rgb(6, 6, 8)';
+    const panelBg = background
+        ? `color-mix(in srgb, ${darkBase} 84%, transparent)`
+        : 'rgba(0, 0, 0, 0.88)';
+
+    const panelBorder = muted
+        ? `color-mix(in srgb, ${muted} 50%, #050505)`
+        : '#3a3a3a';
+
+    ov.style.setProperty('--character-panel-bg', panelBg);
+    ov.style.setProperty('--character-panel-border', panelBorder);
+    ov.style.setProperty('--character-panel-text', accent2 || '#e6e6e6');
+    ov.style.setProperty('--character-panel-heading', accent || accent2 || '#ffffff');
+    ov.style.setProperty('--character-panel-link', accent || accent2 || '#fbff00');
+
+    ov.classList.add(OVERLAY_PANEL_THEME_CLASS);
+}
+
 function applyInfoboxTheme(theme) {
     const box = document.getElementById('infobox');
     if (!box) return;
 
     INFOBOX_THEME_PROPS.forEach((p) => box.style.removeProperty(p));
     box.classList.remove('infobox--themed');
+    clearOverlayCharacterPanelTheme();
 
     if (!theme || typeof theme !== 'object') return;
 
@@ -132,6 +177,7 @@ function applyInfoboxTheme(theme) {
     if (!accent && !accent2 && !background && !muted) return;
 
     box.classList.add('infobox--themed');
+    applyOverlayCharacterPanelTheme(theme);
 
     if (background) {
         box.style.setProperty('--ib-bg', background);
@@ -154,6 +200,43 @@ function applyInfoboxTheme(theme) {
         box.style.setProperty('--ib-tooltip-border', muted);
         box.style.setProperty('--ib-tooltip-underline', muted);
         box.style.setProperty('--ib-bar-grid', `color-mix(in srgb, ${muted} 42%, transparent)`);
+    }
+}
+
+/**
+ * Цвет основного текста статьи = тот же computed color, что у текста значений infobox (--ib-text).
+ * Берём ячейку без шкалы (.value-bar): первая в DOM .infobox-value бывает у «Параметров» и даёт тот же цвет,
+ * но явный inline color на #Article снимает расхождение каскада (заметно на Hollow и др.).
+ */
+function syncCharacterPanelTypographyFromInfobox() {
+    const box = document.getElementById('infobox');
+    const ov = document.getElementById('overlay');
+    const article = document.getElementById('Article');
+    if (!box || !ov || !ov.classList.contains(OVERLAY_PANEL_THEME_CLASS)) return;
+
+    const textValueCell = [...box.querySelectorAll('.infobox-value')].find((el) => !el.querySelector('.value-bar'));
+    let bodyColor = '';
+    if (textValueCell) bodyColor = getComputedStyle(textValueCell).color.trim();
+    if (!bodyColor || bodyColor === 'rgba(0, 0, 0, 0)') bodyColor = getComputedStyle(box).color.trim();
+
+    if (bodyColor && bodyColor !== 'rgba(0, 0, 0, 0)') {
+        ov.style.setProperty('--character-panel-text', bodyColor);
+        article?.style.setProperty('color', bodyColor);
+    }
+
+    const hSample = box.querySelector('.infobox-section h3');
+    if (hSample) {
+        const hc = getComputedStyle(hSample).color.trim();
+        if (hc && hc !== 'rgba(0, 0, 0, 0)') ov.style.setProperty('--character-panel-heading', hc);
+    }
+
+    const linkSample = box.querySelector('.infobox a[href]');
+    if (linkSample) {
+        const lc = getComputedStyle(linkSample).color.trim();
+        if (lc && lc !== 'rgba(0, 0, 0, 0)') ov.style.setProperty('--character-panel-link', lc);
+    } else {
+        const ibLink = getComputedStyle(box).getPropertyValue('--ib-link').trim();
+        if (ibLink) ov.style.setProperty('--character-panel-link', ibLink);
     }
 }
 
@@ -395,6 +478,10 @@ async function applyLanguageUI() {
     const langCode = currentLang === 'RU' ? 'ru' : 'en';
     await renderInfobox(langCode);
     await renderArticle(langCode);
+    requestAnimationFrame(() => {
+        syncCharacterPanelTypographyFromInfobox();
+        requestAnimationFrame(() => syncCharacterPanelTypographyFromInfobox());
+    });
 }
 
 (async function initCharacterPage() {
