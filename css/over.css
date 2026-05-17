@@ -1,0 +1,108 @@
+.over-page {
+    min-height: 100vh;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+body.over-page #backgroundHeight.over-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0;
+    background-image: url("../images/wallpapers/ItIsLooking.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    pointer-events: none;
+    filter: brightness(0.55) contrast(1.08) saturate(0.85);
+}
+
+body.over-page #backgroundHeight.over-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+    pointer-events: none;
+}
+
+.over-glitch-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.over-glitch-rect {
+    position: fixed;
+    background: #fff;
+    opacity: 0;
+    z-index: 101;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    animation: over-glitch-rect-flash 0.12s steps(2, end) forwards;
+}
+
+@keyframes over-glitch-rect-flash {
+    0% {
+        opacity: 0;
+    }
+    35% {
+        opacity: 0.92;
+    }
+    70% {
+        opacity: 0.55;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Локальные помехи (не больше 25% экрана — размер задаёт over_glitch.js) */
+.over-glitch-static {
+    position: fixed;
+    z-index: 102;
+    pointer-events: none;
+    overflow: hidden;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 2px,
+            rgba(255, 255, 255, 0.12) 2px,
+            rgba(255, 255, 255, 0.12) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 3px,
+            rgba(255, 255, 255, 0.08) 3px,
+            rgba(255, 255, 255, 0.08) 6px
+        );
+    animation: over-static-burst 0.14s steps(4, end) forwards;
+}
+
+@keyframes over-static-burst {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    20% {
+        opacity: 0.85;
+        transform: translate(-3px, 1px);
+    }
+    45% {
+        opacity: 0.55;
+        transform: translate(4px, -2px);
+    }
+    70% {
+        opacity: 0.75;
+        transform: translate(-2px, 3px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+}

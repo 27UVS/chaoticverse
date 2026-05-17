@@ -1,6 +1,50 @@
 /* --- Только страница персонажей / статьи (общие карточки — в common.css) --- */
 @import url("special.css");
 
+/* Star Way — фиксированная кнопка в углу viewport (characters/index.html) */
+.star-way-corner-button {
+    position: fixed;
+    z-index: 1100;
+    display: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.star-way-corner-button.is-visible {
+    display: block;
+}
+
+.star-way-corner-button img {
+    width: 72px;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+}
+
+.star-way-corner-button--top-left {
+    top: 16px;
+    left: 16px;
+}
+
+.star-way-corner-button--top-right {
+    top: 16px;
+    right: 16px;
+}
+
+.star-way-corner-button--bottom-left {
+    bottom: 16px;
+    left: 16px;
+}
+
+.star-way-corner-button--bottom-right {
+    bottom: 16px;
+    right: 16px;
+}
+
 /* Статичный фон на весь экран (не двигается при прокрутке); картинка задаётся inline на #backgroundHeight */
 body.character-page-static-bg #backgroundHeight {
     position: fixed;
