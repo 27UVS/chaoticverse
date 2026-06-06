@@ -25,15 +25,19 @@
       {
         "name_ru": "Полнолуние",
         "name_en": "Full Moon",
-        "parts_ru": [1, 2.1, 2.2, 2.3],
-        "parts_en": [1.1, 1.2, 2.1, 2.2, 2.3],
-        "urls_ru": ["https://vk.com/wall-196152977_5915", "https://vk.com/wall-196152977_5978", "https://vk.com/wall-196152977_6073",
-          "https://vk.com/wall-196152977_6113"],
+        "parts_ru": [1, 2.1, 2.2, 2.3, 2.4],
+        "parts_en": [1.1, 1.2, 2.1, 2.2, 2.3, 2.4],
+        "urls_ru": ["https://vk.com/wall-196152977_5915",
+          "https://vk.com/wall-196152977_5978", "https://vk.com/wall-196152977_6073",
+          "https://vk.com/wall-196152977_6113", "https://vk.ru/wall-196152977_6149"
+        ],
         "urls_en": ["https://www.tumblr.com/sole-production-ut/802220307960283136/full-moon",
           "https://www.tumblr.com/sole-production-ut/802220314990870528/full-moon-part-12-part-11-next-part",
           "https://www.tumblr.com/sole-production-ut/807991187455754240/full-moon-part-21-pages-1-4-previous",
           "https://www.tumblr.com/sole-production-ut/812452930710011904/full-moon",
-          "https://www.tumblr.com/sole-production-ut/815499922629689344/full-moon-part-23-pages-12-14"]
+          "https://www.tumblr.com/sole-production-ut/815499922629689344/full-moon-part-23-pages-12-14",
+          "https://www.tumblr.com/sole-production-ut/818691182554218496/full-moon"
+        ]
       },
       {"placeholder": true}
     ],
