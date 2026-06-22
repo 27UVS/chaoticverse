@@ -19,7 +19,7 @@
     },
     "link": {
       "type": "string",
-      "description": "External URL (https://…)"
+      "description": "Shared external URL (https://…). Used for all languages unless overridden in en.link or ru.link."
     },
     "en": {
       "type": "object",
@@ -29,6 +29,10 @@
         "name": {
           "type": "string",
           "description": "Display name; may include HTML such as <br>."
+        },
+        "link": {
+          "type": "string",
+          "description": "Optional English-only URL; falls back to top-level link."
         }
       }
     },
@@ -39,6 +43,10 @@
       "properties": {
         "name": {
           "type": "string"
+        },
+        "link": {
+          "type": "string",
+          "description": "Optional Russian-only URL; falls back to top-level link."
         }
       }
     }

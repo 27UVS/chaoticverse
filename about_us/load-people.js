@@ -17,3 +17,15 @@ async function loadPeopleData(basePath) {
     );
     return Object.fromEntries(keys.map((k, i) => [k, parts[i].people]));
 }
+
+/**
+ * @param {{ link?: string, en?: { link?: string }, ru?: { link?: string } }} person
+ * @param {string} lang "en", "ru", "EN", or "RU"
+ * @returns {string}
+ */
+function resolvePersonLink(person, lang) {
+    if (!person) return "#";
+    const l = String(lang).toLowerCase();
+    const locale = l.startsWith("ru") ? "ru" : "en";
+    return person[locale]?.link || person.link || "#";
+}

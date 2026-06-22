@@ -2,6 +2,30 @@
   "$schema": "./people-role.schema.json",
   "people": [
     {
+      "id": "arkashka",
+      "image": "arkashka.webp",
+      "alt": "arkashka",
+      "link": "https://t.me/Thought120",
+      "en": {
+        "name": "Arkashka"
+      },
+      "ru": {
+        "name": "Arkashka"
+      }
+    },
+    {
+      "id": "tsuno_airite",
+      "image": "tsuno_airite.webp",
+      "alt": "tsuno_airite",
+      "link": "https://vk.com/club169822038",
+      "en": {
+        "name": "Tsuno Airite's<br>Jewelry Box"
+      },
+      "ru": {
+        "name": "Шкатулка Цуно Айрэйт"
+      }
+    },
+    {
       "id": "ti_sparrow",
       "image": "ti_sparrow.webp",
       "alt": "ti_sparrow",

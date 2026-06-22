@@ -98,18 +98,6 @@
       }
     },
     {
-      "id": "arkashka",
-      "image": "arkashka.webp",
-      "alt": "arkashka",
-      "link": "https://t.me/Thought120",
-      "en": {
-        "name": "Arkashka"
-      },
-      "ru": {
-        "name": "Arkashka"
-      }
-    },
-    {
       "id": "meta_kaj",
       "image": "meta_kaj.webp",
       "alt": "meta_kaj",
@@ -119,18 +107,6 @@
       },
       "ru": {
         "name": "Сан Хи"
-      }
-    },
-    {
-      "id": "tsuno_airite",
-      "image": "tsuno_airite.webp",
-      "alt": "tsuno_airite",
-      "link": "https://vk.com/club169822038",
-      "en": {
-        "name": "Tsuno Airite's<br>Jewelry Box"
-      },
-      "ru": {
-        "name": "Шкатулка Цуно Айрэйт"
       }
     },
     {
@@ -155,6 +131,31 @@
       },
       "ru": {
         "name": "^°•°•Hell~Husky•°•°^"
+      }
+    },
+    {
+      "id": "limelag",
+      "image": "limelag.webp",
+      "alt": "limelag",
+      "link": "https://vk.ru/limelag",
+      "en": {
+        "name": "LiMe L.A.G."
+      },
+      "ru": {
+        "name": "LiMe L.A.G."
+      }
+    },
+    {
+      "id": "antifffff",
+      "image": "antifffff.webp",
+      "alt": "antifffff",
+      "en": {
+        "name": "sugar.ART",
+        "link": "https://www.tumblr.com/antifffff"
+      },
+      "ru": {
+        "name": "сахарок.ART",
+        "link": "https://vk.com/tvorchestvo.sugar"
       }
     }
   ]

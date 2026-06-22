@@ -110,6 +110,7 @@ function renderGroup(group, container) {
 
         const lang = currentLang.toLowerCase();
         const name = person[lang]?.name || person.en.name; // fallback на en
+        const link = resolvePersonLink(person, lang);
 
         let extraTitle = "";
         if (person.id === "unknown_team") {
@@ -120,14 +121,14 @@ function renderGroup(group, container) {
 
         card.innerHTML = `
             <div class="person-group-icon">
-                <a href="${person.link}" target="_blank">
+                <a href="${link}" target="_blank">
                     <img src="../images/people/${person.image}" 
                          alt="${person.alt}"
                          ${extraTitle ? `title="${extraTitle}"` : ""}>
                 </a>
             </div>
             <div class="person-group-text">
-                <div class="person-group-name"><a href="${person.link}">${name}</a></div>
+                <div class="person-group-name"><a href="${link}">${name}</a></div>
             </div>
         `;
         container.appendChild(card);

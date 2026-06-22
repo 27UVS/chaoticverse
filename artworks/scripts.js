@@ -185,22 +185,20 @@ async function initGalleryCarousels(containerId) {
     const peopleMap = {};
     [...people.scripters, ...people.artists, ...people.partners, ...people.exparticipants]
         .forEach(p => {
-            peopleMap[p.id] = {
-                link: p.link,
-                ru: p.ru.name,
-                en: p.en.name
-            };
+            peopleMap[p.id] = p;
         });
 
     let images = [];
     for (const entry of artworks.gallery) {
         const id = entry.authorId;
         const files = entry.files;
-        const p = peopleMap[id] || { link: "#", ru: "Неизвестно", en: "Unknown" };
+        const p = peopleMap[id];
         files.forEach(f =>
             images.push({
                 src: `../images/gallery/${f}`,
-                ...p
+                person: p,
+                ru: p?.ru.name ?? "Неизвестно",
+                en: p?.en.name ?? "Unknown"
             })
         );
     }
@@ -232,13 +230,14 @@ async function initGalleryCarousels(containerId) {
             img.setAttribute("height", "225");
 
             const a = document.createElement("a");
-            a.href = imgData.link;
+            a.href = resolvePersonLink(imgData.person, currentLang);
             a.target = "_blank";
             a.className = "gallery-name";
             a.innerHTML = currentLang === "EN" ? imgData.en : imgData.ru;
 
             galleryNameLinks.push({
                 element: a,
+                person: imgData.person,
                 ru: imgData.ru,
                 en: imgData.en
             });
@@ -399,9 +398,10 @@ langToggle.onclick = async () => {
     setStoredLang(currentLang);
     await loadLanguage(currentLang);
 
-    galleryNameLinks.forEach(l =>
-        (l.element.textContent = currentLang === "EN" ? l.en : l.ru)
-    );
+    galleryNameLinks.forEach(l => {
+        l.element.textContent = currentLang === "EN" ? l.en : l.ru;
+        l.element.href = resolvePersonLink(l.person, currentLang);
+    });
 };
 
 minimizeBtn.onclick = () => {
